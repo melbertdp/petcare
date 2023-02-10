@@ -16,39 +16,7 @@ export default function SimpleMap({ vetNearby }) {
     };
 
     useEffect(() => {
-        // const places = [
-        //     {
-        //         name: "pocmes",
-        //         location: {
-        //             lat: 14.898463,
-        //             lng: 120.735960
-        //         }
-        //     },
-        //     {
-        //         name: "slhs",
-        //         location: {
-        //             lat: 14.895541,
-        //             lng: 120.733891
-        //         }
-        //     },
-        //     {
-        //         name: "mart",
-        //         location: {
-        //             lat: 14.894535,
-        //             lng: 120.732304
-        //         }
-        //     },
-        //     {
-        //         name: "church",
-        //         location: {
-        //             lat: 14.899199,
-        //             lng: 120.733631
-        //         }
-        //     }
-        // ]
-
         setPlaces(vetNearby);
-
     }, [])
 
     return (

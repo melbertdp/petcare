@@ -20,6 +20,7 @@ import logoWired from '@/images/logos/wired.svg'
 
 import FindVet from '@/components/modals/findvet';
 import Dogs from '@/images/dogs_img_1.png';
+import Bg from '@/images/blue_abstract.png';
 
 function BackgroundIllustration(props) {
   let id = useId()
@@ -373,6 +374,8 @@ export function Hero() {
             </div>
           </div>
           <div className="relative mt-10 sm:mt-20 lg:col-span-5 lg:row-span-2 lg:mt-0 xl:col-span-6">
+            {/* <div className="absolute w-16 h-24 bg-[url('/images/blue_abstract.png')] bg-no-repeat bg-right-top bg-contain sm:bg-auto sm:hidden"></div> */}
+            <Image src={Bg} alt="dogs" className="h-[350px] z-[-1] absolute sm:hidden" unoptimized />
             <Image
               src={Dogs}
               alt="dogs"

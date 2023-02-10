@@ -1,3 +1,6 @@
+import Image from 'next/image'
+import LogoDog from '@/images/logo2.png';
+
 export function Logomark(props) {
   return (
     <svg viewBox="0 0 40 40" aria-hidden="true" {...props}>
@@ -12,9 +15,21 @@ export function Logomark(props) {
 
 export function Logo(props) {
   return (
-    <svg viewBox="0 0 106 40" aria-hidden="true" {...props}>
-      <Logomark width="40" height="40" className="fill-green-400" />
-      
-    </svg>
+    <>
+      <div className='flex'>
+        <Image
+          src={LogoDog}
+          alt="dogs"
+          className='h-14 w-auto'
+          unoptimized
+        />
+        <h5 className='mt-4 ml-4'>Petcare</h5>
+      </div>
+    </>
+
+    // <svg viewBox="0 0 106 40" aria-hidden="true" {...props}>
+
+
+    // </svg>
   )
 }

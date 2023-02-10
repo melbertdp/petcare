@@ -8,6 +8,8 @@ import { Logomark } from '@/components/Logo'
 import { NavLinks } from '@/components/layout/NavLinks'
 import qrCode from '@/images/qr-code.svg'
 
+import LogoDog from '@/images/logo2.png';
+
 function QrCodeBorder(props) {
   return (
     <svg viewBox="0 0 96 96" fill="none" aria-hidden="true" {...props}>
@@ -27,7 +29,12 @@ export function Footer() {
         <div className="flex flex-col items-start justify-between gap-y-12 pt-16 pb-6 lg:flex-row lg:items-center lg:py-16">
           <div>
             <div className="flex items-center text-gray-900">
-              <Logomark className="h-10 w-10 flex-none fill-cyan-500" />
+              <Image
+                src={LogoDog}
+                alt="dogs"
+                className='h-14 w-auto'
+                unoptimized
+              />
               <div className="ml-4">
                 <p className="text-base font-semibold">Petcare</p>
                 <p className="mt-1 text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor quam bibendum.</p>

@@ -57,6 +57,11 @@ export default function Example({ open, setOpen, vets }) {
                       <Dialog.Title className="text-lg font-medium text-gray-900">Panel title</Dialog.Title>
                     </div>
                     <div className="relative mt-6 flex-1 px-4 sm:px-6">
+
+                      <div>
+                        <input type="search" placeholder="Search" />
+                      </div>
+
                       {vets.map((vet, index) => (
                         <div key={index} class="justify-between mb-6 rounded-lg bg-white p-6 shadow-md sm:flex sm:justify-start">
                           <h1>{vet.name}</h1>
