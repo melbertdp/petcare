@@ -9,7 +9,7 @@ export default function Login() {
   return (
     <>
       <Head>
-        <title>Sign In - Pocket</title>
+        <title>Sign In - Petfriend</title>
       </Head>
       <AuthLayout
         title="Sign in to account"

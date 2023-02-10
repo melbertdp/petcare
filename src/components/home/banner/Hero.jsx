@@ -17,6 +17,8 @@ import logoHuffpost from '@/images/logos/huffpost.svg'
 import logoTechcrunch from '@/images/logos/techcrunch.svg'
 import logoWired from '@/images/logos/wired.svg'
 
+
+import FindVet from '@/components/modals/findvet';
 import Dogs from '@/images/dogs_img_1.png';
 
 function BackgroundIllustration(props) {
@@ -336,6 +338,9 @@ function AppDemo() {
 }
 
 export function Hero() {
+
+  const [findVetModalVisible, setFindVetModalVisible] = useState(false)
+
   return (
     <div className="overflow-hidden py-20 sm:py-16 lg:pb-32 xl:pb-36">
       <Container>
@@ -354,21 +359,33 @@ export function Hero() {
                 variant="outline"
               >
                 <PlayIcon className="h-6 w-6 flex-none" />
-                <span className="ml-2.5">Watch the video</span>
+                <span className="ml-2.5">Find Pet Sitter</span>
               </Button>
+
+              <Button
+                onClick={() => setFindVetModalVisible(true)}
+                variant="outline"
+              >
+                <PlayIcon className="h-6 w-6 flex-none" />
+                <span className="ml-2.5">Find Vet</span>
+              </Button>
+
             </div>
           </div>
           <div className="relative mt-10 sm:mt-20 lg:col-span-5 lg:row-span-2 lg:mt-0 xl:col-span-6">
             <Image
               src={Dogs}
               alt="dogs"
-              className="h-[300px] sm:h-[500px] lg:h-[500px] xl:h-[450px]"
+              className="h-[350px] sm:h-[500px] lg:h-[500px] xl:h-[500px]"
               unoptimized
             />
           </div>
-          
+
         </div>
       </Container>
+
+
+      <FindVet open={findVetModalVisible} setOpen={setFindVetModalVisible} />
     </div>
   )
 }

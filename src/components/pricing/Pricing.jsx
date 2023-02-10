@@ -179,7 +179,7 @@ function Plan({
       </div>
       <Button
         href={button.href}
-        color={featured ? 'cyan' : 'gray'}
+        color={featured ? 'indigo' : 'gray'}
         className="mt-6"
         aria-label={`Get started with the ${name} plan for ${price}`}
       >
@@ -236,7 +236,7 @@ export function Pricing() {
             <div
               aria-hidden="true"
               className={clsx(
-                'pointer-events-none absolute inset-0 z-10 grid grid-cols-2 overflow-hidden rounded-lg bg-cyan-500 transition-all duration-300',
+                'pointer-events-none absolute inset-0 z-10 grid grid-cols-2 overflow-hidden rounded-lg bg-indigo-500 transition-all duration-300',
                 activePeriod === 'Monthly'
                   ? '[clip-path:inset(0_50%_0_0)]'
                   : '[clip-path:inset(0_0_0_calc(50%-1px))]'

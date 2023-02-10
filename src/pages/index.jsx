@@ -20,13 +20,16 @@ export default function Home() {
           content="boom boom boom"
         />
       </Head>
-      <Header />
+
+      <div className="bg-[url('/images/banner_bg80.svg')] bg-no-repeat bg-right-top bg-contain sm:bg-auto">
+        <Header />
+        <Hero />
+      </div>
 
       <main>
-        <Hero />
         <AboutUs />
         <Services />
-        
+
         <Reviews />
         <Pricing />
         <Faqs />
