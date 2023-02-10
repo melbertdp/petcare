@@ -1,15 +1,18 @@
 import { useState } from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/router';
+
 import { AnimatePresence, motion } from 'framer-motion'
 
 export function NavLinks() {
   let [hoveredIndex, setHoveredIndex] = useState(null)
+  const router = useRouter()
 
   return [
-    ['About', '#features'],
-    ['Reviews', '#reviews'],
-    ['Pricing', '#pricing'],
-    ['FAQs', '#faqs'],
+    ['About', router.pathname === "/" ? '#features' : "/#features"],
+    ['Reviews', router.pathname === "/" ? '#reviews' : "/#reviews"],
+    ['Pricing', router.pathname === "/" ? '#pricing' : "/#pricing"],
+    ['FAQs', router.pathname === "/" ? '#faqs' : "/#faqs"],
   ].map(([label, href], index) => (
     <Link
       key={label}
