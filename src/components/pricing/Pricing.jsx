@@ -169,7 +169,7 @@ function Plan({
               <CheckIcon
                 className={clsx(
                   'h-6 w-6 flex-none',
-                  featured ? 'text-white' : 'text-cyan-500'
+                  featured ? 'text-white' : 'text-indigo-500'
                 )}
               />
               <span className="ml-4">{feature}</span>
