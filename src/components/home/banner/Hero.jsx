@@ -341,7 +341,7 @@ export function Hero() {
       <Container>
         <div className="lg:grid lg:grid-cols-12 lg:gap-x-8 lg:gap-y-20">
           <div className="relative z-10 mx-auto max-w-2xl lg:col-span-7 lg:max-w-none lg:pt-6 xl:col-span-6">
-            <h1 className="text-7xl font-bold tracking-tight text-lime-700 sm:text-6xl">
+            <h1 className="text-7xl font-bold tracking-tight text-indigo-500 sm:text-6xl">
               Petfriends
             </h1>
             <p className="mt-6 text-xl text-gray-600">

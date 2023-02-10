@@ -8,11 +8,11 @@ import { Logomark } from '@/components/Logo'
 
 const plans = [
   {
-    name: 'On Demand',
+    name: 'Walk-in',
     featured: false,
-    price: { Monthly: '0', Annually: '0' },
+    price: { Monthly: '₱ 0', Annually: '₱ 0' },
     description:
-      'ito yung mga on demand lang, or gusto lang mag try',
+      'Rates will depend on vet/pet sitter rate. ito yung mga on Walk-in lang, or gusto lang mag try',
     button: {
       label: 'Get started for free',
       href: '/register',
@@ -28,7 +28,7 @@ const plans = [
   {
     name: 'Regular',
     featured: false,
-    price: { Monthly: '100', Annually: '999' },
+    price: { Monthly: '₱ 100', Annually: '₱ 999' },
     description:
       'ito yung mga regular customers',
     button: {
@@ -47,7 +47,7 @@ const plans = [
   {
     name: 'VIP',
     featured: true,
-    price: { Monthly: '200 pesos', Annually: '2000' },
+    price: { Monthly: '₱ 200', Annually: '₱ 2000' },
     description:
       'ito VIP, above regular tier, may additional benefits',
     button: {

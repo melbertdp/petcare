@@ -5,7 +5,7 @@ import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import { TextField } from '@/components/Fields'
 import { Logomark } from '@/components/Logo'
-import { NavLinks } from '@/components/NavLinks'
+import { NavLinks } from '@/components/layout/NavLinks'
 import qrCode from '@/images/qr-code.svg'
 
 function QrCodeBorder(props) {

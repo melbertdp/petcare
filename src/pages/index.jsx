@@ -1,14 +1,14 @@
 import Head from 'next/head'
 
 import { CallToAction } from '@/components/CallToAction'
-import { Faqs } from '@/components/Faqs'
-import { Footer } from '@/components/Footer'
-import { Header } from '@/components/Header'
-import { Hero } from '@/components/Hero'
-import { Pricing } from '@/components/Pricing'
-import { PrimaryFeatures } from '@/components/PrimaryFeatures'
-import { Reviews } from '@/components/Reviews'
-import { SecondaryFeatures } from '@/components/SecondaryFeatures'
+import { Faqs } from '@/components/faq/Faqs'
+import { Footer } from '@/components/layout/Footer'
+import { Header } from '@/components/layout/Header'
+import { Hero } from '@/components/Home/banner/Hero'
+import { Pricing } from '@/components/pricing/Pricing'
+import { AboutUs } from '@/components/home/about/About'
+import { Reviews } from '@/components/reviews/Reviews'
+import { Services } from '@/components/home/services/Services'
 
 export default function Home() {
   return (
@@ -24,8 +24,8 @@ export default function Home() {
 
       <main>
         <Hero />
-        <PrimaryFeatures />
-        <SecondaryFeatures />
+        <AboutUs />
+        <Services />
         
         <Reviews />
         <Pricing />

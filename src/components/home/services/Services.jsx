@@ -186,7 +186,7 @@ function DeviceChartIcon(props) {
   )
 }
 
-export function SecondaryFeatures() {
+export function Services() {
   return (
     <section
       id="secondary-features"

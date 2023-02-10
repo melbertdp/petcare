@@ -120,7 +120,7 @@ function splitArray(array, numParts) {
 function ReviewColumn({
   className,
   reviews,
-  reviewClassName = () => {},
+  reviewClassName = () => { },
   msPerPixel = 0,
 }) {
   let columnRef = useRef()
@@ -175,7 +175,7 @@ function ReviewGrid() {
             reviewClassName={(reviewIndex) =>
               clsx(
                 reviewIndex >= columns[0].length + columns[2][0].length &&
-                  'md:hidden',
+                'md:hidden',
                 reviewIndex >= columns[0].length && 'lg:hidden'
               )
             }
@@ -210,15 +210,16 @@ export function Reviews() {
       className="pt-12 pb-16 sm:pt-14 sm:pb-14"
     >
       <Container>
-        <h2
-          id="reviews-title"
-          className="text-3xl font-medium tracking-tight text-gray-900 sm:text-center"
-        >
-          Testimonials
-        </h2>
-        <p className="mt-2 text-lg text-gray-600 sm:text-center">
-          What People Say
-        </p>
+        <div className="mx-auto max-w-2xl sm:text-center">
+          <h5
+            id="reviews-title"
+            className="text-2xl font-bold tracking-tight text-indigo-500">
+            Testimonials
+          </h5>
+          <h2 className="text-5xl py-5 font-medium tracking-tight text-gray-900">
+            What People Say
+          </h2>
+        </div>
         <ReviewGrid />
       </Container>
     </section>
