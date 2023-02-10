@@ -45,7 +45,6 @@ export default function SimpleMap({ vetNearby }) {
 
                     styles: mapOptions
                 }}
-                // bootstrapURLKeys={{ key: "AIzaSyDXUe9mQdVxwxa0zXbP2x8AUrnAMUfpA1A" }}
                 bootstrapURLKeys={{ key: "" }}
                 defaultCenter={defaultProps.center}
                 defaultZoom={defaultProps.zoom}
