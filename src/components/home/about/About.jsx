@@ -7,8 +7,8 @@ import { Container } from '@/components/Container'
 export function AboutUs() {
   return (
     <section
-      id="features"
-      aria-label="Features for investing all your money"
+      id="about"
+      aria-label="About us"
       className="py-12 sm:py-14"
     >
       <Container>

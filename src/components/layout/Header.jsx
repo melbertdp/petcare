@@ -1,11 +1,13 @@
 import Link from 'next/link'
 import { Popover } from '@headlessui/react'
 import { AnimatePresence, motion } from 'framer-motion'
-
+import { useRouter } from 'next/router';
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import { Logo } from '@/components/Logo'
 import { NavLinks } from '@/components/layout/NavLinks'
+
+import NavLinkList from "@/components/layout/sections";
 
 function MenuIcon(props) {
   return (
@@ -46,6 +48,7 @@ function MobileNavLink({ children, ...props }) {
 }
 
 export function Header() {
+  const router = useRouter()
   return (
     <header>
       <nav>
@@ -98,16 +101,18 @@ export function Header() {
                           className="absolute inset-x-0 top-0 z-0 origin-top rounded-b-2xl bg-gray-50 px-6 pb-6 pt-32 shadow-2xl shadow-gray-900/20"
                         >
                           <div className="space-y-4">
-                            <MobileNavLink href="#features">
-                              About Us
-                            </MobileNavLink>
-                            <MobileNavLink href="#reviews">
-                              Reviews
-                            </MobileNavLink>
-                            <MobileNavLink href="#pricing">
-                              Pricing
-                            </MobileNavLink>
-                            <MobileNavLink href="#faqs">FAQs</MobileNavLink>
+
+                            {
+                              NavLinkList.map((item, index) => {
+                                return (
+                                  <MobileNavLink href={router.pathname === "/" ? item.home : item.other} key={index}>
+                                    {item.name}
+                                  </MobileNavLink>
+                                )
+                              })
+                            }
+
+
                           </div>
                           <div className="mt-8 flex flex-col gap-4">
                             <Button href="/login" variant="outline">

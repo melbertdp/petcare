@@ -1,6 +1,5 @@
 import Head from 'next/head'
 
-import { CallToAction } from '@/components/CallToAction'
 import { Faqs } from '@/components/faq/Faqs'
 import { Footer } from '@/components/layout/Footer'
 import { Header } from '@/components/layout/Header'

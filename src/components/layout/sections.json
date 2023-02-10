@@ -1,0 +1,27 @@
+[
+    {
+        "name": "About",
+        "home": "#about",
+        "other": "/#about"
+    },
+    {
+        "name": "Services",
+        "home": "#services",
+        "other": "/#services"
+    },
+    {
+        "name": "Reviews",
+        "home": "#reviews",
+        "other": "/#reviews"
+    },
+    {
+        "name": "Pricing",
+        "home": "#pricing",
+        "other": "/#pricing"
+    },
+    {
+        "name": "FAQs",
+        "home": "#faqs",
+        "other": "/#faqs"
+    }
+]

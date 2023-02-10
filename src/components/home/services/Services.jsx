@@ -189,8 +189,8 @@ function DeviceChartIcon(props) {
 export function Services() {
   return (
     <section
-      id="secondary-features"
-      aria-label="Features for building a portfolio"
+      id="services"
+      aria-label="Our services"
       className="py-12 sm:py-14"
     >
       <Container>

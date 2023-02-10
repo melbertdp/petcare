@@ -13,9 +13,7 @@ const AnyReactComponent = ({ text }) => {
     )
 }
 
-export default function SimpleMap({ vetNearby }) {
-
-    
+export default function SimpleMap({ vetNearby, setViewPetDetails }) {
 
     const defaultProps = {
         center: {
@@ -31,18 +29,19 @@ export default function SimpleMap({ vetNearby }) {
     }
 
     const onChildClick = (key, childProps) => {
-        console.log("key", key);
+        setViewPetDetails(vetNearby[key]);
     }
 
     return (
         // Important! Always set the container height explicitly
-        <div style={{ height: '100vh', width: '100%' }}>
+        <div style={{ height: '450px', width: '100%' }}>
             <GoogleMapReact
                 options={{
                     clickableIcons: false,
                     fullscreenControl: false,
                     keyboardShortcuts: false,
-
+                    minZoom: 13,
+                    maxZoom: 18,
                     styles: mapOptions
                 }}
                 bootstrapURLKeys={{ key: "" }}
@@ -50,20 +49,20 @@ export default function SimpleMap({ vetNearby }) {
                 defaultZoom={defaultProps.zoom}
                 onChildClick={onChildClick}
             >
-                <AnyReactComponent
+                {/* <AnyReactComponent
                     lat={14.894720}
                     lng={120.733336}
                     text="My Marker"
-                />
+                /> */}
 
                 {vetNearby.map((place, index) => {
-
+                    console.log("place", place);
                     return (
                         <AnyReactComponent
-                            key={place.name}
+                            key={place.index}
                             lat={place.location.lat}
                             lng={place.location.lng}
-                            text={place.text}
+                            text={place.name}
                         />
                     )
                 })}

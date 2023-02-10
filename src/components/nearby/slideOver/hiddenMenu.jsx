@@ -1,8 +1,9 @@
 import { Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
+import NearbyVetCards from '@/components/nearby/cards/vetCards';
 
-export default function Example({ open, setOpen, vets }) {
+export default function HiddenMenu({ open, setOpen, vets, handleSearch, setViewPetDetails }) {
 
   return (
     <Transition.Root show={open} as={Fragment}>
@@ -59,16 +60,11 @@ export default function Example({ open, setOpen, vets }) {
                     <div className="relative mt-6 flex-1 px-4 sm:px-6">
 
                       <div>
-                        <input type="search" placeholder="Search" />
+                        <input onChange={(e) => handleSearch(e)} type="search" placeholder="Search" />
                       </div>
 
                       {vets.map((vet, index) => (
-                        <div key={index} class="justify-between mb-6 rounded-lg bg-white p-6 shadow-md sm:flex sm:justify-start">
-                          <h1>{vet.name}</h1>
-                          <p>{vet.address}</p>
-                          <p>{vet.price}</p>
-                          <p>{vet.rating}</p>
-                        </div>
+                        <NearbyVetCards key={index} vet={vet} setViewPetDetails={setViewPetDetails} />
                       ))}
                     </div>
                   </div>
