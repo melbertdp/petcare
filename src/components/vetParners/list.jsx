@@ -1,3 +1,6 @@
+import { useEffect, useState } from "react"
+import Modal from '@/components/vetParners/modal/viewVetDetails';
+
 const vets = [
     {
         id: 1,
@@ -9,6 +12,7 @@ const vets = [
         address: '1234 Main St',
         imageSrc: 'https://i.pravatar.cc/300?img=2',
         imageAlt: 'Tall slender porcelain bottle with natural clay textured body and cork stopper.',
+        rating: 1
     },
     {
         id: 2,
@@ -20,6 +24,7 @@ const vets = [
         address: '1234 Main St',
         imageSrc: 'https://i.pravatar.cc/300?img=1',
         imageAlt: 'Olive drab green insulated bottle with flared screw lid and flat top.',
+        rating: 2
     },
     {
         id: 3,
@@ -31,6 +36,7 @@ const vets = [
         address: '1234 Main St',
         imageSrc: 'https://i.pravatar.cc/300?img=3',
         imageAlt: 'Person using a pen to cross a task off a productivity paper card.',
+        rating: 5
     },
     {
         id: 4,
@@ -42,6 +48,7 @@ const vets = [
         address: '1234 Main St',
         imageSrc: 'https://i.pravatar.cc/300?img=4',
         imageAlt: 'Hand holding black machined steel mechanical pencil with brass tip and top.',
+        rating: 4
     },
     {
         id: 5,
@@ -53,6 +60,7 @@ const vets = [
         address: '1234 Main St',
         imageSrc: 'https://i.pravatar.cc/300?img=5',
         imageAlt: 'Tall slender porcelain bottle with natural clay textured body and cork stopper.',
+        rating: 3
     },
     {
         id: 6,
@@ -64,6 +72,7 @@ const vets = [
         address: '1234 Main St',
         imageSrc: 'https://i.pravatar.cc/300?img=9',
         imageAlt: 'Olive drab green insulated bottle with flared screw lid and flat top.',
+        rating: 2
     },
     {
         id: 7,
@@ -75,6 +84,7 @@ const vets = [
         address: '1234 Main St',
         imageSrc: 'https://i.pravatar.cc/300?img=7',
         imageAlt: 'Person using a pen to cross a task off a productivity paper card.',
+        rating: 3
     },
     {
         id: 8,
@@ -86,14 +96,23 @@ const vets = [
         price: '$35',
         imageSrc: 'https://i.pravatar.cc/300?img=8',
         imageAlt: 'Hand holding black machined steel mechanical pencil with brass tip and top.',
+        rating: 4
     }
 ]
 
 export default function VetPartners() {
+    const [showVetDetails, setsShowVetDetails] = useState(false);
+    const [vetDetails, setVetDetails] = useState({});
+
+    const handleShowVetDetails = (vet) => {
+        setVetDetails(vet);
+        setsShowVetDetails(true);
+    }
+
     return (
         <div className="bg-white">
             <div className="mx-auto max-w-2xl py-1 px-4 sm:py-1 sm:px-6 lg:max-w-7xl lg:px-8">
-                <div class="flex flex-col mt-8">
+                <div class="flex flex-col">
                     <div class="container max-w-7xl px-4">
 
                         <div class="flex flex-wrap justify-center text-center mb-10">
@@ -112,7 +131,7 @@ export default function VetPartners() {
                                             key={index}
                                             class="w-full md:w-6/12 lg:w-3/12 mb-6 px-6 sm:px-6 lg:px-4"
                                         >
-                                            <div class="flex flex-col">
+                                            <div class="flex flex-col" onClick={() => handleShowVetDetails(vet)} >
                                                 <a href="#" class="mx-auto">
                                                     <img
                                                         class="rounded-2xl drop-shadow-md hover:drop-shadow-xl transition-all duration-200 delay-100"
@@ -142,9 +161,14 @@ export default function VetPartners() {
                                 })
                             }
                         </div>
+
+                        {
+                            showVetDetails && <Modal vetDetails={vetDetails} open={showVetDetails} setOpen={setsShowVetDetails} />
+                        }
+
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
