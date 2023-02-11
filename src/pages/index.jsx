@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import Head from 'next/head'
 
 import { Faqs } from '@/components/faq/Faqs'
@@ -9,7 +10,18 @@ import { AboutUs } from '@/components/home/about/About'
 import { Reviews } from '@/components/reviews/Reviews'
 import { Services } from '@/components/home/services/Services'
 
+import { Loading } from '@/components/layout/Loader'
+
 export default function Home() {
+
+  const [isPageLoading, setIsPageLoading] = useState(false)
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsPageLoading(false)
+    }, 3000);
+  },[])
+
   return (
     <>
       <Head>
@@ -20,20 +32,29 @@ export default function Home() {
         />
       </Head>
 
-      <div className="bg-[url('/images/banner_bg80.svg')] bg-no-repeat bg-right-top bg-contain sm:bg-auto">
-        <Header />
-        <Hero />
-      </div>
+      {
+        isPageLoading ?
+          <Loading />
+          :
+          <>
+            <div className="bg-[url('/images/banner_bg80.svg')] bg-no-repeat bg-right-top bg-contain sm:bg-auto">
+              <Header />
+              <Hero />
+            </div>
 
-      <main>
-        <AboutUs />
-        <Services />
+            <main>
+              <AboutUs />
+              <Services />
 
-        <Reviews />
-        <Pricing />
-        <Faqs />
-      </main>
-      <Footer />
+              <Reviews />
+              <Pricing />
+              <Faqs />
+            </main>
+            <Footer />
+          </>
+      }
+
+
     </>
   )
 }

@@ -1,12 +1,13 @@
 /* This example requires Tailwind CSS v2.0+ */
 import { Fragment, useRef, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
-import { CheckIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 
 export default function FindVet({ open, setOpen, viewVetDetails }) {
 
-    const cancelButtonRef = useRef(null)
+    const makeUrl = (name) => {
+        return name.toLowerCase().split(' ').join('-');
+    }
 
     return (
         <Transition.Root show={open} as={Fragment}>
@@ -48,6 +49,11 @@ export default function FindVet({ open, setOpen, viewVetDetails }) {
                                             </p>
                                         </div>
                                     </div>
+
+                                    <Link href={`/vet/schedule-visit/${makeUrl(viewVetDetails.name)}`}>
+                                        Book an appointment
+                                    </Link>
+
                                 </div>
                             </Dialog.Panel>
                         </Transition.Child>

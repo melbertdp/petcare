@@ -30,3 +30,9 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# service worker
+
+# ignore service worker files
+.sw.js
+.sw.js.map

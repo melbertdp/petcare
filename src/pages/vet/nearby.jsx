@@ -3,63 +3,10 @@ import Head from 'next/head'
 import { Header } from '@/components/layout/Header'
 import Map from '@/components/nearby/map/map'
 import SlideOver from '@/components/nearby/slideOver/hiddenMenu';
-import Modal from '@/components/nearby/modal/findvet';
+import Modal from '@/components/nearby/modal/viewVetDetails';
 import NearbyVetCards from '@/components/nearby/cards/vetCards';
 
-const vets = [
-    {
-        key: 1,
-        name: "pet clinic",
-        address: "address 2",
-        price: 250,
-        rating: 4.5,
-        email: "petclinic@example.com",
-        phone: "09123456789",
-        location: {
-            lat: 14.543382,
-            lng: 121.057486
-        }
-    },
-    {
-        key: 2,
-        name: "pet solutions",
-        address: "address 2",
-        price: 250,
-        rating: 4.5,
-        email: "petsolutions@example.com",
-        phone: "09123456789",
-        location: {
-            lat: 14.551773,
-            lng: 121.053795
-        }
-    },
-    {
-        key: 3,
-        name: "pet express",
-        address: "address 3",
-        price: 300,
-        rating: 1.5,
-        email: "petexpress@example.com",
-        phone: "09123456789",
-        location: {
-            lat: 14.534077,
-            lng: 121.049289
-        }
-    },
-    {
-        key: 4,
-        name: "pet hospital",
-        address: "address 3",
-        price: 300,
-        rating: 1.5,
-        email: "bowwow@example.com",
-        phone: "09123456789",
-        location: {
-            lat: 14.555428,
-            lng: 121.063022
-        }
-    }
-]
+import vets from '@/data/vets';
 
 export default function NearbyVet() {
 
@@ -119,7 +66,7 @@ export default function NearbyVet() {
                             />
 
                             {places.map((vet, index) => (
-                                <NearbyVetCards key={index} vet={vet} setViewPetDetails={setViewPetDetails}/>
+                                <NearbyVetCards key={index} vet={vet} setViewPetDetails={setViewPetDetails} />
                             ))}
                         </div>
 
