@@ -35,4 +35,4 @@ yarn-error.log*
 
 # ignore service worker files
 .sw.js
-.sw.js.map
+.sw.*

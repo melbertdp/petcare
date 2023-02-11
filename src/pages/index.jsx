@@ -10,7 +10,7 @@ import { AboutUs } from '@/components/home/about/About'
 import { Reviews } from '@/components/reviews/Reviews'
 import { Services } from '@/components/home/services/Services'
 
-import { Loading } from '@/components/layout/Loader'
+import { Loading } from '@/components/layout/loader'
 
 export default function Home() {
 

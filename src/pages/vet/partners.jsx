@@ -47,7 +47,7 @@ export default function NearbyVet() {
 
                 <div class=" bg-white pt-8">
                     <h1 class="mb-10 text-center text-2xl font-bold">Our Vet Parners</h1>
-                    <div class="mx-auto max-w-5xl justify-center px-6 md:flex md:space-x-6 xl:px-0">
+                    <div class="overflow-hidden pt-1 pb-20 sm:py-1 lg:pb-32 xl:pb-36">
                         <VetPartners />
                     </div>
                 </div>
