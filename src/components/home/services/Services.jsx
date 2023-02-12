@@ -214,7 +214,7 @@ export function Services() {
         >
           {features.map((feature) => (
             <motion.li
-              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 1.1 }}
               key={feature.name}
               className={`rounded-2xl border border-gray-200 p-8 ${feature.bg}`}
             >
