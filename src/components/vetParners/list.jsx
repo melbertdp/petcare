@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-
+import { motion } from "framer-motion"
 
 import Modal from '@/components/vetParners/modal/viewVetDetails';
 
@@ -132,9 +132,11 @@ export default function VetPartners({ vetList }) {
                             {
                                 vets.map((vet, index) => {
                                     return (
-                                        <div
+                                        <motion.div
                                             key={index}
                                             className="w-full md:w-6/12 lg:w-3/12 mb-6 px-6 sm:px-6 lg:px-4"
+                                            whileHover={{ scale: 1.1 }}
+                                            whileTap={{ scale: 0.9 }}
                                         >
                                             <div className="flex flex-col" onClick={() => handleShowVetDetails(vet)} >
                                                 <a href="#" className="mx-auto" onClick={(e) => e.preventDefault()}>
@@ -161,7 +163,7 @@ export default function VetPartners({ vetList }) {
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </motion.div>
                                     )
                                 })
                             }

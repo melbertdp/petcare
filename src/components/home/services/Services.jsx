@@ -1,5 +1,5 @@
 import { useId } from 'react'
-
+import { motion } from 'framer-motion'
 import { Container } from '@/components/Container'
 
 const features = [
@@ -213,7 +213,8 @@ export function Services() {
           className="mx-auto mt-8 grid max-w-2xl grid-cols-1 gap-6 text-sm sm:mt-12 sm:grid-cols-2 md:gap-y-10 lg:max-w-none lg:grid-cols-3"
         >
           {features.map((feature) => (
-            <li
+            <motion.li
+              whileHover={{ scale: 1.1 }}
               key={feature.name}
               className={`rounded-2xl border border-gray-200 p-8 ${feature.bg}`}
             >
@@ -224,7 +225,7 @@ export function Services() {
                 </h3>
               </div>
               <p className="mt-2 text-base text-[#2A445F]">{feature.description}</p>
-            </li>
+            </motion.li>
           ))}
         </ul>
       </Container>
