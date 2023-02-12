@@ -60,8 +60,8 @@ export default function SimpleMap({ vetNearby, setViewPetDetails }) {
                     return (
                         <AnyReactComponent
                             key={place.index}
-                            lat={place.location.lat}
-                            lng={place.location.lng}
+                            lat={place.clinic_lat}
+                            lng={place.clinic_lng}
                             text={place.name}
                         />
                     )

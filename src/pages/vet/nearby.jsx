@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import Head from 'next/head'
+import { createClient } from '@supabase/supabase-js'
 import { Header } from '@/components/layout/Header'
 import Map from '@/components/nearby/map/map'
 import SlideOver from '@/components/nearby/slideOver/hiddenMenu';
@@ -8,7 +9,7 @@ import NearbyVetCards from '@/components/nearby/cards/vetCards';
 
 import vets from '@/data/vets';
 
-export default function NearbyVet() {
+export default function NearbyVet({vetList}) {
 
     const [hiddenMenuVisible, setHiddenMenuVisible] = useState(false);
     const [viewVetModalVisible, setViewVetModalVisible] = useState(false);
@@ -16,13 +17,14 @@ export default function NearbyVet() {
     const [places, setPlaces] = useState([]);
 
     useEffect(() => {
-        setPlaces(vets);
+
+        // console.log("vetList", vetList);
+
+        setPlaces(vetList);
     }, []);
 
     const handleSearch = (e) => {
-        console.log(e.target.value);
-
-        //loop through the vets array and filter the vets that matches the substring of the input
+        
         const filteredVets = vets.filter(vet => {
             return vet.name.toLowerCase().includes(e.target.value.toLowerCase());
         });
@@ -84,4 +86,22 @@ export default function NearbyVet() {
             </div>
         </>
     )
+}
+
+export async function getStaticProps() {
+
+    const supabase = createClient(process.env.soupUrl, process.env.soupKey)
+    const { data } = await supabase
+        .from('vetpartners')
+        .select('*')
+        .order('id')
+
+
+    console.log("data", data);
+
+    return {
+        props: {
+            vetList: data
+        }
+    }
 }

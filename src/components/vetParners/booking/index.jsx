@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import Datepicker from "react-tailwindcss-datepicker";
 import ConfirmationModal from '@/components/scheduleVisit/modal/confirmation';
+import Timeit from "react-timeit";
 
 export default function ScheduleVisitForm() {
 
@@ -27,7 +28,7 @@ export default function ScheduleVisitForm() {
                     <div>
                         <h3 className="text-lg font-medium leading-6 text-gray-900">Visit Purpose</h3>
                         <p className="mt-1 max-w-2xl text-sm text-gray-500">
-                            Tell us the purpose of your online consultation.
+                            Tell us the purpose of your visit.
                         </p>
                     </div>
 
@@ -47,6 +48,7 @@ export default function ScheduleVisitForm() {
                                         useRange={false}
                                         asSingle={true}
                                     />
+                                    
                                 </div>
                             </div>
                         </div>
@@ -56,6 +58,7 @@ export default function ScheduleVisitForm() {
                                 Visit Purpose
                             </label>
                             <div className="mt-1 sm:col-span-2 sm:mt-0">
+                            <Timeit />
                                 <textarea
                                     id="about"
                                     name="about"

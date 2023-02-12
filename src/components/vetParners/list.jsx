@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react"
+
+
 import Modal from '@/components/vetParners/modal/viewVetDetails';
 
 const vets = [
@@ -100,7 +102,10 @@ const vets = [
     }
 ]
 
-export default function VetPartners() {
+
+
+export default function VetPartners({ vetList }) {
+
     const [showVetDetails, setsShowVetDetails] = useState(false);
     const [vetDetails, setVetDetails] = useState({});
 
@@ -112,47 +117,47 @@ export default function VetPartners() {
     return (
         <div className="bg-white">
             <div className="mx-auto max-w-2xl py-1 px-4 sm:py-1 sm:px-6 lg:max-w-7xl lg:px-8">
-                <div class="flex flex-col">
-                    <div class="container max-w-7xl px-4">
+                <div className="flex flex-col">
+                    <div className="container max-w-7xl px-4">
 
-                        <div class="flex flex-wrap justify-center text-center mb-10">
-                            <div class="w-full lg:w-6/12 px-4">
-                                <p class="text-gray-700 text-lg font-light">
+                        <div className="flex flex-wrap justify-center text-center mb-10">
+                            <div className="w-full lg:w-6/12 px-4">
+                                <p className="text-gray-700 text-lg font-light">
                                     With over 100 years of combined experience, weve got a well-seasoned team at the helm.
                                 </p>
                             </div>
                         </div>
 
-                        <div class="flex flex-wrap">
+                        <div className="flex flex-wrap">
                             {
                                 vets.map((vet, index) => {
                                     return (
                                         <div
                                             key={index}
-                                            class="w-full md:w-6/12 lg:w-3/12 mb-6 px-6 sm:px-6 lg:px-4"
+                                            className="w-full md:w-6/12 lg:w-3/12 mb-6 px-6 sm:px-6 lg:px-4"
                                         >
-                                            <div class="flex flex-col" onClick={() => handleShowVetDetails(vet)} >
-                                                <a href="#" class="mx-auto">
+                                            <div className="flex flex-col" onClick={() => handleShowVetDetails(vet)} >
+                                                <a href="#" className="mx-auto">
                                                     <img
-                                                        class="rounded-2xl drop-shadow-md hover:drop-shadow-xl transition-all duration-200 delay-100"
+                                                        className="rounded-2xl drop-shadow-md hover:drop-shadow-xl transition-all duration-200 delay-100"
                                                         src={vet.imageSrc}
                                                     />
                                                 </a>
 
-                                                <div class="text-center mt-6">
-                                                    <h1 class="text-gray-900 text-xl font-bold mb-1">
+                                                <div className="text-center mt-6">
+                                                    <h1 className="text-gray-900 text-xl font-bold mb-1">
                                                         {vet.name}
                                                     </h1>
 
-                                                    <div class="text-gray-700 font-light mb-2">
+                                                    <div className="text-gray-700 font-light mb-2">
                                                         {vet.specialization}
                                                     </div>
-                                                    <div class="text-gray-700 font-light mb-2">
+                                                    <div className="text-gray-700 font-light mb-2">
                                                         {vet.price}
                                                     </div>
 
                                                     <div
-                                                        class="flex items-center justify-center opacity-50 hover:opacity-100 transition-opacity duration-300">
+                                                        className="flex items-center justify-center opacity-50 hover:opacity-100 transition-opacity duration-300">
                                                     </div>
                                                 </div>
                                             </div>
@@ -172,3 +177,4 @@ export default function VetPartners() {
         </div >
     )
 }
+
