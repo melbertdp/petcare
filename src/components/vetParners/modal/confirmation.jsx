@@ -69,11 +69,14 @@ export default function ConfirmationModal({ open, setOpen }) {
                                                     </Player>
 
                                                     <Dialog.Title as="h3" className="text-lg leading-6 font-medium text-gray-900">
-                                                        Your visit has been scheduled!
+                                                        Your online appointment request has been sent!
                                                     </Dialog.Title>
                                                     <div className="mt-2">
                                                         <p className="text-sm text-gray-500">
-                                                            We will send you a confirmation email shortly.
+                                                            Please proceed with the payment to complete your appointment request.
+                                                        </p>
+                                                        <p className="text-sm text-gray-500">
+                                                            We will send you an email confirmation once your payment has been confirmed.
                                                         </p>
                                                     </div>
                                                 </>

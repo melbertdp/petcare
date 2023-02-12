@@ -137,7 +137,7 @@ export default function VetPartners({ vetList }) {
                                             className="w-full md:w-6/12 lg:w-3/12 mb-6 px-6 sm:px-6 lg:px-4"
                                         >
                                             <div className="flex flex-col" onClick={() => handleShowVetDetails(vet)} >
-                                                <a href="#" className="mx-auto">
+                                                <a href="#" className="mx-auto" onClick={(e) => e.preventDefault()}>
                                                     <img
                                                         className="rounded-2xl drop-shadow-md hover:drop-shadow-xl transition-all duration-200 delay-100"
                                                         src={vet.imageSrc}

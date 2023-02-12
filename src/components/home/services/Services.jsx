@@ -5,36 +5,42 @@ import { Container } from '@/components/Container'
 const features = [
   {
     name: 'Pet Hotel',
+    bg: "bg-pink-300",
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor quam bibendum, ultrices nunc quis, tincidunt nulla. In euismod suscipit augue',
     icon: DeviceArrowIcon,
   },
   {
     name: 'Pet Training',
+    bg: "bg-purple-300",
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor quam bibendum, ultrices nunc quis, tincidunt nulla. In euismod suscipit augue',
     icon: DeviceCardsIcon,
   },
   {
     name: 'Pet Daycare',
+    bg: "bg-blue-300",
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor quam bibendum, ultrices nunc quis, tincidunt nulla. In euismod suscipit augue',
     icon: DeviceClockIcon,
   },
   {
     name: 'Health and Wellness',
+    bg: "bg-yellow-300",
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor quam bibendum, ultrices nunc quis, tincidunt nulla. In euismod suscipit augue',
     icon: DeviceListIcon,
   },
   {
     name: 'Pet Taxi',
+    bg: "bg-red-300",
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor quam bibendum, ultrices nunc quis, tincidunt nulla. In euismod suscipit augue',
     icon: DeviceLockIcon,
   },
   {
     name: 'More coming soon!',
+    bg: "bg-cyan-300",
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor quam bibendum, ultrices nunc quis, tincidunt nulla. In euismod suscipit augue',
     icon: DeviceChartIcon,
@@ -209,15 +215,15 @@ export function Services() {
           {features.map((feature) => (
             <li
               key={feature.name}
-              className="rounded-2xl border border-gray-200 p-8"
+              className={`rounded-2xl border border-gray-200 p-8 ${feature.bg}`}
             >
               <div className='flex'>
                 <feature.icon className="h-8 w-8" />
-                <h3 className="ml-3 text-xl font-bold text-gray-900">
+                <h3 className="ml-3 text-xl font-bold text-[#2A445F]">
                   {feature.name}
                 </h3>
               </div>
-              <p className="mt-2 text-base text-gray-700">{feature.description}</p>
+              <p className="mt-2 text-base text-[#2A445F]">{feature.description}</p>
             </li>
           ))}
         </ul>

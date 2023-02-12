@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import Datepicker from "react-tailwindcss-datepicker";
-import ConfirmationModal from '@/components/scheduleVisit/modal/confirmation';
-import Timeit from "react-timeit";
+import ConfirmationModal from '@/components/vetParners/modal/confirmation';
 
 export default function ScheduleVisitForm() {
 
@@ -48,17 +47,65 @@ export default function ScheduleVisitForm() {
                                         useRange={false}
                                         asSingle={true}
                                     />
-                                    
+
                                 </div>
                             </div>
                         </div>
+
+                        <div className="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">
+                            <label htmlFor="username" className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                                Time of Visit
+                            </label>
+                            <div className="mt-1 sm:col-span-2 sm:mt-0">
+                                <div class="flex justify-start">
+                                    <div class="w-auto">
+                                        <div class="flex">
+                                            <select
+                                                name="hours"
+                                                class="border-gray-300 shadow-sm bg-transparent text-sm appearance-none outline-none"
+                                            >
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                                <option value="9">9</option>
+                                                <option value="10">10</option>
+                                                <option value="11">10</option>
+                                                <option value="12">12</option>
+                                            </select>
+                                            <span class="text-sm mr-2 ml-2 mt-2">:</span>
+                                            <select
+                                                name="minutes"
+                                                class="border-gray-300 shadow-sm bg-transparent text-sm appearance-none outline-none mr-4"
+                                            >
+                                                <option value="0">00</option>
+                                                <option value="30">30</option>
+                                            </select>
+                                            <select
+                                                name="ampm"
+                                                class="border-gray-300 shadow-sm bg-transparent text-sm appearance-none outline-none"
+                                            >
+                                                <option value="am">AM</option>
+                                                <option value="pm">PM</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
 
                         <div className="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">
                             <label htmlFor="about" className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
                                 Visit Purpose
                             </label>
                             <div className="mt-1 sm:col-span-2 sm:mt-0">
-                            <Timeit />
+
                                 <textarea
                                     id="about"
                                     name="about"
@@ -156,17 +203,7 @@ export default function ScheduleVisitForm() {
                                                         Bank Transfer
                                                     </label>
                                                 </div>
-                                                {/* <div className="flex items-center">
-                                                    <input
-                                                        id="push-nothing"
-                                                        name="push-notifications"
-                                                        type="radio"
-                                                        className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
-                                                    />
-                                                    <label htmlFor="push-nothing" className="ml-3 block text-sm font-medium text-gray-700">
-                                                        No push notifications
-                                                    </label>
-                                                </div> */}
+
                                             </div>
                                         </div>
                                     </div>

@@ -66,7 +66,7 @@ export function Hero() {
             <Image
               src={Dogs}
               alt="dogs"
-              className="relative z-[2]  m-auto w-[350px] sm:h-[500px] lg:h-[500px] xl:h-[450px] xl:w-[450px]"
+              className="aspect-w-1 aspect-h-9 relative z-[2] m-auto w-[450px]"
               unoptimized
             />
           </div>
