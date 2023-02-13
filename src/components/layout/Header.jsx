@@ -6,12 +6,8 @@ import { ChevronUpIcon } from '@heroicons/react/20/solid'
 /* This example requires Tailwind CSS v2.0+ */
 import { Popover } from '@headlessui/react'
 import {
-  ArrowPathIcon,
   ChartBarIcon,
-  CursorArrowRaysIcon,
-  DocumentChartBarIcon,
-  ShieldCheckIcon,
-  Squares2X2Icon,
+  CursorArrowRaysIcon
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import { Logo } from '@/components/Logo'
@@ -41,19 +37,13 @@ const solutions = [
     icon: ChartBarIcon,
   },
   {
-    name: 'Pet Hotel',
-    description: 'Speak directly to your customers in a more meaningful way.',
-    href: '#',
-    icon: CursorArrowRaysIcon,
-  },
-  {
     name: 'Vet Clinic Visit',
     description: 'Get a better understanding of where your traffic is coming from.',
     href: '#',
     icon: ChartBarIcon,
   },
   {
-    name: 'Vet Online Appointment',
+    name: 'Talk to a Vet',
     description: 'Speak directly to your customers in a more meaningful way.',
     href: '#',
     icon: CursorArrowRaysIcon,
@@ -70,7 +60,9 @@ export function Header() {
             <div className="flex h-16 justify-between">
               <div className="flex">
                 <div className="flex flex-shrink-0 items-center">
+                  <a href="/" alt="home">
                   <Logo className="h-10 w-auto" />
+                  </a>
                   {/* <img
                     className="block h-8 w-auto lg:hidden"
                     src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
@@ -86,34 +78,28 @@ export function Header() {
                   <Popover.Group as="nav" className="flex space-x-3">
                     {/* Current: "border-indigo-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" */}
                     <a
-                      href="#"
+                      href="/#about"
                       className="inline-flex items-center border-b-2 border-indigo-500 px-1 pt-1 text-sm font-medium text-gray-900"
                     >
                       About
                     </a>
                     <a
-                      href="#"
+                      href="/#services"
                       className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
                     >
                       Services
                     </a>
                     <a
-                      href="#"
+                      href="/#reviews"
                       className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
                     >
                       Reviews
                     </a>
                     <a
-                      href="#"
+                      href="/#pricing"
                       className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
                     >
                       Pricing
-                    </a>
-                    <a
-                      href="#"
-                      className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
-                    >
-                      FAQs
                     </a>
 
                     <Popover className="relative inline-flex">
@@ -144,10 +130,10 @@ export function Header() {
                             leaveFrom="opacity-100 translate-y-0"
                             leaveTo="opacity-0 translate-y-1"
                           >
-                            <Popover.Panel className="absolute z-[99] -ml-8 mt-14 w-screen max-w-xs transform lg:max-w-xl lg:-ml-6">
+                            <Popover.Panel className="absolute z-[99] -ml-8 mt-14 w-screen max-w-xs transform lg:max-w-md lg:-ml-6">
                               <div className="overflow-hidden rounded-lg shadow-lg ring- ring-opacity-5">
 
-                                <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8 lg:grid-cols-2">
+                                <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
                                   {solutions.map((item) => (
                                     <a
                                       key={item.name}
@@ -209,20 +195,10 @@ export function Header() {
                       <Menu.Item>
                         {({ active }) => (
                           <a
-                            href="#"
+                            href="/user/profile"
                             className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                           >
                             Your Profile
-                          </a>
-                        )}
-                      </Menu.Item>
-                      <Menu.Item>
-                        {({ active }) => (
-                          <a
-                            href="#"
-                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
-                          >
-                            Settings
                           </a>
                         )}
                       </Menu.Item>
@@ -292,13 +268,7 @@ export function Header() {
               >
                 Pricing
               </Disclosure.Button>
-              <Disclosure.Button
-                as="a"
-                href="/#faq"
-                className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700"
-              >
-                FAQ
-              </Disclosure.Button>
+              
               <Disclosure>
                 {({ open }) => (
                   <>
@@ -357,13 +327,6 @@ export function Header() {
                   className="block px-4 py-2 text-base font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-800"
                 >
                   Your Profile
-                </Disclosure.Button>
-                <Disclosure.Button
-                  as="a"
-                  href="#"
-                  className="block px-4 py-2 text-base font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-800"
-                >
-                  Settings
                 </Disclosure.Button>
                 <Disclosure.Button
                   as="a"

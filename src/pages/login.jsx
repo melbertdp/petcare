@@ -1,11 +1,34 @@
 import Head from 'next/head'
 import Link from 'next/link'
 
+import { useSession, signIn, signOut } from 'next-auth/react'
+
 import { AuthLayout } from '@/components/AuthLayout'
 import { Button } from '@/components/Button'
 import { TextField } from '@/components/Fields'
 
 export default function Login() {
+
+  const { data: session } = useSession();
+  console.log("sess", session);
+  if (session) {
+    return (
+      <div>
+          {session.user.name}
+          <div>
+            <button onClick={() => signOut()}>logout</button>
+          </div>
+      </div>
+    )
+  } else {
+    return (
+      <div>
+        <button onClick={() => signIn()}>Sign in</button>
+      </div>
+    )
+  }
+
+
   return (
     <>
       <Head>

@@ -26,25 +26,6 @@ const plans = [
     logomarkClassName: 'fill-gray-300',
   },
   {
-    name: 'Regular',
-    featured: false,
-    price: { Monthly: '₱ 100', Annually: '₱ 999' },
-    description:
-      'ito yung mga regular customers',
-    button: {
-      label: 'Subscribe',
-      href: '/register',
-    },
-    features: [
-      'Benefit 1',
-      'Benefit 2',
-      'Benefit 3',
-      'Benefit 4',
-      'Benefit 5',
-    ],
-    logomarkClassName: 'fill-gray-500',
-  },
-  {
     name: 'VIP',
     featured: true,
     price: { Monthly: '₱ 200', Annually: '₱ 2000' },
@@ -128,7 +109,7 @@ function Plan({
               className={clsx(
                 'transition duration-300',
                 activePeriod === 'Annually' &&
-                  'pointer-events-none translate-x-6 select-none opacity-0'
+                'pointer-events-none translate-x-6 select-none opacity-0'
               )}
             >
               {price.Monthly}
@@ -138,7 +119,7 @@ function Plan({
               className={clsx(
                 'absolute left-0 top-0 transition duration-300',
                 activePeriod === 'Monthly' &&
-                  'pointer-events-none -translate-x-6 select-none opacity-0'
+                'pointer-events-none -translate-x-6 select-none opacity-0'
               )}
             >
               {price.Annually}
@@ -202,12 +183,12 @@ export function Pricing() {
         <div className="mx-auto max-w-2xl text-center">
           <h2
             id="pricing-title"
-            className="text-3xl font-medium tracking-tight text-gray-900"
+            className="text-3xl font-bold tracking-tight text-indigo-500"
           >
             Flat pricing, no management fees.
           </h2>
           <p className="mt-2 text-lg text-gray-600">
-            Portion of the profits will be donated to me
+            Portion of the fees collected will be donated to <i>Paws.com.ph</i>
           </p>
         </div>
 
@@ -257,7 +238,7 @@ export function Pricing() {
           </div>
         </div>
 
-        <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 items-start gap-x-8 gap-y-10 sm:mt-20 lg:max-w-none lg:grid-cols-3">
+        <div className="mx-auto max-w-md space-y-4 mt-10 lg:grid lg:max-w-5xl lg:grid-cols-2 lg:gap-5 lg:space-y-0">
           {plans.map((plan) => (
             <Plan key={plan.name} {...plan} activePeriod={activePeriod} />
           ))}

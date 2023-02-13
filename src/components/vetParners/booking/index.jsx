@@ -5,10 +5,15 @@ import ConfirmationModal from '@/components/vetParners/modal/confirmation';
 export default function ScheduleVisitForm() {
 
     const [showConfirmationModal, setShowConfirmationModal] = useState(false);
+    const [randomKey, setRandomKey] = useState("");
 
     const [bookingDate, setBookingDate] = useState({
         startDate: null
     });
+
+    useEffect(() => {
+        setRandomKey(generateRandomKey());
+    },[])
 
     const handleDateSelection = (date) => {
         console.log(date)
@@ -18,6 +23,10 @@ export default function ScheduleVisitForm() {
     const handleSubmit = (e) => {
         e.preventDefault();
         setShowConfirmationModal(true);
+    }
+
+    const generateRandomKey = () => {
+        return (+new Date * Math.random()).toString(36).substring(0, 8)
     }
 
     return (
@@ -98,8 +107,6 @@ export default function ScheduleVisitForm() {
                             </div>
                         </div>
 
-
-
                         <div className="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">
                             <label htmlFor="about" className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
                                 Visit Purpose
@@ -161,7 +168,7 @@ export default function ScheduleVisitForm() {
                     <div>
                         <h3 className="text-lg font-medium leading-6 text-gray-900">Payment options</h3>
                         <p className="mt-1 max-w-2xl text-sm text-gray-500">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras at nisi nibh. Aenean vehicula nulla eget nisl condimentum accumsan. Nam sodales nulla eu diam pharetra dignissim
+                            Please include <span className='text-lg text-indigo-500 font-bold'>{randomKey}</span> in the message/note of your payment.
                         </p>
                     </div>
                     <div className="space-y-6 divide-y divide-gray-200 sm:space-y-5">
@@ -179,13 +186,14 @@ export default function ScheduleVisitForm() {
                                     </div>
                                     <div className="sm:col-span-2">
                                         <div className="max-w-lg">
-                                            <p className="text-sm text-gray-500">orem ipsum dolor sit amet, consectetur adipiscing elit. Cras at nisi nibh..</p>
+                                            <p className="text-sm text-gray-500">Please send your payment to Gcash: xxx-xxx-xxx / Bank: xxx-xxx-xx </p>
                                             <div className="mt-4 space-y-4">
                                                 <div className="flex items-center">
                                                     <input
                                                         id="gcash"
-                                                        name="gcash"
+                                                        name="payment"
                                                         type="radio"
+                                                        value="gcash"
                                                         className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
                                                     />
                                                     <label htmlFor="gcash" className="ml-3 block text-sm font-medium text-gray-700">
@@ -195,8 +203,9 @@ export default function ScheduleVisitForm() {
                                                 <div className="flex items-center">
                                                     <input
                                                         id="bank"
-                                                        name="bank"
+                                                        name="payment"
                                                         type="radio"
+                                                        value="bank"
                                                         className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
                                                     />
                                                     <label htmlFor="bank" className="ml-3 block text-sm font-medium text-gray-700">

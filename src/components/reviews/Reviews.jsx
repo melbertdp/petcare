@@ -210,14 +210,11 @@ export function Reviews() {
       className="pt-12 pb-16 sm:pt-14 sm:pb-14"
     >
       <Container>
-        <div className="mx-auto max-w-2xl sm:text-center">
-          <h5
+        <div className="mx-auto max-w-2xl text-center">
+          <h2
             id="reviews-title"
-            className="text-2xl font-bold tracking-tight text-indigo-500">
+            className="text-3xl font-bold tracking-tight text-indigo-500">
             Testimonials
-          </h5>
-          <h2 className="text-5xl py-5 font-medium tracking-tight text-gray-900">
-            What People Say
           </h2>
         </div>
         <ReviewGrid />

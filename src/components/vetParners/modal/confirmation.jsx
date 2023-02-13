@@ -13,9 +13,15 @@ export default function ConfirmationModal({ open, setOpen }) {
     const [showLoading, setShowLoading] = useState(true);
 
     useEffect(() => {
-        setTimeout(() => {
-            setShowLoading(false);
-        }, 5000);
+        if (open) {
+            const timeout = setTimeout(() => {
+                setShowLoading(false);
+            }, 5000);
+
+            return () => {
+                clearTimeout(timeout);
+            }
+        }
     }, [open]);
 
     return (
@@ -73,10 +79,7 @@ export default function ConfirmationModal({ open, setOpen }) {
                                                     </Dialog.Title>
                                                     <div className="mt-2">
                                                         <p className="text-sm text-gray-500">
-                                                            Please proceed with the payment to complete your appointment request.
-                                                        </p>
-                                                        <p className="text-sm text-gray-500">
-                                                            We will send you an email confirmation once your payment has been confirmed.
+                                                            We will send you an email confirmation along with the instruction for online consultation once your payment has been confirmed.
                                                         </p>
                                                     </div>
                                                 </>
@@ -87,8 +90,8 @@ export default function ConfirmationModal({ open, setOpen }) {
                                 <div className="mt-5 sm:mt-6 sm:grid sm:grid-flow-row-dense sm:grid-cols-1 sm:gap-3">
                                     {
                                         !showLoading && (
-                                            <Link href="/" className="inline-flex w-full justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:col-start-1 sm:text-sm">
-                                                Go back to home page
+                                            <Link href="/user/profile" className="inline-flex w-full justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:col-start-1 sm:text-sm">
+                                                Go to my profile
                                             </Link>
                                         )
                                     }
