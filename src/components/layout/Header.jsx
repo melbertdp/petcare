@@ -3,7 +3,8 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { ChevronUpIcon } from '@heroicons/react/20/solid'
 
-/* This example requires Tailwind CSS v2.0+ */
+import Link from 'next/link'
+
 import { Popover } from '@headlessui/react'
 import {
   ChartBarIcon,
@@ -60,9 +61,9 @@ export function Header() {
             <div className="flex h-16 justify-between">
               <div className="flex">
                 <div className="flex flex-shrink-0 items-center">
-                  <a href="/" alt="home">
-                  <Logo className="h-10 w-auto" />
-                  </a>
+                  <Link href="/" alt="home">
+                    <Logo className="h-10 w-auto" />
+                  </Link>
                   {/* <img
                     className="block h-8 w-auto lg:hidden"
                     src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
@@ -77,30 +78,30 @@ export function Header() {
                 <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
                   <Popover.Group as="nav" className="flex space-x-3">
                     {/* Current: "border-indigo-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" */}
-                    <a
+                    <Link
                       href="/#about"
                       className="inline-flex items-center border-b-2 border-indigo-500 px-1 pt-1 text-sm font-medium text-gray-900"
                     >
                       About
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                       href="/#services"
                       className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
                     >
                       Services
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                       href="/#reviews"
                       className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
                     >
                       Reviews
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                       href="/#pricing"
                       className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
                     >
                       Pricing
-                    </a>
+                    </Link>
 
                     <Popover className="relative inline-flex">
                       {({ open }) => (
@@ -135,7 +136,7 @@ export function Header() {
 
                                 <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
                                   {solutions.map((item) => (
-                                    <a
+                                    <Link
                                       key={item.name}
                                       href={item.href}
                                       className="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-50"
@@ -147,7 +148,7 @@ export function Header() {
                                         <p className="text-base font-medium text-gray-900">{item.name}</p>
                                         <p className="mt-1 text-sm text-gray-500">{item.description}</p>
                                       </div>
-                                    </a>
+                                    </Link>
                                   ))}
                                 </div>
                               </div>
@@ -194,22 +195,22 @@ export function Header() {
                     <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                       <Menu.Item>
                         {({ active }) => (
-                          <a
+                          <Link
                             href="/user/profile"
                             className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                           >
                             Your Profile
-                          </a>
+                          </Link>
                         )}
                       </Menu.Item>
                       <Menu.Item>
                         {({ active }) => (
-                          <a
+                          <Link
                             href="#"
                             className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                           >
                             Sign out
-                          </a>
+                          </Link>
                         )}
                       </Menu.Item>
                     </Menu.Items>
@@ -268,7 +269,7 @@ export function Header() {
               >
                 Pricing
               </Disclosure.Button>
-              
+
               <Disclosure>
                 {({ open }) => (
                   <>
