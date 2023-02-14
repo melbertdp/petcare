@@ -129,7 +129,7 @@ export default function Example() {
 
   useEffect(() => {
 
-    if (status !== "authenticated" && status !== "loading") {
+    if (status === "unauthenticated" && status !== "authenticated" && status !== "loading") {
       Router.push('/login')
     }
 
@@ -196,7 +196,7 @@ export default function Example() {
 
                           <div className="sm:col-span-1">
                             <dt className="text-sm font-medium text-gray-500">Phone</dt>
-                            <dd className="mt-1 text-sm text-gray-900">+1 555-555-5555</dd>
+                            <dd className="mt-1 text-sm text-gray-900">+123 123 123</dd>
                           </div>
 
                           <div className="sm:col-span-1">
