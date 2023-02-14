@@ -129,6 +129,9 @@ export default function Example() {
 
   useEffect(() => {
 
+    console.log("sess", session);
+    console.log("status", status);
+
     if (status === "unauthenticated" && status !== "authenticated" && status !== "loading") {
       Router.push('/login')
     }
@@ -136,7 +139,9 @@ export default function Example() {
     setLoading(false)
   }, [status])
 
-  if (loading || status === "loading") {
+  
+
+  if (!session || loading || status === "loading") {
     return <div>Loading...</div>
   }
 
