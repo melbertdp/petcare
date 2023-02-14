@@ -1,7 +1,8 @@
 import Head from 'next/head'
 import Link from 'next/link'
-
+import { useEffect, useState } from 'react'
 import { useSession, signIn, signOut } from 'next-auth/react'
+import Router from 'next/router'
 
 import { AuthLayout } from '@/components/AuthLayout'
 import { Button } from '@/components/Button'
@@ -10,14 +11,28 @@ import { TextField } from '@/components/Fields'
 export default function Login() {
 
   const { data: session } = useSession();
-  console.log("sess", session);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    if (session) {
+      Router.push('/user/profile')
+    }
+
+    setLoading(false)
+  }, [session])
+
+
+  if(loading){
+    return <div>Loading...</div>
+  }
+
   if (session) {
     return (
       <div>
-          {session.user.name}
-          <div>
-            <button onClick={() => signOut()}>logout</button>
-          </div>
+        {session.user.name}
+        <div>
+          <button onClick={() => signOut()}>logout</button>
+        </div>
       </div>
     )
   } else {
@@ -27,7 +42,6 @@ export default function Login() {
       </div>
     )
   }
-
 
   return (
     <>
