@@ -4,6 +4,7 @@ import Head from 'next/head'
 import { Header } from '@/components/layout/Header'
 import { useSession, signOut } from 'next-auth/react'
 import Router from 'next/router'
+import { createClient } from '@supabase/supabase-js'
 import {
   ArrowLongLeftIcon,
   CheckIcon,
@@ -129,17 +130,42 @@ export default function Example() {
 
   useEffect(() => {
 
-    console.log("sess", session);
-    console.log("status", status);
-
     if (status === "unauthenticated" && status !== "authenticated" && status !== "loading") {
-      Router.push('/login')
+      Router.push('/')
     }
 
     setLoading(false)
   }, [status])
 
-  
+
+
+  useEffect(() => {
+
+    if (session) {
+      console.log("process.env.soupUrl", process.env.NEXT_PUBLIC_soupUrl)
+      const { supabaseAccessToken } = session
+      const supabase = createClient(process.env.NEXT_PUBLIC_soupUrl, process.env.NEXT_PUBLIC_soupKey, {
+        global: {
+          headers: {
+            Authorization: `Bearer ${supabaseAccessToken}`,
+          },
+        },
+      });
+
+      async function fetchMyAPI() {
+
+        const { data } = await supabase
+          .from('users')
+          .select('*')
+          .order('id')
+
+        console.log("daaaaaaaaaaaaaaaaaaa", data);
+      }
+
+      fetchMyAPI()
+    }
+    //fetch data from supabase
+  }, [loading, session])
 
   if (!session || loading || status === "loading") {
     return <div>Loading...</div>

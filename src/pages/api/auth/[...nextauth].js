@@ -19,12 +19,12 @@ export default NextAuth({
         // ...add more providers here
     ],
     adapter: SupabaseAdapter({
-        url: process.env.soupUrl,
-        secret: process.env.soupSecret,
+        url: process.env.NEXT_PUBLIC_soupUrl,
+        secret: process.env.NEXT_PUBLIC_soupSecret,
     }),
     callbacks: {
         async session({ session, user }) {
-            const signingSecret = process.env.soupJwt
+            const signingSecret = process.env.NEXT_PUBLIC_soupJwt
             if (signingSecret) {
                 const payload = {
                     aud: "authenticated",

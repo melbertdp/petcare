@@ -1,11 +1,18 @@
 import Head from 'next/head'
-import {SessionProvider} from 'next-auth/react'
+import { SessionProvider } from 'next-auth/react'
+import { wrapper } from "../store/store";
 
-
+import { config } from '@fortawesome/fontawesome-svg-core'
+import '@fortawesome/fontawesome-svg-core/styles.css'
+config.autoAddCss = false
 import '@/styles/tailwind.css'
 import 'focus-visible'
 
-export default function App({ Component, pageProps }) {
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
+
+
+function App({ Component, pageProps }) {
   return (
     <>
       <SessionProvider>
@@ -16,7 +23,23 @@ export default function App({ Component, pageProps }) {
           />
         </Head>
         <Component {...pageProps} />
+        <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+        />
+        
+        <ToastContainer />
       </SessionProvider>
     </>
   )
 }
+
+export default wrapper.withRedux(App);

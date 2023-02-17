@@ -1,9 +1,15 @@
-import { Fragment } from 'react'
+import { Fragment, useEffect } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { ChevronUpIcon } from '@heroicons/react/20/solid'
-import { useSession, signOut } from 'next-auth/react'
+import { useSession, signIn, signOut } from 'next-auth/react'
 import Link from 'next/link'
+
+import { selectAuthState, setAuthState } from "@/store/authSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { toast } from "react-toastify";
+
+import { selectNotifState, setNotifState } from '@/store/notifSlice';
 
 import { Popover } from '@headlessui/react'
 import {
@@ -54,6 +60,35 @@ const solutions = [
 export function Header() {
 
   const { data: session } = useSession();
+  const dispatch = useDispatch();
+  const noti = useSelector((state) => state.notif.notificationState);
+  
+  useEffect(() => {
+
+    if (noti && noti.length > 0) {
+
+      const timeout = setTimeout(() => {
+
+        toast('🦄 Wow so easy!', {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+
+        dispatch(setNotifState([]))
+
+      }, 10000);
+
+      return () => {
+        clearTimeout(timeout);
+      }
+    }
+  }, [noti])
 
   return (
     <Disclosure as="nav" className="bg-white shadow">
@@ -239,7 +274,9 @@ export function Header() {
                   ) : (
                     <Link
                       className="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                      href="/login">
+                      href="#"
+                      onClick={(e) => (e.preventDefault(), signIn())}
+                    >
                       Login
                     </Link>
                   )
@@ -379,7 +416,8 @@ export function Header() {
                     <div className="mt-3 space-y-1">
                       <Disclosure.Button
                         as="a"
-                        href="/login"
+                        href="#"
+                        onClick={(e) => (e.preventDefault(), signIn())}
                         className="block px-4 py-2 text-base font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-800"
                       >
                         Sign in
@@ -397,7 +435,8 @@ export function Header() {
             </div>
           </Disclosure.Panel>
         </>
-      )}
-    </Disclosure>
+      )
+      }
+    </Disclosure >
   )
 }

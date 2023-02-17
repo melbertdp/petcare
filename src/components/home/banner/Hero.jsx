@@ -1,4 +1,4 @@
-import { useId, useRef, useState } from 'react'
+import { useEffect, useId, useRef, useState } from 'react'
 import Image from 'next/image'
 import clsx from 'clsx'
 import { motion, useInView, useMotionValue } from 'framer-motion'
@@ -11,18 +11,8 @@ import FindVet from '@/components/modals/findvet';
 import Dogs from '@/images/dogs_img_1.png';
 import Bg from '@/images/blue_abstract.png';
 
-function PlayIcon(props) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
-      <circle cx="12" cy="12" r="11.5" stroke="#D4D4D4" />
-      <path
-        d="M9.5 14.382V9.618a.5.5 0 0 1 .724-.447l4.764 2.382a.5.5 0 0 1 0 .894l-4.764 2.382a.5.5 0 0 1-.724-.447Z"
-        fill="#A3A3A3"
-        stroke="#A3A3A3"
-      />
-    </svg>
-  )
-}
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 
 export function Hero() {
 
@@ -44,16 +34,18 @@ export function Hero() {
               <Button
                 href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
                 variant="outline"
+                className="bg-indigo-500 text-white"
               >
-                <PlayIcon className="h-6 w-6 flex-none" />
+                <FontAwesomeIcon className='text-lg' icon="fa-solid fa-person-shelter" />
                 <span className="ml-2.5">Find Pet Sitter</span>
               </Button>
 
               <Button
                 onClick={() => setFindVetModalVisible(true)}
                 variant="outline"
+                className="bg-indigo-500 text-white"
               >
-                <PlayIcon className="h-6 w-6 flex-none" />
+                <FontAwesomeIcon className='text-lg' icon="fa-solid fa-user-doctor" />
                 <span className="ml-2.5">Find Vet</span>
               </Button>
 

@@ -90,7 +90,7 @@ export default function NearbyVet({vetList}) {
 
 export async function getStaticProps() {
 
-    const supabase = createClient(process.env.soupUrl, process.env.soupKey)
+    const supabase = createClient(process.env.NEXT_PUBLIC_soupUrl, process.env.NEXT_PUBLIC_soupKey)
     const { data } = await supabase
         .from('vetpartners')
         .select('*')

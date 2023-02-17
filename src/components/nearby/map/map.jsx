@@ -2,19 +2,25 @@ import React, { useState, useEffect } from "react";
 import GoogleMapReact from 'google-map-react';
 import mapOptions from './mapOptions.json';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { far } from '@fortawesome/free-regular-svg-icons'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+const { library, config } = require('@fortawesome/fontawesome-svg-core');
+
+
 import Marker from '@/images/icon.png'
 
 const AnyReactComponent = ({ text }) => {
     return (
         <div>
-            <svg width="40px" height="40px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none"><path stroke="#6366F1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 10c0 3.976-7 11-7 11s-7-7.024-7-11 3.134-7 7-7 7 3.024 7 7zM9 10h3m3 0h-3m0 0V7m0 3v3" /></svg>
+            <FontAwesomeIcon className="text-3xl text-cyan-500 border-solid" icon="fa-solid fa-shield-dog" />
             {text}
         </div>
     )
 }
 
 export default function SimpleMap({ vetNearby, setViewPetDetails }) {
-
+    library.add(far, fas);
     const defaultProps = {
         center: {
             lat: 14.556444,

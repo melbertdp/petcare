@@ -11,6 +11,11 @@ import { Reviews } from '@/components/reviews/Reviews'
 import { Services } from '@/components/home/services/Services'
 
 import { Loading } from '@/components/layout/loader'
+import { far } from '@fortawesome/free-regular-svg-icons'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+const { library, config } = require('@fortawesome/fontawesome-svg-core');
+
+library.add(far, fas);
 
 export default function Home() {
 
@@ -20,7 +25,7 @@ export default function Home() {
     setTimeout(() => {
       setIsPageLoading(false)
     }, 3000);
-  },[])
+  }, [])
 
   return (
     <>

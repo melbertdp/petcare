@@ -1,8 +1,14 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import Datepicker from "react-tailwindcss-datepicker";
 import ConfirmationModal from '@/components/vetParners/modal/confirmation';
+import { useSession } from 'next-auth/react'
+import { createClient } from '@supabase/supabase-js'
 
 export default function ScheduleVisitForm() {
+    const supabase = useRef(0);
+    const form = useRef();
+
+    const session = useSession();
 
     const [showConfirmationModal, setShowConfirmationModal] = useState(false);
     const [randomKey, setRandomKey] = useState("");
@@ -12,8 +18,22 @@ export default function ScheduleVisitForm() {
     });
 
     useEffect(() => {
+
+        if (session) {
+            const { supabaseAccessToken } = session
+            supabase.current = createClient(process.env.NEXT_PUBLIC_soupUrl, process.env.NEXT_PUBLIC_soupKey, {
+                global: {
+                    headers: {
+                        Authorization: `Bearer ${session?.data?.supabaseAccessToken}`,
+                    },
+                },
+            });
+        }
+    }, [session])
+
+    useEffect(() => {
         setRandomKey(generateRandomKey());
-    },[])
+    }, [])
 
     const handleDateSelection = (date) => {
         console.log(date)
@@ -237,6 +257,9 @@ export default function ScheduleVisitForm() {
                     >
                         Submit
                     </button>
+                    {/* <button type='button' onClick={() => testsubmit()}>
+                        asdl
+                    </button> */}
                 </div>
 
                 {
@@ -244,6 +267,7 @@ export default function ScheduleVisitForm() {
                         <ConfirmationModal
                             open={showConfirmationModal}
                             setOpen={setShowConfirmationModal}
+                            formData={form}
                         />
                     )
                 }

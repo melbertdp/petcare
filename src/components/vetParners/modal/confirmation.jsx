@@ -8,14 +8,20 @@ import { Player, Controls } from '@lottiefiles/react-lottie-player';
 import LoadingPaw from '@/images/animated/loading_paw.json';
 import Success from '@/images/animated/success.json';
 
-export default function ConfirmationModal({ open, setOpen }) {
+import { useDispatch } from "react-redux";
+import { setNotifState } from '@/store/notifSlice';
 
+export default function ConfirmationModal({ open, setOpen, formData }) {
+    const dispatch = useDispatch();
     const [showLoading, setShowLoading] = useState(true);
+    const form = useRef();
+
 
     useEffect(() => {
         if (open) {
             const timeout = setTimeout(() => {
                 setShowLoading(false);
+                dispatch(setNotifState("test"));
             }, 5000);
 
             return () => {
