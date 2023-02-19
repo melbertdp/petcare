@@ -10,6 +10,7 @@ import { Container } from '@/components/Container'
 import FindVet from '@/components/modals/findvet';
 import Dogs from '@/images/dogs_img_1.png';
 import Bg from '@/images/blue_abstract.png';
+import Clock from '@/images/247.svg';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -23,8 +24,13 @@ export function Hero() {
       <Container>
         <div className="lg:grid lg:grid-cols-12 lg:gap-x-8 lg:gap-y-20">
           <div className="relative z-10 mx-auto max-w-2xl lg:col-span-7 lg:max-w-none lg:pt-6 xl:col-span-6">
-            <h1 className="text-7xl font-bold tracking-tight text-indigo-500 sm:text-6xl">
-              Petfriends
+            <h1 className="text-7xl font-bold tracking-tight text-indigo-500 sm:text-6xl flex">
+              <Image
+                src={Clock}
+                alt="clcok"
+                className='h-24 w-24 flex-none text-indigo-500'
+              />
+              <span className='mt-5 ml-5'>Pet Care</span>
             </h1>
             <p className="mt-6 text-xl text-gray-600">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor quam bibendum, ultrices nunc quis, tincidunt nulla. In euismod suscipit augue

@@ -36,9 +36,7 @@ export default function FindVet({ open, setOpen }) {
                         >
                             <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg sm:p-6">
                                 <div>
-                                    <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-green-100">
-                                        <CheckIcon className="h-6 w-6 text-green-600" aria-hidden="true" />
-                                    </div>
+                                    
                                     <div className="mt-3 text-center sm:mt-5">
                                         <Dialog.Title as="h3" className="text-lg font-medium leading-6 text-gray-900">
                                             Find vet

@@ -5,6 +5,9 @@ import mapOptions from './mapOptions.json';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { far } from '@fortawesome/free-regular-svg-icons'
 import { fas } from '@fortawesome/free-solid-svg-icons'
+
+const { forwardRef, useRef, useImperativeHandle } = React;
+
 const { library, config } = require('@fortawesome/fontawesome-svg-core');
 
 
@@ -13,14 +16,33 @@ import Marker from '@/images/icon.png'
 const AnyReactComponent = ({ text }) => {
     return (
         <div>
-            <FontAwesomeIcon className="text-3xl text-cyan-500 border-solid" icon="fa-solid fa-shield-dog" />
+            <FontAwesomeIcon
+                className="text-3xl text-cyan-500 border-solid"
+                icon="fa-solid fa-shield-dog"
+            />
             {text}
         </div>
     )
 }
 
-export default function SimpleMap({ vetNearby, setViewPetDetails }) {
+const MyMarker = ({ text }) => {
+    return (
+        <div>
+            <FontAwesomeIcon
+                className="text-3xl text-red-700 border-solid"
+                icon="fa-solid fa-street-view"
+            />
+            {text}
+        </div>
+    )
+}
+
+
+const SimpleMap = forwardRef(({ vetNearby, setViewPetDetails }, ref) => {
     library.add(far, fas);
+
+    const [center, setCenter] = useState(null);
+
     const defaultProps = {
         center: {
             lat: 14.556444,
@@ -38,9 +60,18 @@ export default function SimpleMap({ vetNearby, setViewPetDetails }) {
         setViewPetDetails(vetNearby[key]);
     }
 
+    useImperativeHandle(ref, () => ({
+        setCenter(val) {
+            setCenter({
+                lat: parseFloat(val.lat),
+                lng: parseFloat(val.lng)
+            })
+        }
+    }));
+
     return (
-        // Important! Always set the container height explicitly
         <div style={{ height: '450px', width: '100%' }}>
+
             <GoogleMapReact
                 options={{
                     clickableIcons: false,
@@ -50,29 +81,37 @@ export default function SimpleMap({ vetNearby, setViewPetDetails }) {
                     maxZoom: 18,
                     styles: mapOptions
                 }}
-                bootstrapURLKeys={{ key: "" }}
-                defaultCenter={defaultProps.center}
+                bootstrapURLKeys={{ key: process.env.NEXT_PUBLIC_GOOGLE_API, libraries: ["places", "geometry"], }}
+                // defaultCenter={defaultProps.center}
+                center={center || defaultProps.center}
                 defaultZoom={defaultProps.zoom}
                 onChildClick={onChildClick}
+                onCenterChange={onBoundsChange}
             >
-                {/* <AnyReactComponent
-                    lat={14.894720}
-                    lng={120.733336}
-                    text="My Marker"
-                /> */}
 
-                {vetNearby.map((place, index) => {
-                    console.log("place", place);
-                    return (
-                        <AnyReactComponent
-                            key={place.index}
-                            lat={place.clinic_lat}
-                            lng={place.clinic_lng}
-                            text={place.name}
-                        />
-                    )
-                })}
+                <MyMarker
+                    lat={defaultProps.center.lat}
+                    lng={defaultProps.center.lng}
+                    text="My Marker"
+                />
+
+                {
+                    vetNearby.map((place, index) => {
+                        return (
+                            <AnyReactComponent
+                                key={place.index}
+                                lat={place.clinic_lat}
+                                lng={place.clinic_lng}
+                                text={place.name}
+                            />
+                        )
+                    })
+                }
             </GoogleMapReact>
         </div>
     );
-}
+});
+
+SimpleMap.displayName = 'SimpleMap';
+
+export default SimpleMap;
