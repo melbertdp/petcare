@@ -28,7 +28,9 @@ const vetList = [
         clinic_lng: 121.057486,
         clinic_name: 'clinic lang',
         address_city: 'taguig',
-        operatingHours: ["all"]
+        operatingHours: ["all"],
+        phone: '09123456789',
+        email: 'sherlock.holmes@gmail.com'
     },
     {
         id: 2,
@@ -45,13 +47,15 @@ const vetList = [
         clinic_lng: 121.053795,
         clinic_name: 'pet solutions',
         address_city: 'taguig',
-        operatingHours: ["all", "day"]
+        operatingHours: ["all", "day"],
+        phone: '09123456789',
+        email: 'tony.stark@gmail.com'
     },
     {
         id: 3,
         created_at: '2023-02-12T04:09:15.034441+00:00',
         name: 'wade wilson',
-        specialization: ["all",'reptiles', 'fish'],
+        specialization: ["all", 'reptiles', 'fish'],
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         address: '1234 Main St',
         price: 12,
@@ -62,13 +66,15 @@ const vetList = [
         clinic_lng: 121.049289,
         clinic_name: 'pet express',
         address_city: 'taguig',
-        operatingHours: ["all", "day"]
+        operatingHours: ["all", "day"],
+        phone: '09123456789',
+        email: 'wade.wilson@gmail.com'
     },
     {
         id: 4,
         created_at: '2023-02-12T04:10:57.084743+00:00',
         name: 'Peter Parker',
-        specialization: ["all",'exotic', 'birds'],
+        specialization: ["all", 'exotic', 'birds'],
         description: 'Your friendly neighborhood spiderman',
         price: 56,
         imageSrc: 'https://i.pravatar.cc/300?img=4',
@@ -79,7 +85,9 @@ const vetList = [
         clinic_lng: 121.063022,
         clinic_name: 'pet hospital',
         address_city: 'taguigssssssssss',
-        operatingHours: ["all","night"]
+        operatingHours: ["all", "night"],
+        phone: '09123456789',
+        email: 'peter.parker@gmail.com'
     }
 ]
 
@@ -127,7 +135,7 @@ export default function NearbyVet() {
     const setMapCenter = (center) => {
         mapRef.current.setCenter({ lat: center.clinic_lat, lng: center.clinic_lng });
     }
-    
+
     const handleChangeFilterValues = (val) => {
         console.log("val", val);
         let specialization = val.specialization;
@@ -175,7 +183,7 @@ export default function NearbyVet() {
                                 setViewPetDetails={setViewPetDetails}
                             />
                         </div>
-                        
+
                         <div className="hidden rounded-lg md:w-1/4 sm:block">
                             <div className='scrollbar scrollbar-thumb-gray-500 scrollbar-track-gray-100 scrollbar-thin overflow-y-scroll max-h-[450px]'>
                                 {

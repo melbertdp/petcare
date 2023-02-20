@@ -3,6 +3,8 @@ import { Fragment, useRef, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import Link from "next/link";
 
+import Rating from "@/components/vetParners/modal/rating";
+
 export default function FindVet({ open, setOpen, viewVetDetails }) {
   const makeUrl = (name) => {
     return name.toLowerCase().split(" ").join("-");
@@ -52,17 +54,28 @@ export default function FindVet({ open, setOpen, viewVetDetails }) {
                                 {viewVetDetails?.name}
                               </h1>
                               <div class="flex mb-4"></div>
-                              <p class="leading-relaxed">
+                              {/* <p class="leading-relaxed">
                                 {viewVetDetails?.description}
-                              </p>
+                              </p> */}
                               <div class="mt-6 text-sm text-left pb-5 border-b-2 border-gray-100 mb-5">
-                                <p>Address: {viewVetDetails.address}</p>
+                                <p><span className="font-bold mr-1">Address:</span> {viewVetDetails.address}</p>
                                 <p>
-                                  Specialization:{" "}
+                                <span className="font-bold mr-1">Specialization:</span>{" "}
                                   {viewVetDetails?.specialization.join(", ")}
                                 </p>
                                 <p>
-                                  Consultation Rate: ₱{viewVetDetails.price}
+                                  <span className="font-bold mr-1">Rate:</span> ₱{viewVetDetails.price}
+                                </p>
+                                <p>
+                                  <span className="font-bold mr-1">Phone:</span> {viewVetDetails.phone}
+                                </p>
+                                <p>
+                                  <span className="font-bold mr-1">Email:</span>
+                                  <a className="text-blue-500" href={`mailto:${viewVetDetails.email}`}>{viewVetDetails.email}</a>
+                                </p>
+                                <p className="flex">
+                                  <span className="font-bold mr-1">Rating:</span>
+                                  <Rating rating={viewVetDetails.rating} showRating={false} />
                                 </p>
                               </div>
                               <div class="">

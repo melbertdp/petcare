@@ -38,7 +38,7 @@ export function Hero() {
             <div className="mt-8 flex flex-wrap gap-x-6 gap-y-4">
               {/* <AppStoreLink /> */}
               <Button
-                href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                href="/services/pet-sitter"
                 variant="outline"
                 className="bg-indigo-500 text-white"
               >
@@ -80,7 +80,6 @@ export function Hero() {
 
         </div>
       </Container>
-
 
       <FindVet open={findVetModalVisible} setOpen={setFindVetModalVisible} />
     </div>

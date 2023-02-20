@@ -4,6 +4,8 @@ import { Dialog, Transition } from "@headlessui/react";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+import Rating from "@/components/vetParners/modal/rating";
+
 import { far } from "@fortawesome/free-regular-svg-icons";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 
@@ -70,9 +72,9 @@ export default function FindVet({ open, setOpen, viewVetDetails }) {
                                 {viewVetDetails?.name}
                               </h1>
                               <div class="flex mb-4"></div>
-                              <p class="leading-relaxed">
+                              {/* <p class="leading-relaxed">
                                 {viewVetDetails?.description}
-                              </p>
+                              </p> */}
                               <div class="mt-6 text-left text-sm pb-5 border-b-2 border-gray-100 mb-5">
                                 <p><span className="font-bold">Address:</span> {viewVetDetails.address}</p>
                                 <p>
@@ -81,9 +83,20 @@ export default function FindVet({ open, setOpen, viewVetDetails }) {
                                     .slice(1)
                                     .join(", ")}
                                 </p>
-                                <p><span className="font-bold">Rate:</span> ₱{viewVetDetails.price}</p>
-                                <p><span className="font-bold">Phone:</span> {viewVetDetails.phone}</p>
-                                <p><span className="font-bold">Email:</span> {viewVetDetails.email}</p>
+                                <p>
+                                  <span className="font-bold mr-1">Rate:</span> ₱{viewVetDetails.price}
+                                </p>
+                                <p>
+                                  <span className="font-bold mr-1">Phone:</span> {viewVetDetails.phone}
+                                </p>
+                                <p>
+                                  <span className="font-bold mr-1">Email:</span>
+                                  <a className="text-blue-500" href={`mailto:${viewVetDetails.email}`}>{viewVetDetails.email}</a>
+                                </p>
+                                <p className="flex">
+                                  <span className="font-bold mr-1">Rating:</span>
+                                  <Rating rating={viewVetDetails.rating} showRating={false} />
+                                </p>
                               </div>
                               <div>
                                 <p>Amenities</p>
