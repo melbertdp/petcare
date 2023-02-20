@@ -2,8 +2,26 @@
 import { Fragment, useRef, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import { far } from "@fortawesome/free-regular-svg-icons";
+import { fas } from "@fortawesome/free-solid-svg-icons";
+
+const { library, config } = require("@fortawesome/fontawesome-svg-core");
+
+library.add(far, fas);
 
 export default function FindVet({ open, setOpen, viewVetDetails }) {
+  const amenities_map = {
+    "air-conditioned": "fa-solid fa-fan",
+    playground: "fa-solid fa-person-running",
+    cctv: "fa-solid fa-camera",
+    pool: "fa-solid fa-water-ladder",
+    bed: "fa-solid fa-bed",
+    crate: "fa-solid fa-house",
+    online: "fa-solid fa-signal",
+  };
+
   const makeUrl = (name) => {
     return name.toLowerCase().split(" ").join("-");
   };
@@ -59,10 +77,30 @@ export default function FindVet({ open, setOpen, viewVetDetails }) {
                                 <p>Address: {viewVetDetails.address}</p>
                                 <p>
                                   Specialization:{" "}
-                                  {viewVetDetails?.specialization.join(", ")}
+                                  {viewVetDetails?.specialization
+                                    .slice(1)
+                                    .join(", ")}
                                 </p>
+                                <p>Rate: ₱{viewVetDetails.price}</p>
+                              </div>
+                              <div>
+                                <p>Ameneties</p>
                                 <p>
-                                  Consultation Rate: ₱{viewVetDetails.price}
+                                  {viewVetDetails?.amenities.map(
+                                    (amenity, index) => {
+                                      return (
+                                        <span
+                                          key={index}
+                                          class={`cursor-pointer text-md mr-2 inline-flex items-center justify-center px-2 py-1 font-bold leading-none rounded-full`}
+                                          title={amenity}
+                                        >
+                                          <FontAwesomeIcon
+                                            icon={amenities_map[amenity]}
+                                          />
+                                        </span>
+                                      );
+                                    }
+                                  )}
                                 </p>
                               </div>
                               <div class="">
