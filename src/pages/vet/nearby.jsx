@@ -17,23 +17,24 @@ const vetList = [
         id: 1,
         created_at: '2023-02-11T19:52:27.584145+00:00',
         name: 'Sherlock Holmes',
-        specialization: ['dogs', 'cats'],
+        specialization: ["all", 'dogs', 'cats'],
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         address: '221B baker street',
         price: 1,
         imageSrc: 'https://i.pravatar.cc/300?img=2',
-        rating: 5,
+        rating: 3,
         active: true,
         clinic_lat: 14.543382,
         clinic_lng: 121.057486,
         clinic_name: 'clinic lang',
-        address_city: 'taguig'
+        address_city: 'taguig',
+        operatingHours: ["all"]
     },
     {
         id: 2,
         created_at: '2023-02-12T04:08:01.087519+00:00',
         name: 'Tony Starks',
-        specialization: ['dogs', 'cats'],
+        specialization: ["all", 'dogs', 'cats'],
         description: 'i am iron man',
         address: '1234 Main St',
         price: 75,
@@ -43,38 +44,42 @@ const vetList = [
         clinic_lat: 14.551773,
         clinic_lng: 121.053795,
         clinic_name: 'pet solutions',
-        address_city: 'taguig'
+        address_city: 'taguig',
+        operatingHours: ["all", "day"]
     },
     {
         id: 3,
         created_at: '2023-02-12T04:09:15.034441+00:00',
         name: 'wade wilson',
-        specialization: ['reptiles', 'fish'],
+        specialization: ["all",'reptiles', 'fish'],
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         address: '1234 Main St',
         price: 12,
         imageSrc: 'https://i.pravatar.cc/300?img=1',
-        rating: 1,
+        rating: 3,
         active: true,
         clinic_lat: 14.534077,
         clinic_lng: 121.049289,
         clinic_name: 'pet express',
-        address_city: 'taguig'
+        address_city: 'taguig',
+        operatingHours: ["all", "day"]
     },
     {
         id: 4,
         created_at: '2023-02-12T04:10:57.084743+00:00',
         name: 'Peter Parker',
-        specialization: ['exotic', 'birds'],
+        specialization: ["all",'exotic', 'birds'],
         description: 'Your friendly neighborhood spiderman',
         price: 56,
         imageSrc: 'https://i.pravatar.cc/300?img=4',
-        rating: 3,
+        rating: 2,
         active: true,
+        address: '1234 Main St',
         clinic_lat: 14.555428,
         clinic_lng: 121.063022,
         clinic_name: 'pet hospital',
-        address_city: 'taguigssssssssss'
+        address_city: 'taguigssssssssss',
+        operatingHours: ["all","night"]
     }
 ]
 
@@ -125,6 +130,19 @@ export default function NearbyVet() {
     
     const handleChangeFilterValues = (val) => {
         console.log("val", val);
+        let specialization = val.specialization;
+        let operatingHours = val.operatingHours;
+
+        console.log("==specialization", specialization);
+        console.log("==operatingHours", operatingHours);
+        //filter vetlist by specialization and operating hours
+        //if value is all then dont filter
+
+        const filteredVets = vetList.filter(vet => {
+            return vet.specialization.includes(specialization) && vet.operatingHours.includes(operatingHours);
+        });
+
+        setPlaces(filteredVets)
     }
 
     return (
@@ -157,9 +175,9 @@ export default function NearbyVet() {
                                 setViewPetDetails={setViewPetDetails}
                             />
                         </div>
-
+                        
                         <div className="hidden rounded-lg md:w-1/4 sm:block">
-                            <div className='overflow-y-scroll max-h-[450px]'>
+                            <div className='scrollbar scrollbar-thumb-gray-500 scrollbar-track-gray-100 scrollbar-thin overflow-y-scroll max-h-[450px]'>
                                 {
                                     places.length > 0 ?
                                         places.map((vet, index) => (
@@ -172,7 +190,7 @@ export default function NearbyVet() {
                                         ))
                                         : <div>
                                             <h1 className="text-center text-2xl font-bold">No nearby vet found in your location</h1>
-                                            <p>
+                                            <p className='text-center pt-4'>
                                                 book an <Link
                                                     className='text-blue-500'
                                                     href="/vet/partners"

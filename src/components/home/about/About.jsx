@@ -66,7 +66,7 @@ export function AboutUs() {
               {({ open }) => (
                 <>
                   <Disclosure.Button className="bg-indigo-500 text-white flex w-full justify-between rounded-lg px-4 py-2 text-left text-sm font-medium focus:outline-none focus-visible:ring focus-visible:ring-opacity-75">
-                    <span className='text-xl'>How Petfriend started</span>
+                    <span className='text-xl'>How 24/7 petcare started</span>
                     <ChevronUpIcon
                       className={`${open ? 'rotate-180 transform' : ''
                         } h-5 w-5 text-white`}

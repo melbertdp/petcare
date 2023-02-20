@@ -154,7 +154,7 @@ const SimpleMap = forwardRef(({ vetNearby, setViewPetDetails }, ref) => {
                 }
 
                 {
-                    mapMarkers.map((place, index) => {
+                    vetNearby.map((place, index) => {
                         return (
                             <AnyReactComponent
                                 key={place.index}
