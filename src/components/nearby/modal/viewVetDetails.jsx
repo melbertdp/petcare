@@ -5,6 +5,7 @@ import Link from 'next/link'
 
 export default function FindVet({ open, setOpen, viewVetDetails }) {
 
+
     const makeUrl = (name) => {
         return name.toLowerCase().split(' ').join('-');
     }

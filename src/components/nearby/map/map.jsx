@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import GoogleMapReact from 'google-map-react';
+import GoogleMapReact, { fitBounds } from 'google-map-react-concurrent';
 import mapOptions from './mapOptions.json';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -15,19 +15,19 @@ import Marker from '@/images/icon.png'
 
 const AnyReactComponent = ({ text }) => {
     return (
-        <div>
+        <div className="cursor-pointer">
             <FontAwesomeIcon
                 className="text-3xl text-cyan-500 border-solid"
                 icon="fa-solid fa-shield-dog"
             />
-            {text}
+            {/* {text} */}
         </div>
     )
 }
 
 const MyMarker = ({ text }) => {
     return (
-        <div>
+        <div className="cursor-pointer">
             <FontAwesomeIcon
                 className="text-3xl text-red-700 border-solid"
                 icon="fa-solid fa-street-view"
@@ -42,6 +42,18 @@ const SimpleMap = forwardRef(({ vetNearby, setViewPetDetails }, ref) => {
     library.add(far, fas);
 
     const [center, setCenter] = useState(null);
+    const [mapRef, setMapRef] = useState(null);
+    const [mapsRef, setMapsRef] = useState(null);
+
+    const [mapMarkers, setMapMarkers] = useState([]);
+
+    useEffect(() => {
+
+        if (vetNearby.length > 0) {
+            setMapMarkers(vetNearby);
+        }
+
+    }, [vetNearby, mapsRef, mapRef]);
 
     const defaultProps = {
         center: {
@@ -57,7 +69,10 @@ const SimpleMap = forwardRef(({ vetNearby, setViewPetDetails }, ref) => {
     }
 
     const onChildClick = (key, childProps) => {
-        setViewPetDetails(vetNearby[key]);
+
+        if (key === 0) return;
+
+        setViewPetDetails(mapMarkers[key - 1]);
     }
 
     useImperativeHandle(ref, () => ({
@@ -68,6 +83,34 @@ const SimpleMap = forwardRef(({ vetNearby, setViewPetDetails }, ref) => {
             })
         }
     }));
+
+    const fitBounds = (map, maps, mapMarkers) => {
+        const bounds = new maps.LatLngBounds();
+
+        mapMarkers.forEach((place) => {
+            bounds.extend(new maps.LatLng(
+                place.clinic_lat,
+                place.clinic_lng,
+            ));
+        });
+
+        map.fitBounds(bounds);
+    };
+
+    const apiIsLoaded = (map, maps, mapMarkers) => {
+        setMapRef(map);
+        setMapsRef(maps);
+        fitBounds(map, maps, mapMarkers);
+    };
+
+    const handleOnChange = (bounds) => {
+
+        // console.log("bounds", bounds);
+
+        // if (bounds.nw.lat >= 45 || bounds.se.lat <= -85) {
+        //     fitBounds(myMap);
+        // }
+    };
 
     return (
         <div style={{ height: '450px', width: '100%' }}>
@@ -87,21 +130,24 @@ const SimpleMap = forwardRef(({ vetNearby, setViewPetDetails }, ref) => {
                 defaultZoom={defaultProps.zoom}
                 onChildClick={onChildClick}
                 onCenterChange={onBoundsChange}
+                yesIWantToUseGoogleMapApiInternals
+                onGoogleApiLoaded={({ map, maps }) => apiIsLoaded(map, maps, mapMarkers)}
+                onChange={({ bounds }) => handleOnChange(bounds)}
             >
 
                 <MyMarker
                     lat={defaultProps.center.lat}
                     lng={defaultProps.center.lng}
-                    text="My Marker"
+                    text=""
                 />
 
                 {
-                    vetNearby.map((place, index) => {
+                    mapMarkers.map((place, index) => {
                         return (
                             <AnyReactComponent
                                 key={place.index}
-                                lat={place.clinic_lat}
-                                lng={place.clinic_lng}
+                                lat={parseFloat(place.clinic_lat)}
+                                lng={parseFloat(place.clinic_lng)}
                                 text={place.name}
                             />
                         )

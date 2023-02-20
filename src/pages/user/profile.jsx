@@ -55,67 +55,15 @@ const timeline = [
   {
     id: 1,
     type: eventTypes.applied,
-    content: 'Applied to',
-    target: 'Front End Developer',
-    date: 'Sep 20',
+    content: 'Created Profile',
+    target: '',
+    date: 'Feb 19',
     datetime: '2020-09-20',
-  },
-  {
-    id: 2,
-    type: eventTypes.advanced,
-    content: 'Advanced to phone screening by',
-    target: 'Bethany Blake',
-    date: 'Sep 22',
-    datetime: '2020-09-22',
-  },
-  {
-    id: 3,
-    type: eventTypes.completed,
-    content: 'Completed phone screening with',
-    target: 'Martha Gardner',
-    date: 'Sep 28',
-    datetime: '2020-09-28',
-  },
-  {
-    id: 4,
-    type: eventTypes.advanced,
-    content: 'Advanced to interview by',
-    target: 'Bethany Blake',
-    date: 'Sep 30',
-    datetime: '2020-09-30',
-  },
-  {
-    id: 5,
-    type: eventTypes.completed,
-    content: 'Completed interview with',
-    target: 'Katherine Snyder',
-    date: 'Oct 4',
-    datetime: '2020-10-04',
-  },
+  }
 ]
-const comments = [
-  {
-    id: 1,
-    name: 'Leslie Alexander',
-    date: '4d ago',
-    imageId: '1494790108377-be9c29b29330',
-    body: 'Ducimus quas delectus ad maxime totam doloribus reiciendis ex. Tempore dolorem maiores. Similique voluptatibus tempore non ut.',
-  },
-  {
-    id: 2,
-    name: 'Michael Foster',
-    date: '4d ago',
-    imageId: '1519244703995-f4e0f30006d5',
-    body: 'Et ut autem. Voluptatem eum dolores sint necessitatibus quos. Quis eum qui dolorem accusantium voluptas voluptatem ipsum. Quo facere iusto quia accusamus veniam id explicabo et aut.',
-  },
-  {
-    id: 3,
-    name: 'Dries Vincent',
-    date: '4d ago',
-    imageId: '1506794778202-cad84cf45f1d',
-    body: 'Expedita consequatur sit ea voluptas quo ipsam recusandae. Ab sint et voluptatem repudiandae voluptatem et eveniet. Nihil quas consequatur autem. Perferendis rerum et.',
-  },
-]
+
+
+const comments = []
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -191,8 +139,10 @@ export default function Example() {
                     <div className="relative">
                       {
                         session?.user.image ? (
+                          // eslint-disable-next-line @next/next/no-img-element
                           <img className="h-16 w-16 rounded-full" src={session.user.image} alt="picture" />
                         ) : (
+                          // eslint-disable-next-line @next/next/no-img-element
                           <img className="h-16 w-16 rounded-full" src="https://images.unsplash.com/photo-1517841900229-3a7b3a9fc91c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="picture" />
                         )
                       }
@@ -235,10 +185,22 @@ export default function Example() {
                             <dd className="mt-1 text-sm text-gray-900">Dog: Fifi</dd>
                           </div>
 
-
                         </dl>
                       </div>
 
+                    </div>
+                  </section>
+
+                  <section aria-labelledby="applicant-information-title">
+                    <div className="bg-white shadow sm:rounded-lg">
+                      <div className="px-4 py-3 sm:px-6">
+                        <h2 id="applicant-information-title" className="text-lg font-medium leading-6 text-gray-900">
+                          Upcoming Appointments
+                        </h2>
+                      </div>
+                      <div className="border-t border-gray-200 px-4 py-5 sm:px-6">
+                        <p className='text-sm'>No Upcoming Appointments</p>
+                      </div>
                     </div>
                   </section>
 
@@ -253,33 +215,54 @@ export default function Example() {
                         </div>
                         <div className="px-4 py-6 sm:px-6">
                           <ul role="list" className="space-y-8">
-                            {comments.map((comment) => (
-                              <li key={comment.id}>
-                                <div className="flex space-x-3">
-                                  <div className="flex-shrink-0">
-                                    <img
-                                      className="h-10 w-10 rounded-full"
-                                      src={`https://images.unsplash.com/photo-${comment.imageId}?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80`}
-                                      alt=""
-                                    />
+
+                            {
+                              comments.length > 0 ?
+                                comments.map((comment) => (
+                                  <li key={comment.id}>
+                                    <div className="flex space-x-3">
+                                      <div className="flex-shrink-0">
+                                        {/* eslint-disable-next-line @next/next/no-img-element  */}
+                                        <img
+                                          className="h-10 w-10 rounded-full"
+                                          src={`https://images.unsplash.com/photo-${comment.imageId}?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80`}
+                                          alt=""
+                                        />
+                                      </div>
+                                      <div>
+                                        <div className="text-sm">
+                                          <a href="#" className="font-medium text-gray-900">
+                                            {comment.name}
+                                          </a>
+                                        </div>
+                                        <div className="mt-1 text-sm text-gray-700">
+                                          <p>{comment.body}</p>
+                                        </div>
+                                        <div className="mt-2 space-x-2 text-sm">
+                                          <span className="font-medium text-gray-500">{comment.date}</span>{' '}
+                                          <span className="font-medium text-gray-500">&middot;</span>{' '}
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </li>
+                                ))
+                                :
+                                <li>
+                                  <div className="flex space-x-3">
+                                    <div className="flex-shrink-0">
+
+                                    </div>
+                                    <div>
+                                      <div className="text-sm">
+                                        <a href="#" className="font-medium text-gray-900">
+                                          No Comments Yet
+                                        </a>
+                                      </div>
+                                    </div>
                                   </div>
-                                  <div>
-                                    <div className="text-sm">
-                                      <a href="#" className="font-medium text-gray-900">
-                                        {comment.name}
-                                      </a>
-                                    </div>
-                                    <div className="mt-1 text-sm text-gray-700">
-                                      <p>{comment.body}</p>
-                                    </div>
-                                    <div className="mt-2 space-x-2 text-sm">
-                                      <span className="font-medium text-gray-500">{comment.date}</span>{' '}
-                                      <span className="font-medium text-gray-500">&middot;</span>{' '}
-                                    </div>
-                                  </div>
-                                </div>
-                              </li>
-                            ))}
+                                </li>
+                            }
+
                           </ul>
                         </div>
                       </div>

@@ -8,6 +8,7 @@ const Filter = ({ changeLocation, setMapCenter }) => {
     const [selectedPlace, setSelectedPlace] = useState(null);
     const [isSearchingPlace, setIsSearchingPlace] = useState(false);
     const [locVal, setLocVal] = useState("nearby");
+    const [searchVal, setSearchVal] = useState("");
 
     const {
         placesService,
@@ -21,7 +22,6 @@ const Filter = ({ changeLocation, setMapCenter }) => {
         options: {
             "types": ["(cities)"],
             "componentRestrictions": { country: "ph" },
-
         }
     });
 
@@ -32,26 +32,29 @@ const Filter = ({ changeLocation, setMapCenter }) => {
                 placeId: item.place_id,
             },
             (placeDetails) => {
+                changeLocation(placeDetails)
                 setSelectedPlace(placeDetails);
                 setMapCenter({
                     clinic_lat: placeDetails.geometry.location.lat(),
                     clinic_lng: placeDetails.geometry.location.lng()
                 })
                 setIsSearchingPlace(false);
+                setSearchVal("");
             }
         );
     }
 
     const renderItem = (item) => {
         return (
-            <div
+            <li
+                className='bg-white border border-gray-300 p-2 cursor-pointer hover:bg-gray-50'
                 key={item.id}
                 onClick={() => {
                     handlePlaceSelection(item);
                 }}
             >
                 {item.description}
-            </div>
+            </li>
         );
     }
 
@@ -73,20 +76,24 @@ const Filter = ({ changeLocation, setMapCenter }) => {
                 </select>
             </div>
 
-            <div className='flex'>
+            <div className='flex relative'>
                 <input
                     disabled={locVal === "nearby" ? true : false}
                     type={"text"}
                     placeholder="Search By Location"
+                    value={searchVal}
                     onChange={(evt) => {
+                        setSearchVal(evt.target.value);
                         getPlacePredictions({ input: evt.target.value });
                         setIsSearchingPlace(true);
                     }}
                     loading={isPlacePredictionsLoading}
                 />
-                {
-                    isSearchingPlace && placePredictions.map((item) => renderItem(item))
-                }
+                <ul className='absolute z-50 mt-10 md:mt-12'>
+                    {
+                        isSearchingPlace && placePredictions.map((item) => renderItem(item))
+                    }
+                </ul>
             </div>
 
             <div className='flex'>
