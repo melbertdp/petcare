@@ -42,10 +42,28 @@ const SimpleMap = forwardRef(({ vetNearby, setViewPetDetails }, ref) => {
     library.add(far, fas);
 
     const [center, setCenter] = useState(null);
+    const [zoom, setZoom] = useState(15);
+    const [myLoc, setMyLoc] = useState(null);
+
     const [mapRef, setMapRef] = useState(null);
     const [mapsRef, setMapsRef] = useState(null);
 
+
     const [mapMarkers, setMapMarkers] = useState([]);
+
+    useEffect(() => {
+        setCenter({
+            lat: 14.556444,
+            lng: 121.054146
+        });
+
+        setMyLoc({
+            lat: 14.556444,
+            lng: 121.054146
+        });
+
+        setZoom(15);
+    }, []);
 
     useEffect(() => {
 
@@ -54,14 +72,6 @@ const SimpleMap = forwardRef(({ vetNearby, setViewPetDetails }, ref) => {
         }
 
     }, [vetNearby, mapsRef, mapRef]);
-
-    const defaultProps = {
-        center: {
-            lat: 14.556444,
-            lng: 121.054146
-        },
-        zoom: 15
-    };
 
     const onBoundsChange = (center, zoom /* , bounds, marginBounds */) => {
         this.props.onCenterChange(center);
@@ -126,8 +136,8 @@ const SimpleMap = forwardRef(({ vetNearby, setViewPetDetails }, ref) => {
                 }}
                 bootstrapURLKeys={{ key: process.env.NEXT_PUBLIC_GOOGLE_API, libraries: ["places", "geometry"], }}
                 // defaultCenter={defaultProps.center}
-                center={center || defaultProps.center}
-                defaultZoom={defaultProps.zoom}
+                center={center}
+                defaultZoom={zoom}
                 onChildClick={onChildClick}
                 onCenterChange={onBoundsChange}
                 yesIWantToUseGoogleMapApiInternals
@@ -135,11 +145,13 @@ const SimpleMap = forwardRef(({ vetNearby, setViewPetDetails }, ref) => {
                 onChange={({ bounds }) => handleOnChange(bounds)}
             >
 
-                <MyMarker
-                    lat={defaultProps.center.lat}
-                    lng={defaultProps.center.lng}
-                    text=""
-                />
+                {
+                    myLoc && <MyMarker
+                        lat={myLoc.lat}
+                        lng={myLoc.lng}
+                        text=""
+                    />
+                }
 
                 {
                     mapMarkers.map((place, index) => {

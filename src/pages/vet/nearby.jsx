@@ -10,13 +10,14 @@ import NearbyVetCards from '@/components/nearby/cards/vetCards';
 import vets from '@/data/vets';
 
 import Filter from '@/components/nearby/map/filter'
+import Link from 'next/link';
 
 const vetList = [
     {
         id: 1,
         created_at: '2023-02-11T19:52:27.584145+00:00',
         name: 'Sherlock Holmes',
-        specialization: 'Detective',
+        specialization: ['dogs', 'cats'],
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         address: '221B baker street',
         price: 1,
@@ -32,7 +33,7 @@ const vetList = [
         id: 2,
         created_at: '2023-02-12T04:08:01.087519+00:00',
         name: 'Tony Starks',
-        specialization: 'Engineer',
+        specialization: ['dogs', 'cats'],
         description: 'i am iron man',
         address: '1234 Main St',
         price: 75,
@@ -48,7 +49,7 @@ const vetList = [
         id: 3,
         created_at: '2023-02-12T04:09:15.034441+00:00',
         name: 'wade wilson',
-        specialization: 'Mercenary',
+        specialization: ['reptiles', 'fish'],
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         address: '1234 Main St',
         price: 12,
@@ -64,7 +65,7 @@ const vetList = [
         id: 4,
         created_at: '2023-02-12T04:10:57.084743+00:00',
         name: 'Peter Parker',
-        specialization: 'Photographer',
+        specialization: ['exotic', 'birds'],
         description: 'Your friendly neighborhood spiderman',
         price: 56,
         imageSrc: 'https://i.pravatar.cc/300?img=4',
@@ -87,9 +88,6 @@ export default function NearbyVet() {
     const mapRef = useRef();
 
     useEffect(() => {
-
-
-
         setPlaces(vetList);
     }, []);
 
@@ -122,8 +120,11 @@ export default function NearbyVet() {
     }
 
     const setMapCenter = (center) => {
-        // console.log(center);
         mapRef.current.setCenter({ lat: center.clinic_lat, lng: center.clinic_lng });
+    }
+    
+    const handleChangeFilterValues = (val) => {
+        console.log("val", val);
     }
 
     return (
@@ -141,6 +142,7 @@ export default function NearbyVet() {
                     <Filter
                         changeLocation={handleChangeLocationFilter}
                         setMapCenter={setMapCenter}
+                        changeFilterValues={handleChangeFilterValues}
                     />
                     {/* end filter */}
 
@@ -157,21 +159,28 @@ export default function NearbyVet() {
                         </div>
 
                         <div className="hidden rounded-lg md:w-1/4 sm:block">
-                            {/* <input
-                                onChange={(e) => handleSearch(e)}
-                                type="text"
-                                className="w-full px-4 py-2 mb-6 text-gray-700 bg-white border rounded-lg focus:outline-none focus:border-green-500"
-                                placeholder="Search"
-                            /> */}
                             <div className='overflow-y-scroll max-h-[450px]'>
-                                {places.map((vet, index) => (
-                                    <NearbyVetCards
-                                        key={index}
-                                        vet={vet}
-                                        setViewPetDetails={setViewPetDetails}
-                                        setMapCenter={setMapCenter}
-                                    />
-                                ))}
+                                {
+                                    places.length > 0 ?
+                                        places.map((vet, index) => (
+                                            <NearbyVetCards
+                                                key={index}
+                                                vet={vet}
+                                                setViewPetDetails={setViewPetDetails}
+                                                setMapCenter={setMapCenter}
+                                            />
+                                        ))
+                                        : <div>
+                                            <h1 className="text-center text-2xl font-bold">No nearby vet found in your location</h1>
+                                            <p>
+                                                book an <Link
+                                                    className='text-blue-500'
+                                                    href="/vet/partners"
+                                                >online
+                                                </Link> appointment instead
+                                            </p>
+                                        </div>
+                                }
                             </div>
                         </div>
 

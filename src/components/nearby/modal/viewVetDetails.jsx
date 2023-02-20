@@ -58,7 +58,7 @@ export default function FindVet({ open, setOpen, viewVetDetails }) {
                                                             <p class="leading-relaxed">{viewVetDetails?.description}</p>
                                                             <div class="mt-6 text-left pb-5 border-b-2 border-gray-100 mb-5">
                                                                 <p>Address: {viewVetDetails.address}</p>
-                                                                <p>Specialization: {viewVetDetails?.specialization}</p>
+                                                                <p>Specialization: {viewVetDetails?.specialization.join(", ")}</p>
                                                                 <p>Consulatation Rate: $58</p>
                                                             </div>
                                                             <div class="">

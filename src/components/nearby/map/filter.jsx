@@ -3,12 +3,14 @@ import Autocomplete from "react-google-autocomplete";
 import usePlacesService from "react-google-autocomplete/lib/usePlacesAutocompleteService";
 
 
-const Filter = ({ changeLocation, setMapCenter }) => {
+const Filter = ({ changeLocation, setMapCenter, changeFilterValues }) => {
 
     const [selectedPlace, setSelectedPlace] = useState(null);
     const [isSearchingPlace, setIsSearchingPlace] = useState(false);
     const [locVal, setLocVal] = useState("nearby");
     const [searchVal, setSearchVal] = useState("");
+    const [specialization, setSpecialization] = useState("all");
+    const [operatingHours, setOperatingHours] = useState("all");
 
     const {
         placesService,
@@ -24,6 +26,15 @@ const Filter = ({ changeLocation, setMapCenter }) => {
             "componentRestrictions": { country: "ph" },
         }
     });
+
+    useEffect(() => {
+        changeFilterValues({
+            location: locVal,
+            selectedPlace: searchVal,
+            specialization: specialization,
+            operatingHours: operatingHours
+        })
+    }, [locVal, searchVal, specialization, operatingHours, changeFilterValues])
 
     const handlePlaceSelection = (item) => {
         placesService?.getDetails(
@@ -98,27 +109,23 @@ const Filter = ({ changeLocation, setMapCenter }) => {
 
             <div className='flex'>
                 <span>Specialization:</span>
-                <select>
+                <select onChange={(e) => setSpecialization(e.target.value)}>
                     <option value="all">All</option>
-                    <option value="all">Dogs</option>
-                    <option value="all">Cats</option>
-                    <option value="all">Birds</option>
-                    <option value="all">Reptiles</option>
-                    <option value="all">Fish</option>
+                    <option value="dogs">Dogs</option>
+                    <option value="cats">Cats</option>
+                    <option value="birds">Birds</option>
+                    <option value="reptiles">Reptiles</option>
+                    <option value="fish">Fish</option>
                 </select>
             </div>
 
             <div className='flex'>
                 <span>Operating Hours:</span>
-                <select>
+                <select onChange={(e) => setOperatingHours(e.target.value)}>
                     <option value="all">All</option>
-                    <option value="all">Open Now</option>
-                    <option value="all">24/7</option>
+                    <option value="day">Day</option>
+                    <option value="overnight">24/7</option>
                 </select>
-            </div>
-
-            <div>
-                <button>Apply</button>
             </div>
         </div>
     );
