@@ -73,25 +73,27 @@ export default function FindVet({ open, setOpen, viewVetDetails }) {
                               <p class="leading-relaxed">
                                 {viewVetDetails?.description}
                               </p>
-                              <div class="mt-6 text-left pb-5 border-b-2 border-gray-100 mb-5">
-                                <p>Address: {viewVetDetails.address}</p>
+                              <div class="mt-6 text-left text-sm pb-5 border-b-2 border-gray-100 mb-5">
+                                <p><span className="font-bold">Address:</span> {viewVetDetails.address}</p>
                                 <p>
-                                  Specialization:{" "}
+                                  <span className="font-bold">Specialization:</span>{" "}
                                   {viewVetDetails?.specialization
                                     .slice(1)
                                     .join(", ")}
                                 </p>
-                                <p>Rate: ₱{viewVetDetails.price}</p>
+                                <p><span className="font-bold">Rate:</span> ₱{viewVetDetails.price}</p>
+                                <p><span className="font-bold">Phone:</span> {viewVetDetails.phone}</p>
+                                <p><span className="font-bold">Email:</span> {viewVetDetails.email}</p>
                               </div>
                               <div>
-                                <p>Ameneties</p>
+                                <p>Amenities</p>
                                 <p>
                                   {viewVetDetails?.amenities.map(
                                     (amenity, index) => {
                                       return (
                                         <span
                                           key={index}
-                                          class={`cursor-pointer text-md mr-2 inline-flex items-center justify-center px-2 py-1 font-bold leading-none rounded-full`}
+                                          class={`cursor-pointer text-lg mr-2 inline-flex px-2 py-1 font-bold leading-none rounded-full`}
                                           title={amenity}
                                         >
                                           <FontAwesomeIcon
@@ -105,21 +107,14 @@ export default function FindVet({ open, setOpen, viewVetDetails }) {
                               </div>
                               <div class="">
                                 {/* <span class="title-font font-medium text-2xl text-gray-900">$58.00</span> */}
-                                <Link
-                                  class="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded"
-                                  href={`/vet/schedule-visit/${makeUrl(
-                                    viewVetDetails.name
-                                  )}`}
-                                >
-                                  Schedule a visit
-                                </Link>
+
                                 <Link
                                   class="flex mt-3 ml-auto text-white bg-sky-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded"
                                   href={`/vet/online-consultation/${makeUrl(
                                     viewVetDetails.name
                                   )}`}
                                 >
-                                  Online Consultation
+                                  Book Pet Sitting Service
                                 </Link>
                               </div>
                             </div>

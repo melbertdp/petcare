@@ -18,13 +18,13 @@ const vetList = [
     specialization: ["all", "dogs", "cats"],
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    address: "221B baker street",
+    address: "G/F Shangri-La at the Fort Manila, 30th Street, Bonifacio Global City, Taguig, Metro Manila",
     price: 499,
     imageSrc: "https://i.pravatar.cc/300?img=2",
     rating: 3,
     active: true,
-    clinic_lat: 14.543382,
-    clinic_lng: 121.057486,
+    clinic_lat: 14.552587,
+    clinic_lng: 121.047455,
     clinic_name: "clinic lang",
     address_city: "taguig",
     operatingHours: ["all"],
@@ -37,6 +37,8 @@ const vetList = [
       "cctv",
       "playground",
     ],
+    phone: "09123456789",
+    email: "petsitter1@gmail.com",
   },
   {
     id: 2,
@@ -44,13 +46,13 @@ const vetList = [
     name: "Pet sitter 2",
     specialization: ["all", "dogs", "cats"],
     description: "i am iron man",
-    address: "1234 Main St",
+    address: "14 Anahaw Rd, Makati, 1219 Metro Manila",
     price: 75,
     imageSrc: "https://i.pravatar.cc/300?img=3",
     rating: 5,
     active: true,
-    clinic_lat: 14.551773,
-    clinic_lng: 121.053795,
+    clinic_lat: 14.553116,
+    clinic_lng: 121.037713,
     clinic_name: "pet solutions",
     address_city: "taguig",
     operatingHours: ["all", "day"],
@@ -63,6 +65,8 @@ const vetList = [
       "cctv",
       "playground",
     ],
+    phone: "09123456789",
+    email: "petsitter2@gmail.com",
   },
   {
     id: 3,
@@ -71,13 +75,13 @@ const vetList = [
     specialization: ["all", "reptiles", "fish"],
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    address: "1234 Main St",
+    address: "G2VQ+JQ2, Manila Polo Club Dr, Makati, Metro Manila",
     price: 12,
     imageSrc: "https://i.pravatar.cc/300?img=1",
     rating: 3,
     active: true,
-    clinic_lat: 14.534077,
-    clinic_lng: 121.049289,
+    clinic_lat: 14.543913,
+    clinic_lng: 121.039319,
     clinic_name: "pet express",
     address_city: "taguig",
     operatingHours: ["all", "day"],
@@ -90,6 +94,8 @@ const vetList = [
       "cctv",
       "playground",
     ],
+    phone: "09123456789",
+    email: "petsitter3@gmail.com",
   },
   {
     id: 4,
@@ -101,14 +107,36 @@ const vetList = [
     imageSrc: "https://i.pravatar.cc/300?img=4",
     rating: 2,
     active: true,
-    address: "1234 Main St",
-    clinic_lat: 14.555428,
-    clinic_lng: 121.063022,
+    address: "Upper McKinley Rd",
+    clinic_lat: 14.533773,
+    clinic_lng: 121.051349,
     clinic_name: "pet hospital",
-    address_city: "taguigssssssssss",
+    address_city: "taguig",
     operatingHours: ["all", "night"],
     amenities: ["pool", "air-conditioned", "crate", "cctv", "playground"],
+    phone: "09123456789",
+    email: "petsitter4@gmail.com",
   },
+  {
+    id: 5,
+    created_at: "2023-02-12T04:10:57.084743+00:00",
+    name: "Pet sitter 5",
+    specialization: ["all", "exotic", "birds"],
+    description: "Your friendly neighborhood spiderman",
+    price: 56,
+    imageSrc: "https://i.pravatar.cc/300?img=4",
+    rating: 2,
+    active: true,
+    address: "Ordonio Dr, Camp John Hay, Baguio, Benguet",
+    clinic_lat: 16.400490,
+    clinic_lng: 120.617380,
+    clinic_name: "pet hospital",
+    address_city: "baguio",
+    operatingHours: ["all", "night"],
+    amenities: ["pool", "air-conditioned", "crate", "cctv", "playground"],
+    phone: "09123456789",
+    email: "petsitter5@gmail.com",
+  }
 ];
 
 export default function NearbyVet() {
@@ -120,7 +148,13 @@ export default function NearbyVet() {
   const mapRef = useRef();
 
   useEffect(() => {
-    setPlaces(vetList);
+    const newLoc = "taguig";
+
+    const filteredVets = vetList.filter((vet) => {
+      return vet.address_city.toLowerCase().includes(newLoc.toLowerCase());
+    });
+
+    setPlaces(filteredVets);
   }, []);
 
   const handleSearch = (e) => {
@@ -136,15 +170,16 @@ export default function NearbyVet() {
     setViewVetModalVisible(true);
   };
 
-  const handleChangeLocationFilter = (e) => {
-    const newLoc = e.address_components[0]?.long_name;
+  // const handleChangeLocationFilter = (e) => {
 
-    const filteredVets = vetList.filter((vet) => {
-      return vet.address_city.toLowerCase().includes(newLoc.toLowerCase());
-    });
+  // const newLoc = e.address_components[0]?.long_name;
 
-    setPlaces(filteredVets);
-  };
+  // const filteredVets = vetList.filter((vet) => {
+  //   return vet.address_city.toLowerCase() == newLoc.toLowerCase();
+  // });
+
+  // setPlaces(filteredVets);
+  // };
 
   const focusClickedVet = (e) => {
     console.log(e);
@@ -160,8 +195,17 @@ export default function NearbyVet() {
   const handleChangeFilterValues = (val) => {
     let specialization = val.specialization;
     let operatingHours = val.operatingHours;
+    let filteredVets = [];
 
-    const filteredVets = vetList.filter((vet) => {
+    if (val.selectedPlace) {
+      const newLoc = val.selectedPlace.address_components[0]?.long_name;
+
+      filteredVets = vetList.filter((vet) => {
+        return vet.address_city.toLowerCase() == newLoc.toLowerCase();
+      });
+    }
+
+    filteredVets = filteredVets.filter((vet) => {
       return (
         vet.specialization.includes(specialization) &&
         vet.operatingHours.includes(operatingHours)
@@ -170,6 +214,8 @@ export default function NearbyVet() {
 
     setPlaces(filteredVets);
   };
+
+  console.log("places: ", places);
 
   return (
     <>
@@ -185,7 +231,7 @@ export default function NearbyVet() {
           </h1>
 
           <Filter
-            changeLocation={handleChangeLocationFilter}
+            // changeLocation={handleChangeLocationFilter}
             setMapCenter={setMapCenter}
             changeFilterValues={handleChangeFilterValues}
           />

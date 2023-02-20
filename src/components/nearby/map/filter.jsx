@@ -56,7 +56,7 @@ const Filter = ({ changeLocation, setMapCenter, changeFilterValues }) => {
   const renderItem = (item) => {
     return (
       <li
-        className="bg-white border border-gray-300 p-2 cursor-pointer hover:bg-gray-50"
+        className="w-full whitespace-nowrap overflow-hidden text-ellipsis bg-white border border-gray-300 p-2 cursor-pointer hover:bg-gray-50"
         key={item.id}
         onClick={() => {
           handlePlaceSelection(item);
@@ -87,9 +87,10 @@ const Filter = ({ changeLocation, setMapCenter, changeFilterValues }) => {
         </label>
         <div className="mt-1 sm:col-span-1 sm:mt-0">
           <div class="flex justify-start">
-            <div class="w-auto">
-              <div class="flex">
+            <div class="w-full sm:w-auto">
+              <div class="relative block sm:flex">
                 <input
+                  className="w-full border-gray-300 shadow-sm bg-transparent text-sm appearance-none outline-none"
                   type={"text"}
                   placeholder="Search By Location"
                   value={searchVal}
@@ -100,7 +101,7 @@ const Filter = ({ changeLocation, setMapCenter, changeFilterValues }) => {
                   }}
                   loading={isPlacePredictionsLoading}
                 />
-                <ul className="absolute z-50 mt-10 md:mt-12">
+                <ul className="w-full absolute z-50 mt-0 md:mt-11 sm:w-80">
                   {isSearchingPlace &&
                     placePredictions.map((item) => renderItem(item))}
                 </ul>
@@ -119,11 +120,11 @@ const Filter = ({ changeLocation, setMapCenter, changeFilterValues }) => {
         </label>
         <div className="mt-1 sm:col-span-1 sm:mt-0">
           <div class="flex justify-start">
-            <div class="w-auto">
-              <div class="flex">
+            <div class="w-full sm:w-auto">
+              <div class="block sm:flex">
                 <select
                   name="hours"
-                  class="border-gray-300 shadow-sm bg-transparent text-sm appearance-none outline-none"
+                  className="w-full border-gray-300 shadow-sm bg-transparent text-sm appearance-none outline-none"
                   onChange={(e) => setSpecialization(e.target.value)}
                 >
                   <option value="all">All</option>
@@ -148,11 +149,11 @@ const Filter = ({ changeLocation, setMapCenter, changeFilterValues }) => {
         </label>
         <div className="mt-1 sm:col-span-1 sm:mt-0">
           <div class="flex justify-start">
-            <div class="w-auto">
-              <div class="flex">
+            <div class="w-full sm:w-auto">
+              <div class="block sm:flex">
                 <select
                   name="hours"
-                  class="border-gray-300 shadow-sm bg-transparent text-sm appearance-none outline-none"
+                  class="w-full border-gray-300 shadow-sm bg-transparent text-sm appearance-none outline-none"
                   onChange={(e) => setOperatingHours(e.target.value)}
                 >
                   <option value="all">All</option>

@@ -110,7 +110,7 @@ const SimpleMap = forwardRef(({ vetNearby, setViewPetDetails }, ref) => {
     const apiIsLoaded = (map, maps, mapMarkers) => {
         setMapRef(map);
         setMapsRef(maps);
-        fitBounds(map, maps, mapMarkers);
+        // fitBounds(map, maps, mapMarkers);
     };
 
     const handleOnChange = (bounds) => {

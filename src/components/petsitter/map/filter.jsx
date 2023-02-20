@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Autocomplete from "react-google-autocomplete";
 import usePlacesService from "react-google-autocomplete/lib/usePlacesAutocompleteService";
 
-const Filter = ({ changeLocation, setMapCenter, changeFilterValues }) => {
+const Filter = ({ setMapCenter, changeFilterValues }) => {
   const [selectedPlace, setSelectedPlace] = useState(null);
   const [isSearchingPlace, setIsSearchingPlace] = useState(false);
   const [locVal, setLocVal] = useState("nearby");
@@ -28,11 +28,11 @@ const Filter = ({ changeLocation, setMapCenter, changeFilterValues }) => {
   useEffect(() => {
     changeFilterValues({
       location: locVal,
-      selectedPlace: searchVal,
+      selectedPlace: selectedPlace,
       specialization: specialization,
       operatingHours: operatingHours,
     });
-  }, [locVal, searchVal, specialization, operatingHours]);
+  }, [locVal, selectedPlace, specialization, operatingHours]);
 
   const handlePlaceSelection = (item) => {
     placesService?.getDetails(
@@ -41,7 +41,7 @@ const Filter = ({ changeLocation, setMapCenter, changeFilterValues }) => {
         placeId: item.place_id,
       },
       (placeDetails) => {
-        changeLocation(placeDetails);
+        // changeLocation(placeDetails);
         setSelectedPlace(placeDetails);
         setMapCenter({
           clinic_lat: placeDetails.geometry.location.lat(),
@@ -67,13 +67,13 @@ const Filter = ({ changeLocation, setMapCenter, changeFilterValues }) => {
     );
   };
 
-  useEffect(() => {
-    console.log("selectedPlace", selectedPlace);
-  }, [selectedPlace]);
+  // useEffect(() => {
+  //   console.log("selectedPlace", selectedPlace);
+  // }, [selectedPlace]);
 
-  const handleChangeLocation = (e) => {
-    setLocVal(e.target.value);
-  };
+  // const handleChangeLocation = (e) => {
+  //   setLocVal(e.target.value);
+  // };
 
   return (
     <div className="mx-auto max-w-5xl justify-center px-6 mb-5 md:flex md:space-x-6 xl:px-0">
