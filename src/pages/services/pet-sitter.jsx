@@ -66,6 +66,32 @@ const vetList = [
           'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80',
       },
     ],
+    socials: [
+      {
+        name: 'Twitter',
+        href: '#',
+      },
+      {
+        name: 'Facebook',
+        href: '#',
+      },
+      {
+        name: 'Instagram',
+        href: '#',
+      },
+    ],
+    faqs: [
+      {
+        question: 'What sevices you can provide?',
+        answer:
+          'The icons are in SVG (Scalable Vector Graphic) format. They can be imported into your design tool of choice and used directly in code.',
+      },
+      {
+        question: 'Can I use the icons at different sizes?',
+        answer:
+          "Yes. The icons are drawn on a 24 x 24 pixel grid, but the icons can be scaled to different sizes as needed. We don't recommend going smaller than 20 x 20 or larger than 64 x 64 to retain legibility and visual balance.",
+      },
+    ]
   },
   {
     id: 2,
@@ -94,7 +120,22 @@ const vetList = [
     ],
     phone: "09123456789",
     email: "petsitter2@gmail.com",
-    reviews: []
+    reviews: [],
+    socials: [
+      {
+        name: 'Twitter',
+        href: '#',
+      },
+      {
+        name: 'Facebook',
+        href: '#',
+      },
+      {
+        name: 'Instagram',
+        href: '#',
+      },
+    ],
+    faqs: []
   },
   {
     id: 3,
@@ -124,7 +165,22 @@ const vetList = [
     ],
     phone: "09123456789",
     email: "petsitter3@gmail.com",
-    reviews: []
+    reviews: [],
+    socials: [
+      {
+        name: 'Twitter',
+        href: '#',
+      },
+      {
+        name: 'Facebook',
+        href: '#',
+      },
+      {
+        name: 'Instagram',
+        href: '#',
+      },
+    ],
+    faqs: []
   },
   {
     id: 4,
@@ -145,7 +201,22 @@ const vetList = [
     amenities: ["pool", "air-conditioned", "crate", "cctv", "playground"],
     phone: "09123456789",
     email: "petsitter4@gmail.com",
-    reviews: []
+    reviews: [],
+    socials: [
+      {
+        name: 'Twitter',
+        href: '#',
+      },
+      {
+        name: 'Facebook',
+        href: '#',
+      },
+      {
+        name: 'Instagram',
+        href: '#',
+      },
+    ],
+    faqs: []
   },
   {
     id: 5,
@@ -166,7 +237,22 @@ const vetList = [
     amenities: ["pool", "air-conditioned", "crate", "cctv", "playground"],
     phone: "09123456789",
     email: "petsitter5@gmail.com",
-    reviews: []
+    reviews: [],
+    socials: [
+      {
+        name: 'Twitter',
+        href: '#',
+      },
+      {
+        name: 'Facebook',
+        href: '#',
+      },
+      {
+        name: 'Instagram',
+        href: '#',
+      },
+    ],
+    faqs: []
   }
 ];
 
