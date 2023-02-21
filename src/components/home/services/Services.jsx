@@ -1,6 +1,11 @@
 import { useId } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Container } from "@/components/Container";
+
+import DogRun from "@/images/dog_run.svg";
+import Vet from "@/images/vet.svg";
+import Clinic from "@/images/clinic.svg";
 
 const features = [
   {
@@ -210,17 +215,7 @@ export function Services() {
         <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 md:space-y-0 space-y-6">
           <div class="p-4 md:w-1/3 flex flex-col text-center items-center">
             <div class="w-20 h-20 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5 flex-shrink-0">
-              <svg
-                fill="none"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                class="w-10 h-10"
-                viewBox="0 0 24 24"
-              >
-                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-              </svg>
+              <Image src={DogRun} alt="dog-walking" width={100} height={100} />
             </div>
             <div class="flex-grow">
               <h2 class="text-gray-900 text-lg title-font font-medium mb-3">
@@ -234,19 +229,7 @@ export function Services() {
           </div>
           <div class="p-4 md:w-1/3 flex flex-col text-center items-center">
             <div class="w-20 h-20 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5 flex-shrink-0">
-              <svg
-                fill="none"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                class="w-10 h-10"
-                viewBox="0 0 24 24"
-              >
-                <circle cx="6" cy="6" r="3"></circle>
-                <circle cx="6" cy="18" r="3"></circle>
-                <path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"></path>
-              </svg>
+              <Image src={Clinic} alt="dog-walking" width={100} height={100} />
             </div>
             <div class="flex-grow">
               <h2 class="text-gray-900 text-lg title-font font-medium mb-3">
@@ -259,18 +242,7 @@ export function Services() {
           </div>
           <div class="p-4 md:w-1/3 flex flex-col text-center items-center">
             <div class="w-20 h-20 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5 flex-shrink-0">
-              <svg
-                fill="none"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                class="w-10 h-10"
-                viewBox="0 0 24 24"
-              >
-                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
-                <circle cx="12" cy="7" r="4"></circle>
-              </svg>
+              <Image src={Vet} alt="dog-walking" width={100} height={100} />
             </div>
             <div class="flex-grow">
               <h2 class="text-gray-900 text-lg title-font font-medium mb-3">
