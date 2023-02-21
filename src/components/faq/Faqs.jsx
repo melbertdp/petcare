@@ -1,30 +1,32 @@
-import Link from 'next/link'
+import Link from "next/link";
 
-import { Container } from '@/components/Container'
+import { Container } from "@/components/Container";
 
 const faqs = [
   [
     {
-      question: 'Is the pet hotel safe?',
+      question:
+        "Is the pet sitting safe and can we ensure the safety of our pets?",
       answer:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer aliquet interdum nisi in scelerisque. Cras quam felis, mollis vitae varius et, facilisis quis lacus',
+        "Yes pet sitting is safe and we can assure you that all of our pet sitter was verified and thorough background check.",
     },
   ],
   [
     {
-      question: 'How can we ensure the safety of our pets',
+      question: "Are all Veterinary Doctors licensed?",
       answer:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer aliquet interdum nisi in scelerisque. Cras quam felis, mollis vitae varius et, facilisis quis lacus',
+        "Yes only licensed vet doctors are accepted here at 24/7 Pet Care.",
     },
   ],
   [
     {
-      question: 'Who are you',
+      question:
+        "Are all types of Pet can be accomodated by your Vet clinics and Pet Sitters?",
       answer:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer aliquet interdum nisi in scelerisque. Cras quam felis, mollis vitae varius et, facilisis quis lacus',
+        "No it depends on their specialty, it is indicated on their profile.",
     },
   ],
-]
+];
 
 export function Faqs() {
   return (
@@ -42,7 +44,7 @@ export function Faqs() {
             Frequently asked questions
           </h2>
           <p className="mt-2 text-lg text-gray-600">
-            If you have anything else you want to ask,{' '}
+            If you have anything else you want to ask,{" "}
             <Link
               href="mailto:info@example.com"
               className="text-gray-900 underline"
@@ -73,5 +75,5 @@ export function Faqs() {
         </ul>
       </Container>
     </section>
-  )
+  );
 }

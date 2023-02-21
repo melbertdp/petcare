@@ -1,51 +1,50 @@
-import { useState } from 'react'
-import { RadioGroup } from '@headlessui/react'
-import clsx from 'clsx'
+import { useState } from "react";
+import { RadioGroup } from "@headlessui/react";
+import clsx from "clsx";
 
-import { Button } from '@/components/Button'
-import { Container } from '@/components/Container'
-import { Logomark } from '@/components/Logo'
+import { Button } from "@/components/Button";
+import { Container } from "@/components/Container";
+import { Logomark } from "@/components/Logo";
 
 const plans = [
   {
-    name: 'Walk-in',
+    name: "Walk-in",
     featured: false,
-    price: { Monthly: '₱ 0', Annually: '₱ 0' },
-    description:
-      'Rates will depend on vet/pet sitter rate. ito yung mga on Walk-in lang, or gusto lang mag try',
+    price: { Monthly: "Pay per consult", Annually: "Pay per consult" },
+    description: "",
     button: {
-      label: 'Get started for free',
-      href: '/register',
+      label: "Get started for free",
+      href: "/register",
     },
     features: [
-      'Benefit 1',
-      'Benefit 2',
-      'Benefit 3',
-      'Benefit 4',
+      "24/7 Availability of Vet and Pet Sitter",
+      "tele-consult",
+      "e-prescription",
+      "e-laboratory request",
+      "access to partner benefits (e.g. grooming, petshops discounts, etc.)",
     ],
-    logomarkClassName: 'fill-gray-300',
+    logomarkClassName: "fill-gray-300",
   },
   {
-    name: 'VIP',
+    name: "VIP",
     featured: true,
-    price: { Monthly: '₱ 200', Annually: '₱ 2000' },
-    description:
-      'ito VIP, above regular tier, may additional benefits',
+    price: { Monthly: "₱ 999", Annually: "₱ 4999" },
+    description: "",
     button: {
-      label: 'Subscribe',
-      href: '/register',
+      label: "Subscribe",
+      href: "/register",
     },
     features: [
-      'Priority',
-      'Benefits 1',
-      'Benefits 2',
-      'Benefits 3',
-      'Benefits 4',
-      'Benefits 5',
+      "24/7 Availability of Vet and Pet Sitter",
+      "unlimited tele-consult",
+      "e-prescription",
+      "e-laboratory request",
+      "access to partner benefits (e.g. grooming, petshops discounts, etc.)",
+      "1 primary pet holder + 4 extension pet",
     ],
-    logomarkClassName: 'fill-cyan-500',
+    logomarkClassName: "fill-cyan-500",
   },
-]
+];
 
 function CheckIcon(props) {
   return (
@@ -65,7 +64,7 @@ function CheckIcon(props) {
         strokeLinejoin="round"
       />
     </svg>
-  )
+  );
 }
 
 function Plan({
@@ -81,23 +80,23 @@ function Plan({
   return (
     <section
       className={clsx(
-        'flex flex-col overflow-hidden rounded-3xl p-6 shadow-lg shadow-gray-900/5',
-        featured ? 'order-first bg-gray-900 lg:order-none' : 'bg-white'
+        "flex flex-col overflow-hidden rounded-3xl p-6 shadow-lg shadow-gray-900/5",
+        featured ? "order-first bg-gray-900 lg:order-none" : "bg-white"
       )}
     >
       <h3
         className={clsx(
-          'flex items-center text-sm font-semibold',
-          featured ? 'text-white' : 'text-gray-900'
+          "flex items-center text-sm font-semibold",
+          featured ? "text-white" : "text-gray-900"
         )}
       >
-        <Logomark className={clsx('h-6 w-6 flex-none', logomarkClassName)} />
+        <Logomark className={clsx("h-6 w-6 flex-none", logomarkClassName)} />
         <span className="ml-4">{name}</span>
       </h3>
       <p
         className={clsx(
-          'relative mt-5 flex text-3xl tracking-tight',
-          featured ? 'text-white' : 'text-gray-900'
+          "relative mt-5 flex text-3xl tracking-tight",
+          featured ? "text-white" : "text-gray-900"
         )}
       >
         {price.Monthly === price.Annually ? (
@@ -105,21 +104,21 @@ function Plan({
         ) : (
           <>
             <span
-              aria-hidden={activePeriod === 'Annually'}
+              aria-hidden={activePeriod === "Annually"}
               className={clsx(
-                'transition duration-300',
-                activePeriod === 'Annually' &&
-                'pointer-events-none translate-x-6 select-none opacity-0'
+                "transition duration-300",
+                activePeriod === "Annually" &&
+                  "pointer-events-none translate-x-6 select-none opacity-0"
               )}
             >
               {price.Monthly}
             </span>
             <span
-              aria-hidden={activePeriod === 'Monthly'}
+              aria-hidden={activePeriod === "Monthly"}
               className={clsx(
-                'absolute left-0 top-0 transition duration-300',
-                activePeriod === 'Monthly' &&
-                'pointer-events-none -translate-x-6 select-none opacity-0'
+                "absolute left-0 top-0 transition duration-300",
+                activePeriod === "Monthly" &&
+                  "pointer-events-none -translate-x-6 select-none opacity-0"
               )}
             >
               {price.Annually}
@@ -129,8 +128,8 @@ function Plan({
       </p>
       <p
         className={clsx(
-          'mt-3 text-sm',
-          featured ? 'text-gray-300' : 'text-gray-700'
+          "mt-3 text-sm",
+          featured ? "text-gray-300" : "text-gray-700"
         )}
       >
         {description}
@@ -139,18 +138,18 @@ function Plan({
         <ul
           role="list"
           className={clsx(
-            '-my-2 divide-y text-sm',
+            "-my-2 divide-y text-sm",
             featured
-              ? 'divide-gray-800 text-gray-300'
-              : 'divide-gray-200 text-gray-700'
+              ? "divide-gray-800 text-gray-300"
+              : "divide-gray-200 text-gray-700"
           )}
         >
           {features.map((feature) => (
             <li key={feature} className="flex py-2">
               <CheckIcon
                 className={clsx(
-                  'h-6 w-6 flex-none',
-                  featured ? 'text-white' : 'text-indigo-500'
+                  "h-6 w-6 flex-none",
+                  featured ? "text-white" : "text-indigo-500"
                 )}
               />
               <span className="ml-4">{feature}</span>
@@ -160,18 +159,18 @@ function Plan({
       </div>
       <Button
         href={button.href}
-        color={featured ? 'indigo' : 'gray'}
+        color={featured ? "indigo" : "gray"}
         className="mt-6"
         aria-label={`Get started with the ${name} plan for ${price}`}
       >
         {button.label}
       </Button>
     </section>
-  )
+  );
 }
 
 export function Pricing() {
-  let [activePeriod, setActivePeriod] = useState('Monthly')
+  let [activePeriod, setActivePeriod] = useState("Monthly");
 
   return (
     <section
@@ -199,15 +198,15 @@ export function Pricing() {
               onChange={setActivePeriod}
               className="grid grid-cols-2"
             >
-              {['Monthly', 'Annually'].map((period) => (
+              {["Monthly", "Annually"].map((period) => (
                 <RadioGroup.Option
                   key={period}
                   value={period}
                   className={clsx(
-                    'cursor-pointer border border-gray-300 py-[calc(theme(spacing.2)-1px)] px-[calc(theme(spacing.3)-1px)] text-sm text-gray-700 outline-2 outline-offset-2 transition-colors hover:border-gray-400',
-                    period === 'Monthly'
-                      ? 'rounded-l-lg'
-                      : '-ml-px rounded-r-lg'
+                    "cursor-pointer border border-gray-300 py-[calc(theme(spacing.2)-1px)] px-[calc(theme(spacing.3)-1px)] text-sm text-gray-700 outline-2 outline-offset-2 transition-colors hover:border-gray-400",
+                    period === "Monthly"
+                      ? "rounded-l-lg"
+                      : "-ml-px rounded-r-lg"
                   )}
                 >
                   {period}
@@ -217,18 +216,18 @@ export function Pricing() {
             <div
               aria-hidden="true"
               className={clsx(
-                'pointer-events-none absolute inset-0 z-10 grid grid-cols-2 overflow-hidden rounded-lg bg-indigo-500 transition-all duration-300',
-                activePeriod === 'Monthly'
-                  ? '[clip-path:inset(0_50%_0_0)]'
-                  : '[clip-path:inset(0_0_0_calc(50%-1px))]'
+                "pointer-events-none absolute inset-0 z-10 grid grid-cols-2 overflow-hidden rounded-lg bg-indigo-500 transition-all duration-300",
+                activePeriod === "Monthly"
+                  ? "[clip-path:inset(0_50%_0_0)]"
+                  : "[clip-path:inset(0_0_0_calc(50%-1px))]"
               )}
             >
-              {['Monthly', 'Annually'].map((period) => (
+              {["Monthly", "Annually"].map((period) => (
                 <div
                   key={period}
                   className={clsx(
-                    'py-2 text-center text-sm font-semibold text-white [&:not(:focus-visible)]:focus:outline-none',
-                    period === 'Annually' && '-ml-px'
+                    "py-2 text-center text-sm font-semibold text-white [&:not(:focus-visible)]:focus:outline-none",
+                    period === "Annually" && "-ml-px"
                   )}
                 >
                   {period}
@@ -245,5 +244,5 @@ export function Pricing() {
         </div>
       </Container>
     </section>
-  )
+  );
 }

@@ -36,8 +36,8 @@ export function Footer() {
                 unoptimized
               />
               <div className="ml-4">
-                <p className="text-base font-semibold">Petcare</p>
-                <p className="mt-1 text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor quam bibendum.</p>
+                <p className="text-base font-semibold">24/7 Petcare</p>
+                <p className="mt-1 text-sm">Always available for your Pets needs.</p>
               </div>
             </div>
           </div>

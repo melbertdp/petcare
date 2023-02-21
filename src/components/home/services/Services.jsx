@@ -1,51 +1,51 @@
-import { useId } from 'react'
-import { motion } from 'framer-motion'
-import { Container } from '@/components/Container'
+import { useId } from "react";
+import { motion } from "framer-motion";
+import { Container } from "@/components/Container";
 
 const features = [
   {
-    name: 'Pet Hotel',
+    name: "Pet Hotel",
     bg: "bg-pink-300",
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor quam bibendum, ultrices nunc quis, tincidunt nulla. In euismod suscipit augue',
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor quam bibendum, ultrices nunc quis, tincidunt nulla. In euismod suscipit augue",
     icon: DeviceArrowIcon,
   },
   {
-    name: 'Pet Training',
+    name: "Pet Training",
     bg: "bg-purple-300",
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor quam bibendum, ultrices nunc quis, tincidunt nulla. In euismod suscipit augue',
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor quam bibendum, ultrices nunc quis, tincidunt nulla. In euismod suscipit augue",
     icon: DeviceCardsIcon,
   },
   {
-    name: 'Pet Daycare',
+    name: "Pet Daycare",
     bg: "bg-blue-300",
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor quam bibendum, ultrices nunc quis, tincidunt nulla. In euismod suscipit augue',
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor quam bibendum, ultrices nunc quis, tincidunt nulla. In euismod suscipit augue",
     icon: DeviceClockIcon,
   },
   {
-    name: 'Health and Wellness',
+    name: "Health and Wellness",
     bg: "bg-yellow-300",
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor quam bibendum, ultrices nunc quis, tincidunt nulla. In euismod suscipit augue',
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor quam bibendum, ultrices nunc quis, tincidunt nulla. In euismod suscipit augue",
     icon: DeviceListIcon,
   },
   {
-    name: 'Pet Taxi',
+    name: "Pet Taxi",
     bg: "bg-red-300",
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor quam bibendum, ultrices nunc quis, tincidunt nulla. In euismod suscipit augue',
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor quam bibendum, ultrices nunc quis, tincidunt nulla. In euismod suscipit augue",
     icon: DeviceLockIcon,
   },
   {
-    name: 'More coming soon!',
+    name: "More coming soon!",
     bg: "bg-cyan-300",
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor quam bibendum, ultrices nunc quis, tincidunt nulla. In euismod suscipit augue',
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor quam bibendum, ultrices nunc quis, tincidunt nulla. In euismod suscipit augue",
     icon: DeviceChartIcon,
   },
-]
+];
 
 function DeviceArrowIcon(props) {
   return (
@@ -64,11 +64,11 @@ function DeviceArrowIcon(props) {
       />
       <circle cx={16} cy={16} r={16} fill="#A3A3A3" fillOpacity={0.2} />
     </svg>
-  )
+  );
 }
 
 function DeviceCardsIcon(props) {
-  let id = useId()
+  let id = useId();
 
   return (
     <svg viewBox="0 0 32 32" aria-hidden="true" {...props}>
@@ -100,7 +100,7 @@ function DeviceCardsIcon(props) {
         </linearGradient>
       </defs>
     </svg>
-  )
+  );
 }
 
 function DeviceClockIcon(props) {
@@ -120,7 +120,7 @@ function DeviceClockIcon(props) {
         fill="#171717"
       />
     </svg>
-  )
+  );
 }
 
 function DeviceListIcon(props) {
@@ -143,7 +143,7 @@ function DeviceListIcon(props) {
       />
       <circle cx={16} cy={16} r={16} fill="#A3A3A3" fillOpacity={0.2} />
     </svg>
-  )
+  );
 }
 
 function DeviceLockIcon(props) {
@@ -163,7 +163,7 @@ function DeviceLockIcon(props) {
         fill="#171717"
       />
     </svg>
-  )
+  );
 }
 
 function DeviceChartIcon(props) {
@@ -189,7 +189,7 @@ function DeviceChartIcon(props) {
       />
       <circle cx={16} cy={16} r={16} fill="#A3A3A3" fillOpacity={0.2} />
     </svg>
-  )
+  );
 }
 
 export function Services() {
@@ -197,8 +197,12 @@ export function Services() {
     <section class="text-gray-600 body-font">
       <div class="container px-5 py-24 mx-auto">
         <div class="text-center mb-20">
-          <h1 class="text-3xl font-bold tracking-tight text-indigo-500 mb-4">Our Services</h1>
-          <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s">Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine, ramps microdosing banh mi pug.</p>
+          <h1 class="text-3xl font-bold tracking-tight text-indigo-500 mb-4">
+            Our Services
+          </h1>
+          <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s">
+            Available 24/7
+          </p>
           <div class="flex mt-6 justify-center">
             <div class="w-16 h-1 rounded-full bg-indigo-500 inline-flex"></div>
           </div>
@@ -206,57 +210,80 @@ export function Services() {
         <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 md:space-y-0 space-y-6">
           <div class="p-4 md:w-1/3 flex flex-col text-center items-center">
             <div class="w-20 h-20 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5 flex-shrink-0">
-              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10" viewBox="0 0 24 24">
+              <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                class="w-10 h-10"
+                viewBox="0 0 24 24"
+              >
                 <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
               </svg>
             </div>
             <div class="flex-grow">
-              <h2 class="text-gray-900 text-lg title-font font-medium mb-3">Pet Sitter</h2>
-              <p class="leading-relaxed text-base">Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine, ramps microdosing banh mi pug VHS try-hard.</p>
-              <a class="mt-3 text-indigo-500 inline-flex items-center">Learn More
-                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-                  <path d="M5 12h14M12 5l7 7-7 7"></path>
-                </svg>
-              </a>
+              <h2 class="text-gray-900 text-lg title-font font-medium mb-3">
+                Pet Sitter
+              </h2>
+              <p class="leading-relaxed text-base">
+                Your pets stay overnight in your sitter’s home. They’ll be
+                treated like part of the family in a comfortable environment.
+              </p>
             </div>
           </div>
           <div class="p-4 md:w-1/3 flex flex-col text-center items-center">
             <div class="w-20 h-20 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5 flex-shrink-0">
-              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10" viewBox="0 0 24 24">
+              <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                class="w-10 h-10"
+                viewBox="0 0 24 24"
+              >
                 <circle cx="6" cy="6" r="3"></circle>
                 <circle cx="6" cy="18" r="3"></circle>
                 <path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"></path>
               </svg>
             </div>
             <div class="flex-grow">
-              <h2 class="text-gray-900 text-lg title-font font-medium mb-3">Find Vet Clinic</h2>
-              <p class="leading-relaxed text-base">Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine, ramps microdosing banh mi pug VHS try-hard.</p>
-              <a class="mt-3 text-indigo-500 inline-flex items-center">Learn More
-                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-                  <path d="M5 12h14M12 5l7 7-7 7"></path>
-                </svg>
-              </a>
+              <h2 class="text-gray-900 text-lg title-font font-medium mb-3">
+                Find Vet Clinic
+              </h2>
+              <p class="leading-relaxed text-base">
+                You can search and look for open Vet Clinic near you anytime.
+              </p>
             </div>
           </div>
           <div class="p-4 md:w-1/3 flex flex-col text-center items-center">
             <div class="w-20 h-20 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5 flex-shrink-0">
-              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10" viewBox="0 0 24 24">
+              <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                class="w-10 h-10"
+                viewBox="0 0 24 24"
+              >
                 <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
                 <circle cx="12" cy="7" r="4"></circle>
               </svg>
             </div>
             <div class="flex-grow">
-              <h2 class="text-gray-900 text-lg title-font font-medium mb-3">Vet Online Consultation</h2>
-              <p class="leading-relaxed text-base">Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine, ramps microdosing banh mi pug VHS try-hard.</p>
-              <a class="mt-3 text-indigo-500 inline-flex items-center">Learn More
-                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-                  <path d="M5 12h14M12 5l7 7-7 7"></path>
-                </svg>
-              </a>
+              <h2 class="text-gray-900 text-lg title-font font-medium mb-3">
+                Vet Online Consultation
+              </h2>
+              <p class="leading-relaxed text-base">
+                Book for an online vet consultation with our affiliated clinics
+                anytime anywhere.
+              </p>
             </div>
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }

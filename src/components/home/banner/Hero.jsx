@@ -33,7 +33,7 @@ export function Hero() {
               <span className='mt-5 ml-5'>Pet Care</span>
             </h1>
             <p className="mt-6 text-xl text-gray-600">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor quam bibendum, ultrices nunc quis, tincidunt nulla. In euismod suscipit augue
+            Pet Care services at the comfort of your own home.
             </p>
             <div className="mt-8 flex flex-wrap gap-x-6 gap-y-4">
               {/* <AppStoreLink /> */}
