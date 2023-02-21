@@ -4,7 +4,7 @@ import { createClient } from '@supabase/supabase-js'
 import { Header } from '@/components/layout/Header'
 import Map from '@/components/nearby/map/map'
 import SlideOver from '@/components/nearby/slideOver/hiddenMenu';
-import Modal from '@/components/nearby/modal/viewVetDetails';
+import Modal from '@/components/modals/viewDetails';
 import NearbyVetCards from '@/components/nearby/cards/vetCards';
 
 import vets from '@/data/vets';

@@ -18,7 +18,8 @@ const vetList = [
     specialization: ["all", "dogs", "cats"],
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    address: "G/F Shangri-La at the Fort Manila, 30th Street, Bonifacio Global City, Taguig, Metro Manila",
+    address:
+      "G/F Shangri-La at the Fort Manila, 30th Street, Bonifacio Global City, Taguig, Metro Manila",
     price: 499,
     imageSrc: "https://i.pravatar.cc/300?img=2",
     rating: 3,
@@ -47,11 +48,11 @@ const vetList = [
         content: `
         <p>This icon pack is just what I need for my latest project. There's an icon for just about anything I could ever need. Love the playful look!</p>
       `,
-        date: 'July 16, 2021',
-        datetime: '2021-07-16',
-        author: 'Emily Selman',
+        date: "July 16, 2021",
+        datetime: "2021-07-16",
+        author: "Emily Selman",
         avatarSrc:
-          'https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80',
+          "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80",
       },
       {
         id: 2,
@@ -59,39 +60,39 @@ const vetList = [
         content: `
         <p>Blown away by how polished this icon pack is. Everything looks so consistent and each SVG is optimized out of the box so I can use it directly with confidence. It would take me several hours to create a single icon this good, so it's a steal at this price.</p>
       `,
-        date: 'July 12, 2021',
-        datetime: '2021-07-12',
-        author: 'Hector Gibbons',
+        date: "July 12, 2021",
+        datetime: "2021-07-12",
+        author: "Hector Gibbons",
         avatarSrc:
-          'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80',
+          "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80",
       },
     ],
     socials: [
       {
-        name: 'Twitter',
-        href: '#',
+        name: "Twitter",
+        href: "#",
       },
       {
-        name: 'Facebook',
-        href: '#',
+        name: "Facebook",
+        href: "#",
       },
       {
-        name: 'Instagram',
-        href: '#',
+        name: "Instagram",
+        href: "#",
       },
     ],
     faqs: [
       {
-        question: 'What sevices you can provide?',
+        question: "What sevices you can provide?",
         answer:
-          'The icons are in SVG (Scalable Vector Graphic) format. They can be imported into your design tool of choice and used directly in code.',
+          "The icons are in SVG (Scalable Vector Graphic) format. They can be imported into your design tool of choice and used directly in code.",
       },
       {
-        question: 'Can I use the icons at different sizes?',
+        question: "Can I use the icons at different sizes?",
         answer:
           "Yes. The icons are drawn on a 24 x 24 pixel grid, but the icons can be scaled to different sizes as needed. We don't recommend going smaller than 20 x 20 or larger than 64 x 64 to retain legibility and visual balance.",
       },
-    ]
+    ],
   },
   {
     id: 2,
@@ -123,19 +124,19 @@ const vetList = [
     reviews: [],
     socials: [
       {
-        name: 'Twitter',
-        href: '#',
+        name: "Twitter",
+        href: "#",
       },
       {
-        name: 'Facebook',
-        href: '#',
+        name: "Facebook",
+        href: "#",
       },
       {
-        name: 'Instagram',
-        href: '#',
+        name: "Instagram",
+        href: "#",
       },
     ],
-    faqs: []
+    faqs: [],
   },
   {
     id: 3,
@@ -168,19 +169,19 @@ const vetList = [
     reviews: [],
     socials: [
       {
-        name: 'Twitter',
-        href: '#',
+        name: "Twitter",
+        href: "#",
       },
       {
-        name: 'Facebook',
-        href: '#',
+        name: "Facebook",
+        href: "#",
       },
       {
-        name: 'Instagram',
-        href: '#',
+        name: "Instagram",
+        href: "#",
       },
     ],
-    faqs: []
+    faqs: [],
   },
   {
     id: 4,
@@ -204,19 +205,19 @@ const vetList = [
     reviews: [],
     socials: [
       {
-        name: 'Twitter',
-        href: '#',
+        name: "Twitter",
+        href: "#",
       },
       {
-        name: 'Facebook',
-        href: '#',
+        name: "Facebook",
+        href: "#",
       },
       {
-        name: 'Instagram',
-        href: '#',
+        name: "Instagram",
+        href: "#",
       },
     ],
-    faqs: []
+    faqs: [],
   },
   {
     id: 5,
@@ -229,8 +230,8 @@ const vetList = [
     rating: 2,
     active: true,
     address: "Ordonio Dr, Camp John Hay, Baguio, Benguet",
-    clinic_lat: 16.400490,
-    clinic_lng: 120.617380,
+    clinic_lat: 16.40049,
+    clinic_lng: 120.61738,
     clinic_name: "pet hospital",
     address_city: "baguio",
     operatingHours: ["all", "night"],
@@ -240,20 +241,20 @@ const vetList = [
     reviews: [],
     socials: [
       {
-        name: 'Twitter',
-        href: '#',
+        name: "Twitter",
+        href: "#",
       },
       {
-        name: 'Facebook',
-        href: '#',
+        name: "Facebook",
+        href: "#",
       },
       {
-        name: 'Instagram',
-        href: '#',
+        name: "Instagram",
+        href: "#",
       },
     ],
-    faqs: []
-  }
+    faqs: [],
+  },
 ];
 
 export default function NearbyVet() {
@@ -286,17 +287,6 @@ export default function NearbyVet() {
     setViewVetDetails(details);
     setViewVetModalVisible(true);
   };
-
-  // const handleChangeLocationFilter = (e) => {
-
-  // const newLoc = e.address_components[0]?.long_name;
-
-  // const filteredVets = vetList.filter((vet) => {
-  //   return vet.address_city.toLowerCase() == newLoc.toLowerCase();
-  // });
-
-  // setPlaces(filteredVets);
-  // };
 
   const focusClickedVet = (e) => {
     console.log(e);
@@ -331,8 +321,6 @@ export default function NearbyVet() {
 
     setPlaces(filteredVets);
   };
-
-  console.log("places: ", places);
 
   return (
     <>

@@ -85,12 +85,13 @@ const Filter = ({ setMapCenter, changeFilterValues }) => {
           Search by Location
         </label>
         <div className="mt-1 sm:col-span-1 sm:mt-0">
-          <div class="flex justify-start">
+          <div class="flex justify-start text-sm ">
             <div class="w-auto">
               <div class="flex">
                 <input
+                  className="border-gray-300 text-sm "
                   type={"text"}
-                  placeholder="Search By Location"
+                  placeholder="Search by location"
                   value={searchVal}
                   onChange={(evt) => {
                     setSearchVal(evt.target.value);

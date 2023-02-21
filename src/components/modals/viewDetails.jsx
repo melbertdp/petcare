@@ -2,13 +2,7 @@
 import { Fragment, useRef, useState } from "react";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Dialog, Popover, Tab, Transition } from "@headlessui/react";
-import {
-  Bars3Icon,
-  MagnifyingGlassIcon,
-  ShoppingBagIcon,
-  XMarkIcon,
-} from "@heroicons/react/24/outline";
+import { Dialog, Tab, Transition } from "@headlessui/react";
 import { StarIcon } from "@heroicons/react/20/solid";
 
 import Rating from "@/components/vetParners/modal/rating";
@@ -25,8 +19,6 @@ function classNames(...classes) {
 }
 
 export default function FindVet({ open, setOpen, viewVetDetails }) {
-  const [openx, setOpenx] = useState(false);
-
   const amenities_map = {
     "air-conditioned": "fa-solid fa-fan",
     playground: "fa-solid fa-person-running",
@@ -81,7 +73,7 @@ export default function FindVet({ open, setOpen, viewVetDetails }) {
                       </div>
 
                       {/* Product details */}
-                      <div className="mx-auto mt-14 max-w-2xl sm:mt-16 lg:col-span-4 lg:row-span-2 lg:row-end-2 lg:mt-0 lg:max-w-none">
+                      <div className="w-full mx-auto mt-14 max-w-2xl sm:mt-16 lg:col-span-4 lg:row-span-2 lg:row-end-2 lg:mt-0 lg:max-w-none">
                         <div className="flex flex-col-reverse">
                           <div className="mt-0">
                             <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
@@ -93,21 +85,6 @@ export default function FindVet({ open, setOpen, viewVetDetails }) {
                         <p className="mt-3 text-gray-500">
                           {viewVetDetails.description}
                         </p>
-
-                        {/* <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-2">
-                          <button
-                            type="button"
-                            className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 py-3 px-8 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50"
-                          >
-                            Pay {product.price}
-                          </button>
-                          <button
-                            type="button"
-                            className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-50 py-3 px-8 text-base font-medium text-indigo-700 hover:bg-indigo-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50"
-                          >
-                            Preview
-                          </button>
-                        </div> */}
 
                         <div className="mt-5 border-t border-gray-200 pt-3">
                           <h3 className="text-lg font-bold text-gray-900">
@@ -151,26 +128,32 @@ export default function FindVet({ open, setOpen, viewVetDetails }) {
                           </div>
                         </div>
 
-                        <div className="mt-5 border-t border-gray-200 pt-5">
-                          <h3 className="text-lg font-bold text-gray-900">
-                            Amenities
-                          </h3>
-                          <p className="mt-0 text-sm text-gray-500">
-                            {viewVetDetails?.amenities.map((amenity, index) => {
-                              return (
-                                <span
-                                  key={index}
-                                  class={`cursor-pointer text-lg mr-2 inline-flex px-2 py-1 font-bold leading-none rounded-full`}
-                                  title={amenity}
-                                >
-                                  <FontAwesomeIcon
-                                    icon={amenities_map[amenity]}
-                                  />
-                                </span>
-                              );
-                            })}
-                          </p>
-                        </div>
+                        {viewVetDetails?.amenities?.length > 0 ? (
+                          <div className="mt-5 border-t border-gray-200 pt-5">
+                            <h3 className="text-lg font-bold text-gray-900">
+                              Amenities
+                            </h3>
+                            <p className="mt-0 text-sm text-gray-500">
+                              {viewVetDetails?.amenities?.map(
+                                (amenity, index) => {
+                                  return (
+                                    <span
+                                      key={index}
+                                      class={`cursor-pointer text-lg mr-2 inline-flex px-2 py-1 font-bold leading-none rounded-full`}
+                                      title={amenity}
+                                    >
+                                      <FontAwesomeIcon
+                                        icon={amenities_map[amenity]}
+                                      />
+                                    </span>
+                                  );
+                                }
+                              )}
+                            </p>
+                          </div>
+                        ) : (
+                          ""
+                        )}
 
                         <div className="mt-5 border-t border-gray-200 pt-5">
                           <h3 className="text-lg font-bold text-gray-900">
@@ -243,6 +226,25 @@ export default function FindVet({ open, setOpen, viewVetDetails }) {
                               </a>
                             </li>
                           </ul>
+                        </div>
+
+                        <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-2">
+                          <Link
+                            class="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 py-3 px-8 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50"
+                            href={`/vet/schedule-visit/${makeUrl(
+                              viewVetDetails.name
+                            )}`}
+                          >
+                            Schedule a visit
+                          </Link>
+                          <Link
+                            class="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-50 py-3 px-8 text-base font-medium text-indigo-700 hover:bg-indigo-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50"
+                            href={`/vet/online-consultation/${makeUrl(
+                              viewVetDetails.name
+                            )}`}
+                          >
+                            Online Consultation
+                          </Link>
                         </div>
                       </div>
 

@@ -12,7 +12,7 @@ const NearbyVetCards = ({ vet, setViewPetDetails, setMapCenter }) => {
       key={vet.name}
       class="text-sm cursor-pointer justify-between rounded-lg bg-white pl-4 pr-4 pb-2"
     >
-      <div className="p-3 border border-solid border-gray-500 rounded shadow-md">
+      <div className="p-3 border border-solid border-gray-300 rounded shadow-md">
         <h1>{vet.name}</h1>
         <p>
           <span>Address: </span> {vet.address}

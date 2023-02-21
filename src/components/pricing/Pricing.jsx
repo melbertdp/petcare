@@ -4,7 +4,6 @@ import clsx from "clsx";
 
 import { Button } from "@/components/Button";
 import { Container } from "@/components/Container";
-import { Logomark } from "@/components/Logo";
 
 const plans = [
   {
@@ -42,7 +41,7 @@ const plans = [
       "access to partner benefits (e.g. grooming, petshops discounts, etc.)",
       "1 primary pet holder + 4 extension pet",
     ],
-    logomarkClassName: "fill-cyan-500",
+    logomarkClassName: "fill-indigo-500",
   },
 ];
 
@@ -90,8 +89,7 @@ function Plan({
           featured ? "text-white" : "text-gray-900"
         )}
       >
-        <Logomark className={clsx("h-6 w-6 flex-none", logomarkClassName)} />
-        <span className="ml-4">{name}</span>
+        <span className="font-bold text-2xl">{name}</span>
       </h3>
       <p
         className={clsx(
