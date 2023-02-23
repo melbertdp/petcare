@@ -2,16 +2,48 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 import Modal from "@/components/vetParners/modal/viewVetDetails";
+import Rating from "@/components/vetParners/modal/rating";
+import Filter from "@/components/vetParners/filter";
 
 export default function VetPartners({ vetList }) {
-  console.log("vetList", vetList);
-
   const [showVetDetails, setsShowVetDetails] = useState(false);
   const [vetDetails, setVetDetails] = useState({});
+  const [vets, setVets] = useState([]);
+
+  useEffect(() => {
+    setVets(vetList);
+  }, []);
 
   const handleShowVetDetails = (vet) => {
     setVetDetails(vet);
     setsShowVetDetails(true);
+  };
+
+  const changeFilterValues = (val) => {
+    console.log("==", val);
+
+    let specialization = val.specialization;
+    let operatingHours = val.operatingHours;
+
+    let filteredVets = [];
+
+    if (val.selectedPlace) {
+
+      const newLoc = val.selectedPlace.address_components[0]?.long_name;
+
+      filteredVets = vetList.filter((vet) => {
+        return vet.address_city.toLowerCase().includes(newLoc.toLowerCase());
+      });
+    }
+
+    filteredVets = filteredVets.filter((vet) => {
+      return (
+        vet.specialization.includes(specialization) &&
+        vet.operatingHours.includes(operatingHours)
+      );
+    });
+
+    setVets(filteredVets);
   };
 
   return (
@@ -22,14 +54,18 @@ export default function VetPartners({ vetList }) {
             <div className="flex flex-wrap justify-center text-center mb-10">
               <div className="w-full lg:w-6/12 px-4">
                 <p className="text-gray-700 text-lg font-light">
-                  With over 100 years of combined experience, weve got a
-                  well-seasoned team at the helm.
+                  We have a team of highly qualified and experienced
+                  veterinarians
                 </p>
               </div>
             </div>
 
+            <div>
+              <Filter changeFilterValues={changeFilterValues} />
+            </div>
+
             <div className="flex flex-wrap">
-              {vetList.map((vet, index) => {
+              {vets.map((vet, index) => {
                 return (
                   <motion.div
                     key={index}
@@ -53,16 +89,24 @@ export default function VetPartners({ vetList }) {
                         />
                       </a>
 
-                      <div className="text-center mt-6">
+                      <div className="mt-6">
                         <h1 className="text-gray-900 text-xl font-bold mb-1">
                           {vet.name}
                         </h1>
 
                         <div className="text-gray-700 font-light mb-2">
-                          {vet.specialization}
+                          <span className="font-bold">Specialization:</span>{" "}
+                          {vet?.specialization.slice(1).join(", ")}
                         </div>
+
                         <div className="text-gray-700 font-light mb-2">
+                          <span className="font-bold mr-1">Rate:</span> ₱
                           {vet.price}
+                        </div>
+
+                        <div className="flex items-center text-gray-700 font-light mb-2">
+                          <span className="font-bold mr-1">Rating:</span>
+                          <Rating rating={vet.rating} showRating={false} />
                         </div>
 
                         <div className="flex items-center justify-center opacity-50 hover:opacity-100 transition-opacity duration-300"></div>

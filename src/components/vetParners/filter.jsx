@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Autocomplete from "react-google-autocomplete";
 import usePlacesService from "react-google-autocomplete/lib/usePlacesAutocompleteService";
 
-const Filter = ({ setMapCenter, changeFilterValues }) => {
+const Filter = ({ changeFilterValues }) => {
   const [selectedPlace, setSelectedPlace] = useState(null);
   const [isSearchingPlace, setIsSearchingPlace] = useState(false);
   const [locVal, setLocVal] = useState("nearby");
@@ -43,12 +43,9 @@ const Filter = ({ setMapCenter, changeFilterValues }) => {
       (placeDetails) => {
         // changeLocation(placeDetails);
         setSelectedPlace(placeDetails);
-        setMapCenter({
-          clinic_lat: placeDetails.geometry.location.lat(),
-          clinic_lng: placeDetails.geometry.location.lng(),
-        });
         setIsSearchingPlace(false);
-        setSearchVal("");
+
+        setSearchVal(placeDetails.address_components.map(x => x.long_name).join(", "));
       }
     );
   };

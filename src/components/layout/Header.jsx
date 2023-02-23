@@ -4,7 +4,7 @@ import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { ChevronUpIcon } from "@heroicons/react/20/solid";
 import { useSession, signIn, signOut } from "next-auth/react";
 import Link from "next/link";
-
+import Image from "next/image";
 import { selectAuthState, setAuthState } from "@/store/authSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
@@ -12,49 +12,16 @@ import { toast } from "react-toastify";
 import { selectNotifState, setNotifState } from "@/store/notifSlice";
 
 import { Popover } from "@headlessui/react";
-import { ChartBarIcon, CursorArrowRaysIcon } from "@heroicons/react/24/outline";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { Logo } from "@/components/Logo";
+
+import DogRun from "@/images/dog_run.svg";
+import Clinic from "@/images/clinic.svg";
+import Vet from "@/images/vet.svg";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
-
-function MenuIcon(props) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
-      <path
-        d="M5 6h14M5 18h14M5 12h14"
-        strokeWidth={2}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
-const solutions = [
-  {
-    name: "Pet sitter",
-    description:
-      "Get a better understanding of where your traffic is coming from.",
-    href: "#",
-    icon: ChartBarIcon,
-  },
-  {
-    name: "Vet Clinic Visit",
-    description:
-      "Get a better understanding of where your traffic is coming from.",
-    href: "#",
-    icon: ChartBarIcon,
-  },
-  {
-    name: "Talk to a Vet",
-    description: "Speak directly to your customers in a more meaningful way.",
-    href: "#",
-    icon: CursorArrowRaysIcon,
-  },
-];
 
 export function Header() {
   const { data: session } = useSession();
@@ -165,28 +132,76 @@ export function Header() {
                             <Popover.Panel className="absolute z-[99] -ml-8 mt-14 w-screen max-w-xs transform lg:max-w-md lg:-ml-6">
                               <div className="overflow-hidden rounded-lg shadow-lg ring- ring-opacity-5">
                                 <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
-                                  {solutions.map((item) => (
-                                    <Link
-                                      key={item.name}
-                                      href={item.href}
-                                      className="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-50"
-                                    >
-                                      <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md bg-indigo-500 text-white sm:h-12 sm:w-12">
-                                        <item.icon
-                                          className="h-6 w-6"
-                                          aria-hidden="true"
-                                        />
-                                      </div>
-                                      <div className="ml-4">
-                                        <p className="text-base font-medium text-gray-900">
-                                          {item.name}
-                                        </p>
-                                        <p className="mt-1 text-sm text-gray-500">
-                                          {item.description}
-                                        </p>
-                                      </div>
-                                    </Link>
-                                  ))}
+                                  <Link
+                                    href={"/services/pet-sitter"}
+                                    className="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-50"
+                                  >
+                                    <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md bg-indigo-100 text-white sm:h-12 sm:w-12">
+                                      <Image
+                                        src={DogRun}
+                                        alt="dog-walking"
+                                        width={50}
+                                        height={50}
+                                      />
+                                    </div>
+                                    <div className="ml-4">
+                                      <p className="text-base font-medium text-gray-900">
+                                        Pet Sitter
+                                      </p>
+                                      <p className="mt-1 text-sm text-gray-500">
+                                        Your pets stay overnight in your
+                                        sitter’s home. They’ll be treated like
+                                        part of the family in a comfortable
+                                        environment.
+                                      </p>
+                                    </div>
+                                  </Link>
+
+                                  <Link
+                                    href={"/vet/nearby"}
+                                    className="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-50"
+                                  >
+                                    <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md bg-indigo-100 text-white sm:h-12 sm:w-12">
+                                      <Image
+                                        src={Clinic}
+                                        alt="dog-walking"
+                                        width={50}
+                                        height={50}
+                                      />
+                                    </div>
+                                    <div className="ml-4">
+                                      <p className="text-base font-medium text-gray-900">
+                                        Find Vet Clinic
+                                      </p>
+                                      <p className="mt-1 text-sm text-gray-500">
+                                        You can search and look for open Vet
+                                        Clinic near you anytime.
+                                      </p>
+                                    </div>
+                                  </Link>
+
+                                  <Link
+                                    href={"/vet/partners"}
+                                    className="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-50"
+                                  >
+                                    <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md bg-indigo-100 text-white sm:h-12 sm:w-12">
+                                      <Image
+                                        src={Vet}
+                                        alt="dog-walking"
+                                        width={50}
+                                        height={50}
+                                      />
+                                    </div>
+                                    <div className="ml-4">
+                                      <p className="text-base font-medium text-gray-900">
+                                        Vet Online Consultation
+                                      </p>
+                                      <p className="mt-1 text-sm text-gray-500">
+                                        Book for an online vet consultation with
+                                        our affiliated clinics anytime anywhere.
+                                      </p>
+                                    </div>
+                                  </Link>
                                 </div>
                               </div>
                             </Popover.Panel>
@@ -357,14 +372,21 @@ export function Header() {
                     <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-500">
                       <Disclosure.Button
                         as="a"
-                        href="/#faq"
+                        href="/services/pet-sitter"
                         className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700"
                       >
-                        Schedule Vet Clinic Visit
+                        Find Pet Sitter
                       </Disclosure.Button>
                       <Disclosure.Button
                         as="a"
-                        href="/#faq"
+                        href="/vet/nearby"
+                        className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700"
+                      >
+                        Find Vet Clinic
+                      </Disclosure.Button>
+                      <Disclosure.Button
+                        as="a"
+                        href="/vet/online-consultation"
                         className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700"
                       >
                         Schedule Vet Online Consultation
