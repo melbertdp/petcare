@@ -2,28 +2,9 @@ import { useEffect, useState } from 'react';
 import Head from 'next/head'
 
 import { Header } from '@/components/layout/Header'
-import { Container } from '@/components/Container'
 import Form from '@/components/vetParners/booking';
-import vets from '@/data/vets';
 
 export default function NearbyVet() {
-
-    const [places, setPlaces] = useState([]);
-
-    useEffect(() => {
-        setPlaces(vets);
-    }, []);
-
-    const handleSearch = (e) => {
-        console.log(e.target.value);
-
-        //loop through the vets array and filter the vets that matches the substring of the input
-        const filteredVets = vets.filter(vet => {
-            return vet.name.toLowerCase().includes(e.target.value.toLowerCase());
-        });
-
-        setPlaces(filteredVets);
-    }
 
     return (
         <>
