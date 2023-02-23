@@ -7,49 +7,17 @@ import Router from "next/router";
 import { createClient } from "@supabase/supabase-js";
 import Image from "next/image";
 import {
-  ArrowLongLeftIcon,
   CheckIcon,
   HandThumbUpIcon,
-  HomeIcon,
-  MagnifyingGlassIcon,
-  PaperClipIcon,
-  QuestionMarkCircleIcon,
   UserIcon,
 } from "@heroicons/react/20/solid";
-import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 
 import Crown from "@/images/crown.svg";
+import UpcomingEvents from "./upcomingEvents";
 
-const user = {
-  name: "Whitney Francis",
-  email: "whitney@example.com",
-  imageUrl:
-    "https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80",
-};
+import appointments from "@/data/appointments";
 
-const navigation = [
-  { name: "Dashboard", href: "#" },
-  { name: "Jobs", href: "#" },
-  { name: "Applicants", href: "#" },
-  { name: "Company", href: "#" },
-];
-
-const breadcrumbs = [
-  { name: "Jobs", href: "#", current: false },
-  { name: "Front End Developer", href: "#", current: false },
-  { name: "Applicants", href: "#", current: true },
-];
-
-const userNavigation = [
-  { name: "Your Profile", href: "#" },
-  { name: "Settings", href: "#" },
-  { name: "Sign out", href: "#" },
-];
-
-const attachments = [
-  { name: "resume_front_end_developer.pdf", href: "#" },
-  { name: "coverletter_front_end_developer.pdf", href: "#" },
-];
+const { upcoming, finished } = appointments;
 
 const eventTypes = {
   applied: { icon: UserIcon, bgColorClass: "bg-gray-400" },
@@ -169,7 +137,7 @@ export default function Example() {
               </div>
 
               <div className="mx-auto mt-8 grid max-w-3xl grid-cols-1 gap-6 sm:px-6 lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-3">
-                <div className="space-y-6 lg:col-span-2 lg:col-start-1">
+                <div className="space-y-6 lg:col-span-3 lg:col-start-1">
                   {/* Description list*/}
                   <section aria-labelledby="applicant-information-title">
                     <div className="bg-white shadow sm:rounded-lg">
@@ -260,91 +228,12 @@ export default function Example() {
                           </div>
 
                           <Tab.Panels as={Fragment}>
-                            <Tab.Panel className="-mb-10">
-                              <div className="scrollbar-thumb-gray-500 scrollbar-track-gray-100 scrollbar-thin overflow-y-scroll max-h-[350px]">
-                                <h3 className="sr-only">Upcoming Events</h3>
-
-                                <div className="p-5">
-                                  {/* start timeline */}
-                                  <ol className="relative border-l border-gray-200 border-gray-700">
-                                    <li className="mb-10 ml-4">
-                                      <div className="absolute w-3 h-3 bg-gray-200 rounded-full -left-1.5 border border-gray-900 bg-gray-700"></div>
-                                      <time className="mb-1 text-sm font-normal leading-none text-gray-500">
-                                        February 2022
-                                      </time>
-                                      <h3 className="text-lg font-semibold text-gray-900">
-                                        Application UI code in Tailwind CSS
-                                      </h3>
-                                      <p className="mb-4 text-base font-normal text-gray-500">
-                                        Get access to over 20+ pages including a
-                                        dashboard layout, charts, kanban board,
-                                        calendar, and pre-order E-commerce &amp;
-                                        Marketing pages.
-                                      </p>
-                                    </li>
-                                    <li className="mb-10 ml-4">
-                                      <div className="absolute w-3 h-3 bg-gray-200 rounded-full -left-1.5 border border-white border-gray-900 bg-gray-700"></div>
-                                      <time className="mb-1 text-sm font-normal leading-none text-gray-500">
-                                        March 2022
-                                      </time>
-                                      <h3 className="text-lg font-semibold text-gray-900 ">
-                                        Marketing UI design in Figma
-                                      </h3>
-                                      <p className="text-base font-normal text-gray-500">
-                                        All of the pages and components are
-                                        first designed in Figma and we keep a
-                                        parity between the two versions even as
-                                        we update the project.
-                                      </p>
-                                    </li>
-                                  </ol>
-                                  {/* end timeline */}
-                                </div>
-                              </div>
+                            <Tab.Panel>
+                              <UpcomingEvents appointments={upcoming} />
                             </Tab.Panel>
 
-                            <Tab.Panel className="-mb-10">
-                              <div className="scrollbar-thumb-gray-500 scrollbar-track-gray-100 scrollbar-thin overflow-y-scroll max-h-[350px]">
-                                <h3 className="sr-only">Upcoming Events</h3>
-
-                                <div className="p-5">
-                                  {/* start timeline */}
-                                  <ol className="relative border-l border-gray-200 border-gray-700">
-                                    <li className="mb-10 ml-4">
-                                      <div className="absolute w-3 h-3 bg-gray-200 rounded-full -left-1.5 border border-gray-900 bg-gray-700"></div>
-                                      <time className="mb-1 text-sm font-normal leading-none text-gray-500">
-                                        February 2021
-                                      </time>
-                                      <h3 className="text-lg font-semibold text-gray-900">
-                                        Application UI code in Tailwind CSS
-                                      </h3>
-                                      <p className="mb-4 text-base font-normal text-gray-500">
-                                        Get access to over 20+ pages including a
-                                        dashboard layout, charts, kanban board,
-                                        calendar, and pre-order E-commerce &amp;
-                                        Marketing pages.
-                                      </p>
-                                    </li>
-
-                                    <li className="mb-10 ml-4">
-                                      <div className="absolute w-3 h-3 bg-gray-200 rounded-full -left-1.5 border border-white border-gray-900 bg-gray-700"></div>
-                                      <time className="mb-1 text-sm font-normal leading-none text-gray-500">
-                                        March 2022
-                                      </time>
-                                      <h3 className="text-lg font-semibold text-gray-900 ">
-                                        Marketing UI design in Figma
-                                      </h3>
-                                      <p className="text-base font-normal text-gray-500">
-                                        All of the pages and components are
-                                        first designed in Figma and we keep a
-                                        parity between the two versions even as
-                                        we update the project.
-                                      </p>
-                                    </li>
-                                  </ol>
-                                  {/* end timeline */}
-                                </div>
-                              </div>
+                            <Tab.Panel>
+                              <UpcomingEvents appointments={finished} />
                             </Tab.Panel>
                           </Tab.Panels>
                         </Tab.Group>
@@ -428,71 +317,6 @@ export default function Example() {
                     </div>
                   </section>
                 </div>
-
-                <section
-                  aria-labelledby="timeline-title"
-                  className="lg:col-span-1 lg:col-start-3"
-                >
-                  <div className="bg-white px-4 py-5 shadow sm:rounded-lg sm:px-6">
-                    <h2
-                      id="timeline-title"
-                      className="text-lg font-medium text-gray-900"
-                    >
-                      Timeline
-                    </h2>
-
-                    {/* Activity Feed */}
-                    <div className="mt-6 flow-root">
-                      <ul role="list" className="-mb-8">
-                        {timeline.map((item, itemIdx) => (
-                          <li key={item.id}>
-                            <div className="relative pb-8">
-                              {itemIdx !== timeline.length - 1 ? (
-                                <span
-                                  className="absolute top-4 left-4 -ml-px h-full w-0.5 bg-gray-200"
-                                  aria-hidden="true"
-                                />
-                              ) : null}
-                              <div className="relative flex space-x-3">
-                                <div>
-                                  <span
-                                    className={classNames(
-                                      item.type.bgColorClass,
-                                      "h-8 w-8 rounded-full flex items-center justify-center ring-8 ring-white"
-                                    )}
-                                  >
-                                    <item.type.icon
-                                      className="h-5 w-5 text-white"
-                                      aria-hidden="true"
-                                    />
-                                  </span>
-                                </div>
-                                <div className="flex min-w-0 flex-1 justify-between space-x-4 pt-1.5">
-                                  <div>
-                                    <p className="text-sm text-gray-500">
-                                      {item.content}{" "}
-                                      <a
-                                        href="#"
-                                        className="font-medium text-gray-900"
-                                      >
-                                        {item.target}
-                                      </a>
-                                    </p>
-                                  </div>
-                                  <div className="whitespace-nowrap text-right text-sm text-gray-500">
-                                    <time dateTime={item.datetime}>
-                                      {item.date}
-                                    </time>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </section>
               </div>
             </main>
           </div>

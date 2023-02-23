@@ -1,0 +1,70 @@
+{
+  "upcoming": [
+    {
+      "id": 1,
+      "title": "Video Call",
+      "date": "Mar 15",
+      "time": "10:00 AM",
+      "type": "Online consulation",
+      "location": "Skype",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "vet": {
+        "id": 1,
+        "name": "Leslie Alexander",
+        "email": ""
+      },
+      "status": "Pending",
+      "link": null
+    },
+    {
+      "id": 2,
+      "title": "Video Call",
+      "date": "Mar 25",
+      "time": "10:00 AM",
+      "type": "Online consulation",
+      "location": "Skype",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "vet": {
+        "id": 1,
+        "name": "Leslie Alexander",
+        "email": ""
+      },
+      "status": "Paid",
+      "link": "https://www.google.com"
+    }
+  ],
+  "finished": [
+    {
+      "id": 1,
+      "title": "Video Call",
+      "date": "Jan 10",
+      "time": "10:00 AM",
+      "type": "Online consulation",
+      "location": "Skype",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "vet": {
+        "id": 1,
+        "name": "Leslie Alexander",
+        "email": ""
+      },
+      "status": "Completed",
+      "link": null
+    },
+    {
+      "id": 2,
+      "title": "Video Call",
+      "date": "Feb 14",
+      "time": "10:00 AM",
+      "type": "Online consulation",
+      "location": "Skype",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "vet": {
+        "id": 1,
+        "name": "Leslie Alexander",
+        "email": ""
+      },
+      "status": "Completed",
+      "link": null
+    }
+  ]
+}
