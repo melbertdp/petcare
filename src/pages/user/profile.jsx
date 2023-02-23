@@ -13,7 +13,7 @@ import {
 } from "@heroicons/react/20/solid";
 
 import Crown from "@/images/crown.svg";
-import UpcomingEvents from "./upcomingEvents";
+import UpcomingEvents from "@/components/user/upcomingEvents";
 
 import appointments from "@/data/appointments";
 
