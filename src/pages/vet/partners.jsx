@@ -1,12 +1,5 @@
-import { useEffect, useState } from "react";
 import Head from "next/head";
-import { createClient } from "@supabase/supabase-js";
 import { Header } from "@/components/layout/Header";
-import Map from "@/components/nearby/map/map";
-import SlideOver from "@/components/nearby/slideOver/hiddenMenu";
-import Modal from "@/components/nearby/modal/viewVetDetails";
-import NearbyVetCards from "@/components/nearby/cards/vetCards";
-
 import VetPartners from "@/components/vetParners/list";
 
 import vetList from "@/data/vetlist.json";

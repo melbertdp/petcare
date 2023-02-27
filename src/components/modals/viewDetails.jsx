@@ -165,7 +165,9 @@ export default function FindVet({ open, setOpen, viewVetDetails }) {
                           >
                             <li>
                               <a
-                                href="#"
+                                href="http://facebook.com"
+                                target={"_blank"}
+                                rel="noopener noreferrer"
                                 className="flex h-6 w-6 items-center justify-center text-gray-400 hover:text-gray-500"
                               >
                                 <span className="sr-only">
@@ -187,7 +189,9 @@ export default function FindVet({ open, setOpen, viewVetDetails }) {
                             </li>
                             <li>
                               <a
-                                href="#"
+                                href="http://instagram.com"
+                                target={"_blank"}
+                                rel="noopener noreferrer"
                                 className="flex h-6 w-6 items-center justify-center text-gray-400 hover:text-gray-500"
                               >
                                 <span className="sr-only">
@@ -209,7 +213,9 @@ export default function FindVet({ open, setOpen, viewVetDetails }) {
                             </li>
                             <li>
                               <a
-                                href="#"
+                                href="http://twitter.com"
+                                target={"_blank"}
+                                rel="noopener noreferrer"
                                 className="flex h-6 w-6 items-center justify-center text-gray-400 hover:text-gray-500"
                               >
                                 <span className="sr-only">

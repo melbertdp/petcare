@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
-import Modal from "@/components/vetParners/modal/viewVetDetails";
+// import Modal from "@/components/vetParners/modal/viewVetDetails";
+import Modal from "@/components/modals/viewDetails";
 import Rating from "@/components/vetParners/modal/rating";
 import Filter from "@/components/vetParners/filter";
 
@@ -20,15 +21,12 @@ export default function VetPartners({ vetList }) {
   };
 
   const changeFilterValues = (val) => {
-    console.log("==", val);
-
     let specialization = val.specialization;
     let operatingHours = val.operatingHours;
 
     let filteredVets = [];
 
     if (val.selectedPlace) {
-
       const newLoc = val.selectedPlace.address_components[0]?.long_name;
 
       filteredVets = vetList.filter((vet) => {
@@ -119,7 +117,7 @@ export default function VetPartners({ vetList }) {
 
             {showVetDetails && (
               <Modal
-                vetDetails={vetDetails}
+                viewVetDetails={vetDetails}
                 open={showVetDetails}
                 setOpen={setsShowVetDetails}
               />
