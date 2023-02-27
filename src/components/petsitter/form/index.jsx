@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Datepicker from "react-tailwindcss-datepicker";
-import ConfirmationModal from "@/components/scheduleVisit/modal/confirmation";
+import ConfirmationModal from "@/components/modals/confirmationModal";
 
 export default function ScheduleVisitForm() {
   const [isPremium, setIsPremium] = useState(true);
@@ -29,10 +29,10 @@ export default function ScheduleVisitForm() {
         <div className="space-y-6 sm:space-y-5">
           <div>
             <h3 className="text-lg font-medium leading-6 text-gray-900">
-              Visit Purpose
+              Pet Sitting Service
             </h3>
             <p className="mt-1 max-w-2xl text-sm text-gray-500">
-              Tell us the purpose of your online consultation.
+              Tell us details of your pets.
             </p>
           </div>
 
@@ -42,7 +42,7 @@ export default function ScheduleVisitForm() {
                 htmlFor="username"
                 className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2"
               >
-                Date of visit
+                Date of Pet Sitting
               </label>
               <div className="mt-1 sm:col-span-2 sm:mt-0">
                 <div className="block w-full max-w-lg rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
@@ -64,7 +64,7 @@ export default function ScheduleVisitForm() {
                 htmlFor="username"
                 className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2"
               >
-                Time of Visit
+                Time
               </label>
               <div className="mt-1 sm:col-span-2 sm:mt-0">
                 <div class="flex justify-start">
@@ -113,7 +113,7 @@ export default function ScheduleVisitForm() {
                 htmlFor="about"
                 className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2"
               >
-                Visit Purpose
+                Tell us more about your pets
               </label>
               <div className="mt-1 sm:col-span-2 sm:mt-0">
                 <textarea
@@ -124,7 +124,8 @@ export default function ScheduleVisitForm() {
                   defaultValue={""}
                 />
                 <p className="mt-2 text-sm text-gray-500">
-                  Write a few sentences about the purpose of your visit.
+                  Write a few sentences about your pet, dislikes, allergies,
+                  etc.
                 </p>
               </div>
             </div>
@@ -268,6 +269,8 @@ export default function ScheduleVisitForm() {
           <ConfirmationModal
             open={showConfirmationModal}
             setOpen={setShowConfirmationModal}
+            confirm_message={"Pet sitter request sent!"}
+            confirmation_type={"PET_SITTER"}
           />
         )}
       </div>

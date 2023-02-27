@@ -30,18 +30,36 @@ export function Header() {
 
   useEffect(() => {
     if (noti && noti.length > 0) {
+      let message =
+        "Online consultation has been scheduled, we will send the details on your email";
+
+      switch (noti) {
+        case "VET_VISIT":
+          message =
+            "Your visit has been scheduled, we will send the details on your email";
+          break;
+        case "VET_CONSULT":
+          message =
+            "Online consultation has been scheduled, we will send the details on your email";
+          break;
+        case "PET_SITTER":
+          message =
+            "Pet sitter service has been scheduled, we will send the details on your email";
+          break;
+        default:
+          message =
+            "Online consultation has been scheduled, we will send the details on your email";
+      }
+
       const timeout = setTimeout(() => {
-        toast(
-          "Payment has been recieved, we will send the details on your email",
-          {
-            position: "top-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-          }
-        );
+        toast(message, {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+        });
         dispatch(setNotifState([]));
       }, 5000);
 

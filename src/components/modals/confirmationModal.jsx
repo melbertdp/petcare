@@ -11,7 +11,12 @@ import { setNotifState } from "@/store/notifSlice";
 import LoadingPaw from "@/images/animated/loading_paw.json";
 import Success from "@/images/animated/success.json";
 
-export default function ConfirmationModal({ open, setOpen }) {
+export default function ConfirmationModal({
+  open,
+  setOpen,
+  confirmation_type,
+  confirm_message,
+}) {
   const [showLoading, setShowLoading] = useState(true);
   const dispatch = useDispatch();
 
@@ -19,7 +24,7 @@ export default function ConfirmationModal({ open, setOpen }) {
     if (open) {
       const timeout = setTimeout(() => {
         setShowLoading(false);
-        dispatch(setNotifState("VET_VISIT"));
+        dispatch(setNotifState(confirmation_type));
       }, 5000);
 
       return () => {
@@ -87,7 +92,7 @@ export default function ConfirmationModal({ open, setOpen }) {
                           as="h3"
                           className="text-lg leading-6 font-medium text-gray-900"
                         >
-                          Your visit has been scheduled!
+                          {confirm_message}
                         </Dialog.Title>
                         <div className="mt-2">
                           <p className="text-sm text-gray-500">

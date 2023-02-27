@@ -81,7 +81,7 @@ export default function FindVet({ open, setOpen, viewVetDetails }) {
                       </div>
 
                       {/* Product details */}
-                      <div className="mx-auto mt-14 max-w-2xl sm:mt-16 lg:col-span-4 lg:row-span-2 lg:row-end-2 lg:mt-0 lg:max-w-none">
+                      <div className="w-full mx-auto mt-14 max-w-2xl sm:mt-16 lg:col-span-4 lg:row-span-2 lg:row-end-2 lg:mt-0 lg:max-w-none">
                         <div className="flex flex-col-reverse">
                           <div className="mt-0">
                             <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
@@ -93,21 +93,6 @@ export default function FindVet({ open, setOpen, viewVetDetails }) {
                         <p className="mt-3 text-gray-500">
                           {viewVetDetails.description}
                         </p>
-
-                        {/* <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-2">
-                          <button
-                            type="button"
-                            className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 py-3 px-8 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50"
-                          >
-                            Pay {product.price}
-                          </button>
-                          <button
-                            type="button"
-                            className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-50 py-3 px-8 text-base font-medium text-indigo-700 hover:bg-indigo-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50"
-                          >
-                            Preview
-                          </button>
-                        </div> */}
 
                         <div className="mt-5 border-t border-gray-200 pt-3">
                           <h3 className="text-lg font-bold text-gray-900">
@@ -243,6 +228,17 @@ export default function FindVet({ open, setOpen, viewVetDetails }) {
                               </a>
                             </li>
                           </ul>
+                        </div>
+
+                        <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-4">
+                          <Link
+                            class="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 py-3 px-8 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50"
+                            href={`/vet/schedule-visit/${makeUrl(
+                              viewVetDetails.name
+                            )}`}
+                          >
+                            Schedule Pet sitting
+                          </Link>
                         </div>
                       </div>
 

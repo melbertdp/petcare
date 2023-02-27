@@ -21,7 +21,7 @@ export default function ConfirmationModal({ open, setOpen, formData }) {
         if (open) {
             const timeout = setTimeout(() => {
                 setShowLoading(false);
-                dispatch(setNotifState("test"));
+                dispatch(setNotifState("ONLINE_APPIONTMENT"));
             }, 5000);
 
             return () => {
@@ -85,7 +85,7 @@ export default function ConfirmationModal({ open, setOpen, formData }) {
                                                     </Dialog.Title>
                                                     <div className="mt-2">
                                                         <p className="text-sm text-gray-500">
-                                                            We will send you an email confirmation along with the instruction for online consultation once your payment has been confirmed.
+                                                            We will send you an email confirmation along with the instruction for online consultation once the vet accepted the request.
                                                         </p>
                                                     </div>
                                                 </>
