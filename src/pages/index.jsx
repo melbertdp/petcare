@@ -30,7 +30,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Petfriends.</title>
+        <title>24/7 Petcare</title>
         <meta
           name="description"
           content="boom boom boom"

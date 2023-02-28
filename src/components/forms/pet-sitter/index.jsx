@@ -5,12 +5,17 @@ import Link from "next/link";
 
 export default function ScheduleVisitForm() {
   const [isPremium, setIsPremium] = useState(true);
+  const [prevPath, setPrevPath] = useState("");
   const [showConfirmationModal, setShowConfirmationModal] = useState(false);
   const storage = globalThis?.sessionStorage;
-  
+
   const [bookingDate, setBookingDate] = useState({
     startDate: null,
   });
+
+  useEffect(() => {
+    setPrevPath(storage?.getItem("prevPath") || "/services/pet-sitter");
+  }, []);
 
   const handleDateSelection = (date) => {
     console.log(date);
@@ -254,7 +259,7 @@ export default function ScheduleVisitForm() {
       <div className="pt-5">
         <div className="flex justify-end">
           <Link
-            href={storage.getItem("prevPath") || "/services/pet-sitter"}
+            href={prevPath}
             className="rounded-md border border-gray-300 bg-white py-2 px-4 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
           >
             Cancel

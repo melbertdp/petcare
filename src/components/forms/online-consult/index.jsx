@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import Link from 'next/link'
+import Link from "next/link";
 import Datepicker from "react-tailwindcss-datepicker";
 import ConfirmationModal from "@/components/vetParners/modal/confirmation";
 import { useSession } from "next-auth/react";
@@ -12,6 +12,7 @@ export default function ScheduleVisitForm() {
   const storage = globalThis?.sessionStorage;
 
   const [isPremium, setIsPremium] = useState(true);
+  const [prevPath, setPrevPath] = useState("");
 
   const session = useSession();
 
@@ -21,6 +22,10 @@ export default function ScheduleVisitForm() {
   const [bookingDate, setBookingDate] = useState({
     startDate: null,
   });
+
+  useEffect(() => {
+    setPrevPath(storage?.getItem("prevPath") || "/vet/nearby");
+  }, []);
 
   useEffect(() => {
     if (session) {
@@ -289,7 +294,7 @@ export default function ScheduleVisitForm() {
       <div className="pt-5">
         <div className="flex justify-end">
           <Link
-            href={storage.getItem("prevPath") || "/vet/nearby"}
+            href={prevPath}
             className="rounded-md border border-gray-300 bg-white py-2 px-4 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
           >
             Cancel
