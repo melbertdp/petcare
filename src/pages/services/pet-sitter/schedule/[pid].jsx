@@ -3,7 +3,7 @@ import Head from "next/head";
 
 import { Header } from "@/components/layout/Header";
 import { Container } from "@/components/Container";
-import PetSitterForm from "@/components/petsitter/form";
+import PetSitterForm from "@/components/forms/pet-sitter";
 
 export default function NearbyVet() {
   return (

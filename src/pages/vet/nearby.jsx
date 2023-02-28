@@ -1,6 +1,5 @@
 import { useEffect, useState, useRef } from "react";
 import Head from "next/head";
-import { createClient } from "@supabase/supabase-js";
 import { Header } from "@/components/layout/Header";
 import Map from "@/components/nearby/map/map";
 import SlideOver from "@/components/nearby/slideOver/hiddenMenu";
@@ -163,20 +162,3 @@ export default function NearbyVet() {
     </>
   );
 }
-
-// export async function getStaticProps() {
-
-//     const supabase = createClient(process.env.NEXT_PUBLIC_soupUrl, process.env.NEXT_PUBLIC_soupKey)
-//     const { data } = await supabase
-//         .from('vetpartners')
-//         .select('*')
-//         .order('id')
-
-//     console.log("===", data);
-
-//     return {
-//         props: {
-//             vetList: data
-//         }
-//     }
-// }

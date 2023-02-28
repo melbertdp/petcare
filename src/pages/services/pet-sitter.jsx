@@ -1,15 +1,12 @@
 import { useEffect, useState, useRef } from "react";
 import Head from "next/head";
 import Link from "next/link";
-import { createClient } from "@supabase/supabase-js";
 import { Header } from "@/components/layout/Header";
 import Map from "@/components/petsitter/map/map";
 import SlideOver from "@/components/petsitter/slideOver/hiddenMenu";
 import Modal from "@/components/petsitter/modal/petSitterDetails";
 import NearbyVetCards from "@/components/petsitter/cards/vetCards";
-
 import Filter from "@/components/petsitter/map/filter";
-
 import vetList from "@/data/petsitter.json";
 
 export default function NearbyVet() {

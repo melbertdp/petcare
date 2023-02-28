@@ -3,7 +3,7 @@ import Head from 'next/head'
 
 import { Header } from '@/components/layout/Header'
 import { Container } from '@/components/Container'
-import ScheduleVisitForm from '@/components/scheduleVisit/form';
+import ScheduleVisitForm from '@/components/forms/schedule-visit';
 
 export default function NearbyVet() {
 

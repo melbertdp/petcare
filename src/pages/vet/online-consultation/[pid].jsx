@@ -1,7 +1,7 @@
 import Head from 'next/head'
 
 import { Header } from '@/components/layout/Header'
-import Form from '@/components/vetParners/booking';
+import Form from '@/components/forms/online-consult';
 
 export default function NearbyVet() {
 

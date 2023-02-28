@@ -1,5 +1,5 @@
 import { Fragment, useEffect, useState } from "react";
-import { Tab, Menu, Popover, Transition } from "@headlessui/react";
+import { Tab } from "@headlessui/react";
 import Head from "next/head";
 import { Header } from "@/components/layout/Header";
 import { useSession, signOut } from "next-auth/react";

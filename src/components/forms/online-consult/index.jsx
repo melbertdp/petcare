@@ -1,15 +1,47 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
+import Link from 'next/link'
 import Datepicker from "react-tailwindcss-datepicker";
-import Link from "next/link";
-import ConfirmationModal from "@/components/scheduleVisit/modal/confirmation";
+import ConfirmationModal from "@/components/vetParners/modal/confirmation";
+import { useSession } from "next-auth/react";
+import { createClient } from "@supabase/supabase-js";
 
 export default function ScheduleVisitForm() {
+  const supabase = useRef(0);
+  const form = useRef();
+
+  const storage = globalThis?.sessionStorage;
+
   const [isPremium, setIsPremium] = useState(true);
+
+  const session = useSession();
+
   const [showConfirmationModal, setShowConfirmationModal] = useState(false);
+  const [randomKey, setRandomKey] = useState("");
 
   const [bookingDate, setBookingDate] = useState({
     startDate: null,
   });
+
+  useEffect(() => {
+    if (session) {
+      const { supabaseAccessToken } = session;
+      supabase.current = createClient(
+        process.env.NEXT_PUBLIC_soupUrl,
+        process.env.NEXT_PUBLIC_soupKey,
+        {
+          global: {
+            headers: {
+              Authorization: `Bearer ${session?.data?.supabaseAccessToken}`,
+            },
+          },
+        }
+      );
+    }
+  }, [session]);
+
+  useEffect(() => {
+    setRandomKey(generateRandomKey());
+  }, []);
 
   const handleDateSelection = (date) => {
     console.log(date);
@@ -21,20 +53,21 @@ export default function ScheduleVisitForm() {
     setShowConfirmationModal(true);
   };
 
+  const generateRandomKey = () => {
+    return (+new Date() * Math.random()).toString(36).substring(0, 8);
+  };
+
   return (
     <form
       className="space-y-8 divide-y divide-gray-200"
       onSubmit={handleSubmit}
     >
-      <div className="space-y-8 divide-y  divide-gray-200 sm:w-[700px] sm:space-y-5">
+      <div className="space-y-8 divide-y divide-gray-200 sm:w-[700px] sm:space-y-5">
         <div className="space-y-6 sm:space-y-5">
           <div>
             <h3 className="text-lg font-medium leading-6 text-gray-900">
-              Visit Purpose
+              Cosultation Purpose
             </h3>
-            <p className="mt-1 max-w-2xl text-sm text-gray-500">
-              Tell us the purpose of your online consultation.
-            </p>
           </div>
 
           <div className="space-y-6 sm:space-y-5">
@@ -43,7 +76,7 @@ export default function ScheduleVisitForm() {
                 htmlFor="username"
                 className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2"
               >
-                Date of visit
+                Date of consultation
               </label>
               <div className="mt-1 sm:col-span-2 sm:mt-0">
                 <div className="block w-full max-w-lg rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
@@ -65,7 +98,7 @@ export default function ScheduleVisitForm() {
                 htmlFor="username"
                 className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2"
               >
-                Time of Visit
+                Time of consultation
               </label>
               <div className="mt-1 sm:col-span-2 sm:mt-0">
                 <div class="flex justify-start">
@@ -114,7 +147,7 @@ export default function ScheduleVisitForm() {
                 htmlFor="about"
                 className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2"
               >
-                Visit Purpose
+                consultation Purpose
               </label>
               <div className="mt-1 sm:col-span-2 sm:mt-0">
                 <textarea
@@ -186,9 +219,11 @@ export default function ScheduleVisitForm() {
                 Payment options
               </h3>
               <p className="mt-1 max-w-2xl text-sm text-gray-500">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras at
-                nisi nibh. Aenean vehicula nulla eget nisl condimentum accumsan.
-                Nam sodales nulla eu diam pharetra dignissim
+                Please include{" "}
+                <span className="text-lg text-indigo-500 font-bold">
+                  {randomKey}
+                </span>{" "}
+                in the message/note of your payment.
               </p>
             </div>
             <div className="space-y-6 divide-y divide-gray-200 sm:space-y-5">
@@ -206,15 +241,16 @@ export default function ScheduleVisitForm() {
                     <div className="sm:col-span-2">
                       <div className="max-w-lg">
                         <p className="text-sm text-gray-500">
-                          orem ipsum dolor sit amet, consectetur adipiscing
-                          elit. Cras at nisi nibh..
+                          Please send your payment to Gcash: xxx-xxx-xxx / Bank:
+                          xxx-xxx-xx{" "}
                         </p>
                         <div className="mt-4 space-y-4">
                           <div className="flex items-center">
                             <input
                               id="gcash"
-                              name="gcash"
+                              name="payment"
                               type="radio"
+                              value="gcash"
                               className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
                             />
                             <label
@@ -227,8 +263,9 @@ export default function ScheduleVisitForm() {
                           <div className="flex items-center">
                             <input
                               id="bank"
-                              name="bank"
+                              name="payment"
                               type="radio"
+                              value="bank"
                               className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
                             />
                             <label
@@ -252,7 +289,7 @@ export default function ScheduleVisitForm() {
       <div className="pt-5">
         <div className="flex justify-end">
           <Link
-            href={localStorage.getItem("prevPath") || "/vet/nearby"}
+            href={storage.getItem("prevPath") || "/vet/nearby"}
             className="rounded-md border border-gray-300 bg-white py-2 px-4 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
           >
             Cancel
@@ -263,12 +300,16 @@ export default function ScheduleVisitForm() {
           >
             Submit
           </button>
+          {/* <button type='button' onClick={() => testsubmit()}>
+                        asdl
+                    </button> */}
         </div>
 
         {ConfirmationModal && (
           <ConfirmationModal
             open={showConfirmationModal}
             setOpen={setShowConfirmationModal}
+            formData={form}
           />
         )}
       </div>
