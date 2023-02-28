@@ -199,56 +199,56 @@ function DeviceChartIcon(props) {
 
 export function Services() {
   return (
-    <section id="services" class="text-gray-600 body-font">
-      <div class="container px-5 py-24 mx-auto">
-        <div class="text-center mb-20">
-          <h1 class="text-3xl font-bold tracking-tight text-indigo-500 mb-4">
+    <section id="services" className="text-gray-600 body-font">
+      <div className="container px-5 py-24 mx-auto">
+        <div className="text-center mb-20">
+          <h1 className="text-3xl font-bold tracking-tight text-indigo-500 mb-4">
             Our Services
           </h1>
-          <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s">
+          <p className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s">
             Available 24/7
           </p>
-          <div class="flex mt-6 justify-center">
-            <div class="w-16 h-1 rounded-full bg-indigo-500 inline-flex"></div>
+          <div className="flex mt-6 justify-center">
+            <div className="w-16 h-1 rounded-full bg-indigo-500 inline-flex"></div>
           </div>
         </div>
-        <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 md:space-y-0 space-y-6">
-          <div class="p-4 md:w-1/3 flex flex-col text-center items-center">
-            <div class="w-20 h-20 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5 flex-shrink-0">
+        <div className="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 md:space-y-0 space-y-6">
+          <div className="p-4 md:w-1/3 flex flex-col text-center items-center">
+            <div className="w-20 h-20 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5 flex-shrink-0">
               <Image src={DogRun} alt="dog-walking" width={100} height={100} />
             </div>
-            <div class="flex-grow">
-              <h2 class="text-gray-900 text-lg title-font font-medium mb-3">
+            <div className="flex-grow">
+              <h2 className="text-gray-900 text-lg title-font font-medium mb-3">
                 Pet Sitter
               </h2>
-              <p class="leading-relaxed text-base">
+              <p className="leading-relaxed text-base">
                 Your pets stay overnight in your sitter’s home. They’ll be
                 treated like part of the family in a comfortable environment.
               </p>
             </div>
           </div>
-          <div class="p-4 md:w-1/3 flex flex-col text-center items-center">
-            <div class="w-20 h-20 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5 flex-shrink-0">
+          <div className="p-4 md:w-1/3 flex flex-col text-center items-center">
+            <div className="w-20 h-20 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5 flex-shrink-0">
               <Image src={Clinic} alt="dog-walking" width={100} height={100} />
             </div>
-            <div class="flex-grow">
-              <h2 class="text-gray-900 text-lg title-font font-medium mb-3">
+            <div className="flex-grow">
+              <h2 className="text-gray-900 text-lg title-font font-medium mb-3">
                 Find Vet Clinic
               </h2>
-              <p class="leading-relaxed text-base">
+              <p className="leading-relaxed text-base">
                 You can search and look for open Vet Clinic near you anytime.
               </p>
             </div>
           </div>
-          <div class="p-4 md:w-1/3 flex flex-col text-center items-center">
-            <div class="w-20 h-20 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5 flex-shrink-0">
+          <div className="p-4 md:w-1/3 flex flex-col text-center items-center">
+            <div className="w-20 h-20 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5 flex-shrink-0">
               <Image src={Vet} alt="dog-walking" width={100} height={100} />
             </div>
-            <div class="flex-grow">
-              <h2 class="text-gray-900 text-lg title-font font-medium mb-3">
+            <div className="flex-grow">
+              <h2 className="text-gray-900 text-lg title-font font-medium mb-3">
                 Vet Online Consultation
               </h2>
-              <p class="leading-relaxed text-base">
+              <p className="leading-relaxed text-base">
                 Book for an online vet consultation with our affiliated clinics
                 anytime anywhere.
               </p>
