@@ -14,7 +14,7 @@
     "clinic_lng": 121.047455,
     "clinic_name": "Alexis Pet Care",
     "address_city": "taguig",
-    "operatingHours": ["all"],
+    "operatingHours": ["all", "day"],
     "amenities": [
       "pool",
       "online",
@@ -352,7 +352,7 @@
     "clinic_lng": 121.050866,
     "clinic_name": "Samuel's Dog and Bird Crib",
     "address_city": "mandaluyong",
-    "operatingHours": ["all"],
+    "operatingHours": ["all", "day"],
     "amenities": [
       "pool",
       "online",
@@ -425,7 +425,7 @@
     "clinic_lng": 120.99424616888582,
     "clinic_name": "Olivia's Pet Place",
     "address_city": "paranaque",
-    "operatingHours": ["all"],
+    "operatingHours": ["all", "day"],
     "amenities": [
       "pool",
       "online",
@@ -494,7 +494,7 @@
     "clinic_lng": 121.01313061542785,
     "clinic_name": "Dom's Place for your Pets",
     "address_city": "makati",
-    "operatingHours": ["all"],
+    "operatingHours": ["all", "day"],
     "amenities": [
       "pool",
       "online",
@@ -563,7 +563,7 @@
     "clinic_lng": 121.06350324246648,
     "clinic_name": "Crisse's Pet Crib",
     "address_city": "taguig",
-    "operatingHours": ["all"],
+    "operatingHours": ["all", "day"],
     "amenities": [
       "pool",
       "online",
@@ -632,7 +632,7 @@
     "clinic_lng": 121.05711820509282,
     "clinic_name": "Rion's Exotic Pet Place",
     "address_city": "taguig",
-    "operatingHours": ["all"],
+    "operatingHours": ["all", "day"],
     "amenities": [
       "pool",
       "online",
@@ -701,7 +701,7 @@
     "clinic_lng": 121.08816387135437,
     "clinic_name": "Clark's Feather Place",
     "address_city": "pasig",
-    "operatingHours": ["all"],
+    "operatingHours": ["all", "day"],
     "amenities": [
       "pool",
       "online",
@@ -770,7 +770,7 @@
     "clinic_lng": 121.11090196447789,
     "clinic_name": "Elizha's Bark Place",
     "address_city": "rizal",
-    "operatingHours": ["all"],
+    "operatingHours": ["all", "day"],
     "amenities": [
       "pool",
       "online",
@@ -839,7 +839,7 @@
     "clinic_lng": 121.08976939659905,
     "clinic_name": "Louise's Pet Sitting Service",
     "address_city": "marikina",
-    "operatingHours": ["all"],
+    "operatingHours": ["all", "day"],
     "amenities": [
       "pool",
       "online",
@@ -908,7 +908,7 @@
     "clinic_lng": 121.00479712623628,
     "clinic_name": "Janice's Pet Place",
     "address_city": "paranaque",
-    "operatingHours": ["all"],
+    "operatingHours": ["all", "day"],
     "amenities": [
       "pool",
       "online",
@@ -977,7 +977,7 @@
     "clinic_lng": 121.0336326822218,
     "clinic_name": "Cross' Paw Place",
     "address_city": "taguig",
-    "operatingHours": ["all"],
+    "operatingHours": ["all", "night"],
     "amenities": [
       "pool",
       "online",
@@ -1046,7 +1046,7 @@
     "clinic_lng": 121.0339303669719,
     "clinic_name": "July's Crib",
     "address_city": "taguig",
-    "operatingHours": ["all"],
+    "operatingHours": ["all", "night"],
     "amenities": [
       "pool",
       "online",
@@ -1115,7 +1115,7 @@
     "clinic_lng": 121.03442723138748,
     "clinic_name": "Ezekiel's Pet Place",
     "address_city": "taguig",
-    "operatingHours": ["all"],
+    "operatingHours": ["all", "night"],
     "amenities": [
       "pool",
       "online",

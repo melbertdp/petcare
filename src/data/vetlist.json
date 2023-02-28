@@ -393,7 +393,7 @@
     "clinic_lat": 14.487904,
     "clinic_lng": 121.041481,
     "clinic_name": "Champaca Vet Clinic",
-      "address_city": "Parañaque",
+    "address_city": "Parañaque",
     "operatingHours": ["all", "night"],
     "phone": "09787832546",
     "email": "Champaca.vetclinic@gmail.com"
@@ -469,7 +469,7 @@
     "clinic_lat": 14.556111,
     "clinic_lng": 120.988989,
     "clinic_name": "Madrigal Vet Clinic",
-       "address_city": "pasay",
+    "address_city": "pasay",
     "operatingHours": ["all", "night"],
     "phone": "0998262546",
     "email": "Madrigal.vetclinic@gmail.com"

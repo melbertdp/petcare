@@ -62,6 +62,10 @@ export default function NearbyVet() {
       filteredVets = vetList.filter((vet) => {
         return vet.address_city.toLowerCase() == newLoc.toLowerCase();
       });
+    } else {
+      filteredVets = vetList.filter((vet) => {
+        return vet.address_city.toLowerCase().includes("taguig");
+      });
     }
 
     filteredVets = filteredVets.filter((vet) => {
