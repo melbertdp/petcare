@@ -2,17 +2,17 @@
   {
     "id": 1,
     "created_at": "2023-02-11T19:52:27.584145+00:00",
-    "name": "Pet sitter 1",
+    "name": "Alexis Rodriguez",
     "specialization": ["all", "dogs", "cats"],
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Alexis is both a dog and cat person. He loves to spend time with his pets and also teach tricks.",
     "address": "G/F Shangri-La at the Fort Manila, 30th Street, Bonifacio Global City, Taguig, Metro Manila",
     "price": 499,
-    "imageSrc": "https://i.pravatar.cc/300?img=2",
-    "rating": 3,
+    "imageSrc": "https://i.pravatar.cc/300?img=1",
+    "rating": 4,
     "active": true,
     "clinic_lat": 14.552587,
     "clinic_lng": 121.047455,
-    "clinic_name": "clinic lang",
+    "clinic_name": "Alexis Pet Care",
     "address_city": "taguig",
     "operatingHours": ["all"],
     "amenities": [
@@ -24,23 +24,23 @@
       "cctv",
       "playground"
     ],
-    "phone": "09123456789",
-    "email": "petsitter1@gmail.com",
+    "phone": "90454367684",
+    "email": "alexisrodriguez@gmail.com",
     "average": 4,
     "reviews": [
       {
         "id": 1,
         "rating": 5,
-        "content": "",
+        "content": "Nice and caring pet sitter. Will surely consider him for our next reservation.",
         "date": "July 16, 2021",
         "datetime": "2021-07-16",
         "author": "Emily Selman",
         "avatarSrc": "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80"
       },
       {
-        "id": 2,
-        "rating": 2,
-        "content": "",
+        "id": 4,
+        "rating": 4,
+        "content": "Very caring. Will book again next time if needed.",
         "date": "July 12, 2021",
         "datetime": "2021-07-12",
         "author": "Hector Gibbons",
@@ -63,30 +63,30 @@
     ],
     "faqs": [
       {
-        "question": "What sevices you can provide?",
-        "answer": "The icons are in SVG (Scalable Vector Graphic) format. They can be imported into your design tool of choice and used directly in code."
+        "question": "Do you provide dog or cat food?",
+        "answer": "I can provide but it is advisable for you to bring your own since your pet may not like what I have."
       },
       {
-        "question": "Can I use the icons at different sizes?",
-        "answer": "Yes. The icons are drawn on a 24 x 24 pixel grid, but the icons can be scaled to different sizes as needed. We don't recommend going smaller than 20 x 20 or larger than 64 x 64 to retain legibility and visual balance."
+        "question": "Can I pick up my fur baby anytime?",
+        "answer": "Yes you may, just tell me ahead of time."
       }
     ]
   },
   {
     "id": 2,
     "created_at": "2023-02-12T04:08:01.087519+00:00",
-    "name": "Pet sitter 2",
-    "specialization": ["all", "dogs", "cats"],
-    "description": "i am iron man",
+    "name": "Melinda Aquino",
+    "specialization": ["all", "cats"],
+    "description": "Melinda is a cat person and knows how to take care other cats as well. She's also good with stray cats in fact she adopted 2 stray cats.",
     "address": "14 Anahaw Rd, Makati, 1219 Metro Manila",
-    "price": 75,
-    "imageSrc": "https://i.pravatar.cc/300?img=3",
-    "rating": 5,
+    "price": 450,
+    "imageSrc": "https://i.pravatar.cc/300?img=2",
+    "rating": 3,
     "active": true,
     "clinic_lat": 14.553116,
     "clinic_lng": 121.037713,
-    "clinic_name": "pet solutions",
-    "address_city": "taguig",
+    "clinic_name": "Mel's meow crib",
+    "address_city": "makati",
     "operatingHours": ["all", "day"],
     "amenities": [
       "pool",
@@ -97,9 +97,37 @@
       "cctv",
       "playground"
     ],
-    "phone": "09123456789",
-    "email": "petsitter2@gmail.com",
-    "reviews": [],
+    "phone": "09248783789",
+    "email": "aquinomelinda@gmail.com",
+    "reviews": [
+      {
+        "id": 1,
+        "rating": 3,
+        "content": "Not the best but not so bad. She does not give updates so much. But may baby looks okay.",
+        "date": "July 16, 2021",
+        "datetime": "2021-07-16",
+        "author": "Cody Mariano",
+        "avatarSrc": "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80"
+      },
+      {
+        "id": 2,
+        "rating": 3,
+        "content": "Does not give updates that much.",
+        "date": "July 12, 2021",
+        "datetime": "2021-07-12",
+        "author": "Sansa Salazar",
+        "avatarSrc": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80"
+      },
+      {
+        "id": 3,
+        "rating": 4,
+        "content": "Caring will consider her on my next ",
+        "date": "July 12, 2021",
+        "datetime": "2021-07-12",
+        "author": "Sansa Salazar",
+        "avatarSrc": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80"
+      }
+    ],
     "socials": [
       {
         "name": "Twitter",
@@ -114,23 +142,36 @@
         "href": "#"
       }
     ],
-    "faqs": []
+    "faqs": [
+      {
+        "question": "Do you provide cat food?",
+        "answer": "I can provide but it is advisable for you to bring your own since your pet may not like what I have."
+      },
+      {
+        "question": "Can I pick up my fur baby anytime?",
+        "answer": "Yes you may, just tell me ahead of time."
+      },
+      {
+        "question": "How often do you provide updates?",
+        "answer": "As often as possible. I am very hands on and I can provide updates every 30mins or hourly."
+      }
+    ]
   },
   {
     "id": 3,
     "created_at": "2023-02-12T04:09:15.034441+00:00",
-    "name": "Pet sitter 3",
+    "name": "Steve Marcos",
     "specialization": ["all", "reptiles", "fish"],
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Steve owns a 1 turtle, 2 turquoise, 1 Arowana, and some gold fish",
     "address": "G2VQ+JQ2, Manila Polo Club Dr, Makati, Metro Manila",
-    "price": 12,
-    "imageSrc": "https://i.pravatar.cc/300?img=1",
-    "rating": 3,
+    "price": 400,
+    "imageSrc": "https://i.pravatar.cc/300?img=3",
+    "rating": 4,
     "active": true,
     "clinic_lat": 14.543913,
     "clinic_lng": 121.039319,
-    "clinic_name": "pet express",
-    "address_city": "taguig",
+    "clinic_name": "Steve's Aqua Planet",
+    "address_city": "makati",
     "operatingHours": ["all", "day"],
     "amenities": [
       "pool",
@@ -141,9 +182,28 @@
       "cctv",
       "playground"
     ],
-    "phone": "09123456789",
-    "email": "petsitter3@gmail.com",
-    "reviews": [],
+    "phone": "09657867868",
+    "email": "Steveeeemarcos@gmail.com",
+    "reviews": [
+      {
+        "id": 1,
+        "rating": 5,
+        "content": "Nice and caring pet sitter. Will surely consider him for our next reservation.",
+        "date": "July 16, 2021",
+        "datetime": "2021-07-16",
+        "author": "Ray Raymundo",
+        "avatarSrc": "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80"
+      },
+      {
+        "id": 4,
+        "rating": 4,
+        "content": "Very caring. Will book again next time if needed.",
+        "date": "July 12, 2021",
+        "datetime": "2021-07-12",
+        "author": "John Tolentino",
+        "avatarSrc": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80"
+      }
+    ],
     "socials": [
       {
         "name": "Twitter",
@@ -158,28 +218,60 @@
         "href": "#"
       }
     ],
-    "faqs": []
+    "faqs": [
+      {
+        "question": "Do you provide pet food?",
+        "answer": "I can provide but it is advisable for you to bring your own since your pet may not like what I have."
+      },
+      {
+        "question": "Can I pick up my pet anytime?",
+        "answer": "Yes you may, just tell me ahead of time."
+      },
+      {
+        "question": "How often do you provide updates?",
+        "answer": "As often as possible. I am very hands on and I can provide updates every 30mins or hourly."
+      }
+    ]
   },
   {
     "id": 4,
     "created_at": "2023-02-12T04:10:57.084743+00:00",
-    "name": "Pet sitter 4",
-    "specialization": ["all", "exotic", "birds"],
-    "description": "Your friendly neighborhood spiderman",
-    "price": 56,
+    "name": "Denise Samonte",
+    "specialization": ["all", "dog", "fish"],
+    "description": "Denise is a dog and fish person. She has 2 dogs and some Discus fish. She worked in a pet shop and has enough knowledge on taking care pets like dog and fish.",
+    "price": 400,
     "imageSrc": "https://i.pravatar.cc/300?img=4",
-    "rating": 2,
+    "rating": 5,
     "active": true,
     "address": "Upper McKinley Rd",
     "clinic_lat": 14.533773,
     "clinic_lng": 121.051349,
-    "clinic_name": "pet hospital",
+    "clinic_name": "Denise Crib",
     "address_city": "taguig",
     "operatingHours": ["all", "night"],
     "amenities": ["pool", "air-conditioned", "crate", "cctv", "playground"],
-    "phone": "09123456789",
-    "email": "petsitter4@gmail.com",
-    "reviews": [],
+    "phone": "09875341321",
+    "email": "samontedenise@gmail.com",
+    "reviews": [
+      {
+        "id": 1,
+        "rating": 5,
+        "content": "Nice and caring pet sitter. Will surely consider him for our next reservation.",
+        "date": "July 16, 2021",
+        "datetime": "2021-07-16",
+        "author": "Ray Raymundo",
+        "avatarSrc": "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80"
+      },
+      {
+        "id": 4,
+        "rating": 4,
+        "content": "Very caring. Will book again next time if needed.",
+        "date": "July 12, 2021",
+        "datetime": "2021-07-12",
+        "author": "John Tolentino",
+        "avatarSrc": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80"
+      }
+    ],
     "socials": [
       {
         "name": "Twitter",
@@ -194,27 +286,40 @@
         "href": "#"
       }
     ],
-    "faqs": []
+    "faqs": [
+      {
+        "question": "Do you provide pet food?",
+        "answer": "I can provide but it is advisable for you to bring your own since your pet may not like what I have."
+      },
+      {
+        "question": "Can I pick up my pet anytime?",
+        "answer": "Yes you may, just tell me ahead of time."
+      },
+      {
+        "question": "How often do you provide updates?",
+        "answer": "As often as possible. I am very hands on and I can provide updates every 30mins or hourly."
+      }
+    ]
   },
   {
     "id": 5,
     "created_at": "2023-02-12T04:10:57.084743+00:00",
-    "name": "Pet sitter 5",
-    "specialization": ["all", "exotic", "birds"],
-    "description": "Your friendly neighborhood spiderman",
-    "price": 56,
-    "imageSrc": "https://i.pravatar.cc/300?img=4",
+    "name": "Jamie Austria",
+    "specialization": ["all", "fish", "birds"],
+    "description": "Jamie is a fish and bird person. She likes to talk and care for fish and birds. She believes that both birds and fish are sweet pets as well.",
+    "price": 350,
+    "imageSrc": "https://i.pravatar.cc/300?img=5",
     "rating": 2,
     "active": true,
     "address": "Ordonio Dr, Camp John Hay, Baguio, Benguet",
     "clinic_lat": 16.40049,
     "clinic_lng": 120.61738,
-    "clinic_name": "pet hospital",
+    "clinic_name": "Jamie's Pet Sitting Services",
     "address_city": "baguio",
     "operatingHours": ["all", "night"],
     "amenities": ["pool", "air-conditioned", "crate", "cctv", "playground"],
-    "phone": "09123456789",
-    "email": "petsitter5@gmail.com",
+    "phone": "09184656226",
+    "email": "austriajamie@gmail.com",
     "reviews": [],
     "socials": [
       {
@@ -231,5 +336,837 @@
       }
     ],
     "faqs": []
+  },
+  {
+    "id": 6,
+    "created_at": "2023-02-11T19:52:27.584145+00:00",
+    "name": "Samuel Santos",
+    "specialization": ["all", "dogs", "birds"],
+    "description": "Samuel is a responsible pet owner he has 2 dogs and 3 birds. He likes to walk his dogs and talk to his birds. ",
+    "address": "Reliance St corner Pines St, Barangay Highway Hills,, Mandaluyong, Kalakhang Maynila, Philippines",
+    "price": 500,
+    "imageSrc": "https://i.pravatar.cc/300?img=6",
+    "rating": 4,
+    "active": true,
+    "clinic_lat": 14.574360,
+    "clinic_lng": 121.050866,
+    "clinic_name": "Samuel's Dog and Bird Crib",
+    "address_city": "mandaluyong",
+    "operatingHours": ["all"],
+    "amenities": [
+      "pool",
+      "online",
+      "air-conditioned",
+      "bed",
+      "crate",
+      "cctv",
+      "playground"
+    ],
+    "phone": "09983482637",
+    "email": "samuelsantos@gmail.com",
+    "average": 4,
+    "reviews": [
+      {
+        "id": 6,
+        "rating": 5,
+        "content": "Very caring I can see that my fur baby was really taken care of. Always provide update I love it! ",
+        "date": "July 16, 2021",
+        "datetime": "2021-07-16",
+        "author": "Peter Cruz",
+        "avatarSrc": "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80"
+      },
+      {
+        "id": 2,
+        "rating": 4,
+        "content": "Best Pet Sitter so far. Very caring and he always provides update of my babies.",
+        "date": "July 12, 2021",
+        "datetime": "2021-07-12",
+        "author": "Aurora Dela Cruz",
+        "avatarSrc": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80"
+      }
+    ],
+    "socials": [
+      {
+        "name": "Twitter",
+        "href": "#"
+      },
+      {
+        "name": "Facebook",
+        "href": "#"
+      },
+      {
+        "name": "Instagram",
+        "href": "#"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Can you take care all type of dogs and birds?",
+        "answer": "For dogs I can take care some type like Shih tzu, Pomeranian, Chihuahua, Poodle, Maltese, Chow chow, and Bulldog but I can also try other types. As for birds yes all types as long as caged you can just provide specific instructions for me to follow."
+      },
+      {
+        "question": "How often do you provide updates?",
+        "answer": "As often as possible. I am very hands on and I can provide updates every 30mins or hourly."
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "created_at": "2023-02-11T19:52:27.584145+00:00",
+    "name": "Olivia Bayani",
+    "specialization": ["all", "cats", "birds"],
+    "description": "Olivia is a cat and bird person. She started having cats at an early age and now she have 5 cats and 4 birds. ",
+    "address": "Building 7, A. 1700, General Santos Ave, Parañaque, Metro Manila, Philippines",
+    "price": 400,
+    "imageSrc": "https://i.pravatar.cc/300?img=7",
+    "rating": 4,
+    "active": true,
+    "clinic_lat": 14.485945235047518,
+    "clinic_lng": 120.99424616888582,
+    "clinic_name": "Olivia's Pet Place",
+    "address_city": "paranaque",
+    "operatingHours": ["all"],
+    "amenities": [
+      "pool",
+      "online",
+      "air-conditioned",
+      "bed",
+      "crate",
+      "cctv",
+      "playground"
+    ],
+    "phone": "09983482637",
+    "email": "samuelsantos@gmail.com",
+    "average": 4,
+    "reviews": [
+      {
+        "id": 6,
+        "rating": 5,
+        "content": "Very caring I can see that my fur baby was really taken care of. Always provide update I love it! ",
+        "date": "July 16, 2021",
+        "datetime": "2021-07-16",
+        "author": "Peter Cruz",
+        "avatarSrc": "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80"
+      },
+      {
+        "id": 2,
+        "rating": 4,
+        "content": "Best Pet Sitter so far. Very caring and he always provides update of my babies.",
+        "date": "July 12, 2021",
+        "datetime": "2021-07-12",
+        "author": "Aurora Dela Cruz",
+        "avatarSrc": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80"
+      }
+    ],
+    "socials": [
+      {
+        "name": "Twitter",
+        "href": "#"
+      },
+      {
+        "name": "Facebook",
+        "href": "#"
+      },
+      {
+        "name": "Instagram",
+        "href": "#"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "How often do you provide updates?",
+        "answer": "As often as possible. I am very hands on and I can provide updates every 30mins or hourly."
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "created_at": "2023-02-11T19:52:27.584145+00:00",
+    "name": "Dominic Salazar",
+    "specialization": ["all", "dogs"],
+    "description": "Dominic is a dog person. He likes to walk his dogs and he taught them some tricks.",
+    "address": "Dmci Homes Corporate Center, 1321 Apolinario St. Brgy. Bangkal, Makati, 1233 Metro Manila, Philippines",
+    "price": 400,
+    "imageSrc": "https://i.pravatar.cc/300?img=8",
+    "rating": 4,
+    "active": true,
+    "clinic_lat": 14.543652991952639,
+    "clinic_lng": 121.01313061542785,
+    "clinic_name": "Dom's Place for your Pets",
+    "address_city": "makati",
+    "operatingHours": ["all"],
+    "amenities": [
+      "pool",
+      "online",
+      "air-conditioned",
+      "bed",
+      "crate",
+      "cctv",
+      "playground"
+    ],
+    "phone": "09983482637",
+    "email": "dominicSalazar@gmail.com",
+    "average": 4,
+    "reviews": [
+      {
+        "id": 6,
+        "rating": 5,
+        "content": "Very caring I can see that my fur baby was really taken care of. Always provide update I love it! ",
+        "date": "July 16, 2021",
+        "datetime": "2021-07-16",
+        "author": "Peter Cruz",
+        "avatarSrc": "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80"
+      },
+      {
+        "id": 2,
+        "rating": 4,
+        "content": "Best Pet Sitter so far. Very caring and he always provides update of my babies.",
+        "date": "July 12, 2021",
+        "datetime": "2021-07-12",
+        "author": "Aurora Dela Cruz",
+        "avatarSrc": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80"
+      }
+    ],
+    "socials": [
+      {
+        "name": "Twitter",
+        "href": "#"
+      },
+      {
+        "name": "Facebook",
+        "href": "#"
+      },
+      {
+        "name": "Instagram",
+        "href": "#"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "How often do you provide updates?",
+        "answer": "As often as possible. I am very hands on and I can provide updates every 30mins or hourly."
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "created_at": "2023-02-11T19:52:27.584145+00:00",
+    "name": "Crisse Dela Cruz",
+    "specialization": ["all", "dogs", "cats"],
+    "description": "Crisse is a dog and cat person. She has 2 dog and 1 cats that are very sweet and behave. They know some tricks and loves to go out for a walk.",
+    "address": "Acacia Ave, Taguig, Metro Manila, Philippines",
+    "price": 450,
+    "imageSrc": "https://i.pravatar.cc/300?img=9",
+    "rating": 4,
+    "active": true,
+    "clinic_lat": 14.52147511558289,
+    "clinic_lng": 121.06350324246648,
+    "clinic_name": "Crisse's Pet Crib",
+    "address_city": "taguig",
+    "operatingHours": ["all"],
+    "amenities": [
+      "pool",
+      "online",
+      "air-conditioned",
+      "bed",
+      "crate",
+      "cctv",
+      "playground"
+    ],
+    "phone": "09983482637",
+    "email": "dlcrzcrss@gmail.com",
+    "average": 4,
+    "reviews": [
+      {
+        "id": 6,
+        "rating": 5,
+        "content": "Very caring I can see that my fur baby was really taken care of. Always provide update I love it! ",
+        "date": "July 16, 2021",
+        "datetime": "2021-07-16",
+        "author": "Peter Cruz",
+        "avatarSrc": "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80"
+      },
+      {
+        "id": 2,
+        "rating": 4,
+        "content": "Best Pet Sitter so far. Very caring and he always provides update of my babies.",
+        "date": "July 12, 2021",
+        "datetime": "2021-07-12",
+        "author": "Aurora Dela Cruz",
+        "avatarSrc": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80"
+      }
+    ],
+    "socials": [
+      {
+        "name": "Twitter",
+        "href": "#"
+      },
+      {
+        "name": "Facebook",
+        "href": "#"
+      },
+      {
+        "name": "Instagram",
+        "href": "#"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "How often do you provide updates?",
+        "answer": "As often as possible. I am very hands on and I can provide updates every 30mins or hourly."
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "created_at": "2023-02-11T19:52:27.584145+00:00",
+    "name": "Rion Igual",
+    "specialization": ["all", "exotic"],
+    "description": "Rion likes exotic animals. At a very young age he started to have a tarantula and python. Now he has 5 different types of tarantula and 1 large python.",
+    "address": "Gutierrez Compound, Taguig, Metro Manila, Philippines",
+    "price": 400,
+    "imageSrc": "https://i.pravatar.cc/300?img=10",
+    "rating": 4,
+    "active": true,
+    "clinic_lat": 14.480332504479055,
+    "clinic_lng": 121.05711820509282,
+    "clinic_name": "Rion's Exotic Pet Place",
+    "address_city": "taguig",
+    "operatingHours": ["all"],
+    "amenities": [
+      "pool",
+      "online",
+      "air-conditioned",
+      "bed",
+      "crate",
+      "cctv",
+      "playground"
+    ],
+    "phone": "09983482637",
+    "email": "rionigual@gmail.com",
+    "average": 4,
+    "reviews": [
+      {
+        "id": 6,
+        "rating": 5,
+        "content": "Very caring I can see that my baby was really taken care of. Always provide update I love it! ",
+        "date": "July 16, 2021",
+        "datetime": "2021-07-16",
+        "author": "Peter Cruz",
+        "avatarSrc": "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80"
+      },
+      {
+        "id": 2,
+        "rating": 4,
+        "content": "Best Pet Sitter so far. Very caring and he always provides update of my babies.",
+        "date": "July 12, 2021",
+        "datetime": "2021-07-12",
+        "author": "Aurora Dela Cruz",
+        "avatarSrc": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80"
+      }
+    ],
+    "socials": [
+      {
+        "name": "Twitter",
+        "href": "#"
+      },
+      {
+        "name": "Facebook",
+        "href": "#"
+      },
+      {
+        "name": "Instagram",
+        "href": "#"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "How often do you provide updates?",
+        "answer": "As often as possible. I am very hands on and I can provide updates every 30mins or hourly."
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "created_at": "2023-02-11T19:52:27.584145+00:00",
+    "name": "Clark Rodriguez",
+    "specialization": ["all", "birds"],
+    "description": "Clark is a bird person. He has different kind of birds.",
+    "address": "Urbano Velasco Ave, Pasig, 1602 Metro Manila, Philippines",
+    "price": 350,
+    "imageSrc": "https://i.pravatar.cc/300?img=11",
+    "rating": 4,
+    "active": true,
+    "clinic_lat": 14.55655123841346,
+    "clinic_lng": 121.08816387135437,
+    "clinic_name": "Clark's Feather Place",
+    "address_city": "pasig",
+    "operatingHours": ["all"],
+    "amenities": [
+      "pool",
+      "online",
+      "air-conditioned",
+      "bed",
+      "crate",
+      "cctv",
+      "playground"
+    ],
+    "phone": "09983482637",
+    "email": "clarkrdrgz@gmail.com",
+    "average": 4,
+    "reviews": [
+      {
+        "id": 6,
+        "rating": 5,
+        "content": "Very caring I can see that my baby was really taken care of. Always provide update I love it! ",
+        "date": "July 16, 2021",
+        "datetime": "2021-07-16",
+        "author": "Peter Cruz",
+        "avatarSrc": "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80"
+      },
+      {
+        "id": 2,
+        "rating": 4,
+        "content": "Best Pet Sitter so far. Very caring and he always provides update of my babies.",
+        "date": "July 12, 2021",
+        "datetime": "2021-07-12",
+        "author": "Aurora Dela Cruz",
+        "avatarSrc": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80"
+      }
+    ],
+    "socials": [
+      {
+        "name": "Twitter",
+        "href": "#"
+      },
+      {
+        "name": "Facebook",
+        "href": "#"
+      },
+      {
+        "name": "Instagram",
+        "href": "#"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "How often do you provide updates?",
+        "answer": "As often as possible. I am very hands on and I can provide updates every 30mins or hourly."
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "created_at": "2023-02-11T19:52:27.584145+00:00",
+    "name": "Elizha Vidanes",
+    "specialization": ["all", "dogs"],
+    "description": "Elizha is a dog person. She has 2 dogs and likes to play with them. She also taught them some tricks.",
+    "address": "1 Villena, Cainta, 1800 Rizal, Philippines",
+    "price": 400,
+    "imageSrc": "https://i.pravatar.cc/300?img=12",
+    "rating": 4,
+    "active": true,
+    "clinic_lat": 14.614359042960139,
+    "clinic_lng": 121.11090196447789,
+    "clinic_name": "Elizha's Bark Place",
+    "address_city": "rizal",
+    "operatingHours": ["all"],
+    "amenities": [
+      "pool",
+      "online",
+      "air-conditioned",
+      "bed",
+      "crate",
+      "cctv",
+      "playground"
+    ],
+    "phone": "09983482637",
+    "email": "elizhavidanes@gmail.com",
+    "average": 4,
+    "reviews": [
+      {
+        "id": 6,
+        "rating": 5,
+        "content": "Very caring I can see that my baby was really taken care of. Always provide update I love it! ",
+        "date": "July 16, 2021",
+        "datetime": "2021-07-16",
+        "author": "Peter Cruz",
+        "avatarSrc": "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80"
+      },
+      {
+        "id": 2,
+        "rating": 4,
+        "content": "Best Pet Sitter so far. Very caring and he always provides update of my babies.",
+        "date": "July 12, 2021",
+        "datetime": "2021-07-12",
+        "author": "Aurora Dela Cruz",
+        "avatarSrc": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80"
+      }
+    ],
+    "socials": [
+      {
+        "name": "Twitter",
+        "href": "#"
+      },
+      {
+        "name": "Facebook",
+        "href": "#"
+      },
+      {
+        "name": "Instagram",
+        "href": "#"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "How often do you provide updates?",
+        "answer": "As often as possible. I am very hands on and I can provide updates every 30mins or hourly."
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "created_at": "2023-02-11T19:52:27.584145+00:00",
+    "name": "Loiuse Perez",
+    "specialization": ["all", "cats"],
+    "description": "Louise is a cat person. She has 2 cats that is very sweet and fashionista. Her cats usually joins costume contests whenever there is.",
+    "address": "119 Riverside Drive, Provident Village, Marikina City",
+    "price": 400,
+    "imageSrc": "https://i.pravatar.cc/300?img=13",
+    "rating": 4,
+    "active": true,
+    "clinic_lat": 14.626735842506987,
+    "clinic_lng": 121.08976939659905,
+    "clinic_name": "Louise's Pet Sitting Service",
+    "address_city": "marikina",
+    "operatingHours": ["all"],
+    "amenities": [
+      "pool",
+      "online",
+      "air-conditioned",
+      "bed",
+      "crate",
+      "cctv",
+      "playground"
+    ],
+    "phone": "09983482637",
+    "email": "louiseperez@gmail.com",
+    "average": 4,
+    "reviews": [
+      {
+        "id": 6,
+        "rating": 5,
+        "content": "Very caring I can see that my baby was really taken care of. Always provide update I love it! ",
+        "date": "July 16, 2021",
+        "datetime": "2021-07-16",
+        "author": "Peter Cruz",
+        "avatarSrc": "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80"
+      },
+      {
+        "id": 2,
+        "rating": 4,
+        "content": "Best Pet Sitter so far. Very caring and he always provides update of my babies.",
+        "date": "July 12, 2021",
+        "datetime": "2021-07-12",
+        "author": "Aurora Dela Cruz",
+        "avatarSrc": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80"
+      }
+    ],
+    "socials": [
+      {
+        "name": "Twitter",
+        "href": "#"
+      },
+      {
+        "name": "Facebook",
+        "href": "#"
+      },
+      {
+        "name": "Instagram",
+        "href": "#"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "How often do you provide updates?",
+        "answer": "As often as possible. I am very hands on and I can provide updates every 30mins or hourly."
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "created_at": "2023-02-11T19:52:27.584145+00:00",
+    "name": "Janice Canete",
+    "specialization": ["all", "snakes"],
+    "description": "Janice likes snake as a pet. She owns 2 small size python and 1 large.",
+    "address": "372 Aguirre Ave, Parañaque, 1718 Metro Manila",
+    "price": 400,
+    "imageSrc": "https://i.pravatar.cc/300?img=14",
+    "rating": 4,
+    "active": true,
+    "clinic_lat": 14.457565861762276,
+    "clinic_lng": 121.00479712623628,
+    "clinic_name": "Janice's Pet Place",
+    "address_city": "paranaque",
+    "operatingHours": ["all"],
+    "amenities": [
+      "pool",
+      "online",
+      "air-conditioned",
+      "bed",
+      "crate",
+      "cctv",
+      "playground"
+    ],
+    "phone": "09983482637",
+    "email": "janicecanete@gmail.com",
+    "average": 4,
+    "reviews": [
+      {
+        "id": 6,
+        "rating": 5,
+        "content": "Very caring I can see that my baby was really taken care of. Always provide update I love it! ",
+        "date": "July 16, 2021",
+        "datetime": "2021-07-16",
+        "author": "Peter Cruz",
+        "avatarSrc": "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80"
+      },
+      {
+        "id": 2,
+        "rating": 4,
+        "content": "Best Pet Sitter so far. Very caring and he always provides update of my babies.",
+        "date": "July 12, 2021",
+        "datetime": "2021-07-12",
+        "author": "Aurora Dela Cruz",
+        "avatarSrc": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80"
+      }
+    ],
+    "socials": [
+      {
+        "name": "Twitter",
+        "href": "#"
+      },
+      {
+        "name": "Facebook",
+        "href": "#"
+      },
+      {
+        "name": "Instagram",
+        "href": "#"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "How often do you provide updates?",
+        "answer": "As often as possible. I am very hands on and I can provide updates every 30mins or hourly."
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "created_at": "2023-02-11T19:52:27.584145+00:00",
+    "name": "Cross Gimeno",
+    "specialization": ["all", "cats", "dogs"],
+    "description": "Cross is a cat and dog person. He has 1 cat and 1 dog that are both sweet and playful. His pets likes walking outside and play with other dogs and cats.",
+    "address": "Katipunan Village Barangay Outpost, Taguig, Metro Manila",
+    "price": 450,
+    "imageSrc": "https://i.pravatar.cc/300?img=15",
+    "rating": 4,
+    "active": true,
+    "clinic_lat": 14.517327167498014,
+    "clinic_lng": 121.0336326822218,
+    "clinic_name": "Cross' Paw Place",
+    "address_city": "taguig",
+    "operatingHours": ["all"],
+    "amenities": [
+      "pool",
+      "online",
+      "air-conditioned",
+      "bed",
+      "crate",
+      "cctv",
+      "playground"
+    ],
+    "phone": "09983482637",
+    "email": "crossssgimeno@gmail.com",
+    "average": 4,
+    "reviews": [
+      {
+        "id": 6,
+        "rating": 5,
+        "content": "Very caring I can see that my baby was really taken care of. Always provide update I love it! ",
+        "date": "July 16, 2021",
+        "datetime": "2021-07-16",
+        "author": "Peter Cruz",
+        "avatarSrc": "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80"
+      },
+      {
+        "id": 2,
+        "rating": 4,
+        "content": "Best Pet Sitter so far. Very caring and he always provides update of my babies.",
+        "date": "July 12, 2021",
+        "datetime": "2021-07-12",
+        "author": "Aurora Dela Cruz",
+        "avatarSrc": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80"
+      }
+    ],
+    "socials": [
+      {
+        "name": "Twitter",
+        "href": "#"
+      },
+      {
+        "name": "Facebook",
+        "href": "#"
+      },
+      {
+        "name": "Instagram",
+        "href": "#"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "How often do you provide updates?",
+        "answer": "As often as possible. I am very hands on and I can provide updates every 30mins or hourly."
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "created_at": "2023-02-11T19:52:27.584145+00:00",
+    "name": "July Velasquez",
+    "specialization": ["all", "dogs", "birds"],
+    "description": "July is a dog and bird person. He has 2 dogs and 2 birds. He previously breeds dogs and birds but he stopped since he changed location.",
+    "address": "Blk 14, Lot 23 Spdhai Compound, Lawton Ave, Taguig, Metro Manila",
+    "price": 400,
+    "imageSrc": "https://i.pravatar.cc/300?img=16",
+    "rating": 4,
+    "active": true,
+    "clinic_lat": 14.529887483762225,
+    "clinic_lng": 121.0339303669719,
+    "clinic_name": "July's Crib",
+    "address_city": "taguig",
+    "operatingHours": ["all"],
+    "amenities": [
+      "pool",
+      "online",
+      "air-conditioned",
+      "bed",
+      "crate",
+      "cctv",
+      "playground"
+    ],
+    "phone": "09983482637",
+    "email": "julyvelasquez@gmail.com",
+    "average": 4,
+    "reviews": [
+      {
+        "id": 6,
+        "rating": 5,
+        "content": "Very caring I can see that my baby was really taken care of. Always provide update I love it! ",
+        "date": "July 16, 2021",
+        "datetime": "2021-07-16",
+        "author": "Peter Cruz",
+        "avatarSrc": "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80"
+      },
+      {
+        "id": 2,
+        "rating": 4,
+        "content": "Best Pet Sitter so far. Very caring and he always provides update of my babies.",
+        "date": "July 12, 2021",
+        "datetime": "2021-07-12",
+        "author": "Aurora Dela Cruz",
+        "avatarSrc": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80"
+      }
+    ],
+    "socials": [
+      {
+        "name": "Twitter",
+        "href": "#"
+      },
+      {
+        "name": "Facebook",
+        "href": "#"
+      },
+      {
+        "name": "Instagram",
+        "href": "#"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "How often do you provide updates?",
+        "answer": "As often as possible. I am very hands on and I can provide updates every 30mins or hourly."
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "created_at": "2023-02-11T19:52:27.584145+00:00",
+    "name": "Ezekiel Lopez",
+    "specialization": ["all", "dogs"],
+    "description": "Ezekiel is pet lover. He is an expert in breeding Shih tzus. He do not harm pets and does not impose force or fear. He feeds pets on the given schedule. He has a contact vet or clinic in case of emergencies. A well trained pet sitter for emergency situations (CCPDT certified). He has sanitized place and feeder bowls and beds and also have a clean drinking water.",
+    "address": "Blk 14, Lot 23 Spdhai Compound, Lawton Ave, Taguig, Metro Manila",
+    "price": 600,
+    "imageSrc": "https://i.pravatar.cc/300?img=17",
+    "rating": 4,
+    "active": true,
+    "clinic_lat": 14.53147722583619,
+    "clinic_lng": 121.03442723138748,
+    "clinic_name": "Ezekiel's Pet Place",
+    "address_city": "taguig",
+    "operatingHours": ["all"],
+    "amenities": [
+      "pool",
+      "online",
+      "air-conditioned",
+      "bed",
+      "crate",
+      "cctv",
+      "playground"
+    ],
+    "phone": "09983482637",
+    "email": "ezekiellopez@gmail.com",
+    "average": 4,
+    "reviews": [
+      {
+        "id": 6,
+        "rating": 5,
+        "content": "Very caring I can see that my baby was really taken care of. Always provide update I love it! ",
+        "date": "July 16, 2021",
+        "datetime": "2021-07-16",
+        "author": "Peter Cruz",
+        "avatarSrc": "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80"
+      },
+      {
+        "id": 2,
+        "rating": 4,
+        "content": "Best Pet Sitter so far. Very caring and he always provides update of my babies.",
+        "date": "July 12, 2021",
+        "datetime": "2021-07-12",
+        "author": "Aurora Dela Cruz",
+        "avatarSrc": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80"
+      }
+    ],
+    "socials": [
+      {
+        "name": "Twitter",
+        "href": "#"
+      },
+      {
+        "name": "Facebook",
+        "href": "#"
+      },
+      {
+        "name": "Instagram",
+        "href": "#"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "How often do you provide updates?",
+        "answer": "As often as possible. I am very hands on and I can provide updates every 30mins or hourly."
+      }
+    ]
   }
 ]

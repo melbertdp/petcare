@@ -1,0 +1,235 @@
+[
+  {
+    "id": 1,
+    "created_at": "2023-02-11T19:52:27.584145+00:00",
+    "name": "Pet sitter 1",
+    "specialization": ["all", "dogs", "cats"],
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "address": "G/F Shangri-La at the Fort Manila, 30th Street, Bonifacio Global City, Taguig, Metro Manila",
+    "price": 499,
+    "imageSrc": "https://i.pravatar.cc/300?img=2",
+    "rating": 3,
+    "active": true,
+    "clinic_lat": 14.552587,
+    "clinic_lng": 121.047455,
+    "clinic_name": "clinic lang",
+    "address_city": "taguig",
+    "operatingHours": ["all"],
+    "amenities": [
+      "pool",
+      "online",
+      "air-conditioned",
+      "bed",
+      "crate",
+      "cctv",
+      "playground"
+    ],
+    "phone": "09123456789",
+    "email": "petsitter1@gmail.com",
+    "average": 4,
+    "reviews": [
+      {
+        "id": 1,
+        "rating": 5,
+        "content": "",
+        "date": "July 16, 2021",
+        "datetime": "2021-07-16",
+        "author": "Emily Selman",
+        "avatarSrc": "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80"
+      },
+      {
+        "id": 2,
+        "rating": 2,
+        "content": "",
+        "date": "July 12, 2021",
+        "datetime": "2021-07-12",
+        "author": "Hector Gibbons",
+        "avatarSrc": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80"
+      }
+    ],
+    "socials": [
+      {
+        "name": "Twitter",
+        "href": "#"
+      },
+      {
+        "name": "Facebook",
+        "href": "#"
+      },
+      {
+        "name": "Instagram",
+        "href": "#"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What sevices you can provide?",
+        "answer": "The icons are in SVG (Scalable Vector Graphic) format. They can be imported into your design tool of choice and used directly in code."
+      },
+      {
+        "question": "Can I use the icons at different sizes?",
+        "answer": "Yes. The icons are drawn on a 24 x 24 pixel grid, but the icons can be scaled to different sizes as needed. We don't recommend going smaller than 20 x 20 or larger than 64 x 64 to retain legibility and visual balance."
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "created_at": "2023-02-12T04:08:01.087519+00:00",
+    "name": "Pet sitter 2",
+    "specialization": ["all", "dogs", "cats"],
+    "description": "i am iron man",
+    "address": "14 Anahaw Rd, Makati, 1219 Metro Manila",
+    "price": 75,
+    "imageSrc": "https://i.pravatar.cc/300?img=3",
+    "rating": 5,
+    "active": true,
+    "clinic_lat": 14.553116,
+    "clinic_lng": 121.037713,
+    "clinic_name": "pet solutions",
+    "address_city": "taguig",
+    "operatingHours": ["all", "day"],
+    "amenities": [
+      "pool",
+      "online",
+      "air-conditioned",
+      "bed",
+      "crate",
+      "cctv",
+      "playground"
+    ],
+    "phone": "09123456789",
+    "email": "petsitter2@gmail.com",
+    "reviews": [],
+    "socials": [
+      {
+        "name": "Twitter",
+        "href": "#"
+      },
+      {
+        "name": "Facebook",
+        "href": "#"
+      },
+      {
+        "name": "Instagram",
+        "href": "#"
+      }
+    ],
+    "faqs": []
+  },
+  {
+    "id": 3,
+    "created_at": "2023-02-12T04:09:15.034441+00:00",
+    "name": "Pet sitter 3",
+    "specialization": ["all", "reptiles", "fish"],
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "address": "G2VQ+JQ2, Manila Polo Club Dr, Makati, Metro Manila",
+    "price": 12,
+    "imageSrc": "https://i.pravatar.cc/300?img=1",
+    "rating": 3,
+    "active": true,
+    "clinic_lat": 14.543913,
+    "clinic_lng": 121.039319,
+    "clinic_name": "pet express",
+    "address_city": "taguig",
+    "operatingHours": ["all", "day"],
+    "amenities": [
+      "pool",
+      "online",
+      "air-conditioned",
+      "bed",
+      "crate",
+      "cctv",
+      "playground"
+    ],
+    "phone": "09123456789",
+    "email": "petsitter3@gmail.com",
+    "reviews": [],
+    "socials": [
+      {
+        "name": "Twitter",
+        "href": "#"
+      },
+      {
+        "name": "Facebook",
+        "href": "#"
+      },
+      {
+        "name": "Instagram",
+        "href": "#"
+      }
+    ],
+    "faqs": []
+  },
+  {
+    "id": 4,
+    "created_at": "2023-02-12T04:10:57.084743+00:00",
+    "name": "Pet sitter 4",
+    "specialization": ["all", "exotic", "birds"],
+    "description": "Your friendly neighborhood spiderman",
+    "price": 56,
+    "imageSrc": "https://i.pravatar.cc/300?img=4",
+    "rating": 2,
+    "active": true,
+    "address": "Upper McKinley Rd",
+    "clinic_lat": 14.533773,
+    "clinic_lng": 121.051349,
+    "clinic_name": "pet hospital",
+    "address_city": "taguig",
+    "operatingHours": ["all", "night"],
+    "amenities": ["pool", "air-conditioned", "crate", "cctv", "playground"],
+    "phone": "09123456789",
+    "email": "petsitter4@gmail.com",
+    "reviews": [],
+    "socials": [
+      {
+        "name": "Twitter",
+        "href": "#"
+      },
+      {
+        "name": "Facebook",
+        "href": "#"
+      },
+      {
+        "name": "Instagram",
+        "href": "#"
+      }
+    ],
+    "faqs": []
+  },
+  {
+    "id": 5,
+    "created_at": "2023-02-12T04:10:57.084743+00:00",
+    "name": "Pet sitter 5",
+    "specialization": ["all", "exotic", "birds"],
+    "description": "Your friendly neighborhood spiderman",
+    "price": 56,
+    "imageSrc": "https://i.pravatar.cc/300?img=4",
+    "rating": 2,
+    "active": true,
+    "address": "Ordonio Dr, Camp John Hay, Baguio, Benguet",
+    "clinic_lat": 16.40049,
+    "clinic_lng": 120.61738,
+    "clinic_name": "pet hospital",
+    "address_city": "baguio",
+    "operatingHours": ["all", "night"],
+    "amenities": ["pool", "air-conditioned", "crate", "cctv", "playground"],
+    "phone": "09123456789",
+    "email": "petsitter5@gmail.com",
+    "reviews": [],
+    "socials": [
+      {
+        "name": "Twitter",
+        "href": "#"
+      },
+      {
+        "name": "Facebook",
+        "href": "#"
+      },
+      {
+        "name": "Instagram",
+        "href": "#"
+      }
+    ],
+    "faqs": []
+  }
+]
