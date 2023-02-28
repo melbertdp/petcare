@@ -2,7 +2,6 @@ import Rating from "@/components/vetParners/modal/rating";
 
 const NearbyVetCards = ({ vet, setViewPetDetails, setMapCenter }) => {
   const handleClick = (v) => {
-    // setViewPetDetails(v)
     setMapCenter(v);
   };
 

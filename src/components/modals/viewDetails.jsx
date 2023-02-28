@@ -1,5 +1,4 @@
-/* This example requires Tailwind CSS v2.0+ */
-import { Fragment, useRef, useState } from "react";
+import { Fragment } from "react";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Dialog, Tab, Transition } from "@headlessui/react";
